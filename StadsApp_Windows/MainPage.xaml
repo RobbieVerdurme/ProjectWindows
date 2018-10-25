@@ -7,8 +7,27 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <Grid>
-
-    </Grid>
+    <SplitView x:Name="mySplitView" CompactPaneLength="50" IsPaneOpen="True" DisplayMode="CompactInline">
+        <SplitView.Pane>
+            <StackPanel Background="Gray">
+                <Button FontFamily="Segoe MDL2 assets"
+                        Content="&#xE700;"
+                        Click="Button_Click"
+                        Width="50"
+                        Height="50"/>
+                <StackPanel Orientation="Horizontal" Tapped="StackPanel_Tapped">
+                    <Button FontFamily="Segoe MDL2 Assets"
+                            Content="&#xE825;"
+                            Width="50"
+                            Height="50"/>
+                    <TextBlock Text="Overzicht Ondernemingen"
+                               FontSize="18"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <Frame x:Name="mainFrame"/>
+        </SplitView.Content>
+    </SplitView>
 </Page>

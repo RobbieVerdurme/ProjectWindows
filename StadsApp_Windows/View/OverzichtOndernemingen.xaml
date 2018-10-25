@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="StadsApp_Windows.View.OverzichtOndernemingen"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="using:StadsApp_Windows"
+    xmlns:model="using:StadsApp_Windows.Model"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <ScrollViewer>
+    <StackPanel>
+            <ListView ItemsSource="{x:Bind Ondernemingen}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Onderneming">
+                        <StackPanel>
+                            <TextBlock Text="{x:Bind Naam}"/>
+                            <TextBlock Text="{x:Bind Adres}"/>
+                            <Line Stroke="Red" X1="0" X2="300" Y1="5" Y2="5"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
