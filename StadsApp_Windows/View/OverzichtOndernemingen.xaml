@@ -5,18 +5,16 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="using:StadsApp_Windows"
-    xmlns:model="using:StadsApp_Windows.Model"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <ScrollViewer>
     <StackPanel>
-            <ListView ItemsSource="{x:Bind Ondernemingen}">
+            <ListView ItemsSource="{Binding Ondernemingen}">
                 <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="model:Onderneming">
+                    <DataTemplate>
                         <StackPanel>
-                            <TextBlock Text="{x:Bind Naam}"/>
-                            <TextBlock Text="{x:Bind Adres}"/>
-                            <Line Stroke="Red" X1="0" X2="300" Y1="5" Y2="5"/>
+                            <TextBlock Text="{Binding Naam}"/>
+                            <TextBlock Text="{Binding Adres}"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
