@@ -15,6 +15,7 @@
                         <StackPanel>
                             <TextBlock Text="{Binding Naam}"/>
                             <TextBlock Text="{Binding Adres}"/>
+                            <TextBlock Text="{Binding Soort}"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
