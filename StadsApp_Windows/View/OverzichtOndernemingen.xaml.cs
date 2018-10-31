@@ -28,7 +28,11 @@ namespace StadsApp_Windows.View
         public OverzichtOndernemingen()
         {
             this.InitializeComponent();
+        }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
             this.DataContext = new OverzichtOndernemingenViewModel();
         }
     }

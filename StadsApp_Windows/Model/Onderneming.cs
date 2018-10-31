@@ -8,8 +8,15 @@ using System.Threading.Tasks;
 
 namespace StadsApp_Windows.Model
 {
-    public class Onderneming : INotifyPropertyChanged
+    public class Onderneming //: INotifyPropertyChanged
     {
+
+        public int OndernemingID { get; set; }
+        public String Naam { get; set; }
+        public String Adres { get; set; }
+        public String Soort { get; set; }
+
+        /* MAG WEG ?
         //var
         private string _adres;
         private string _naam;
@@ -41,5 +48,6 @@ namespace StadsApp_Windows.Model
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        */
     }
 }
