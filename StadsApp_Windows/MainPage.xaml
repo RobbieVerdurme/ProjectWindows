@@ -24,6 +24,24 @@
                                FontSize="18"
                                VerticalAlignment="Center"/>
                 </StackPanel>
+                <StackPanel Orientation="Horizontal" Tapped="StackPanel_Tapped_1">
+                    <Button FontFamily="Segoe MDL2 Assets"
+                            Content="&#xE825;"
+                            Width="50"
+                            Height="50"/>
+                    <TextBlock Text="Onderneming Aanmaken"
+                               FontSize="18"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Tapped="StackPanel_Tapped_2">
+                    <Button FontFamily="Segoe MDL2 Assets"
+                            Content="&#xE825;"
+                            Width="50"
+                            Height="50"/>
+                    <TextBlock Text="Login"
+                               FontSize="18"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
             </StackPanel>
         </SplitView.Pane>
         <SplitView.Content>

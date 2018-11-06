@@ -101,6 +101,21 @@
     <Compile Include="Model\Onderneming.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\OverzichtOndernemingenViewModel.cs" />
+    <Compile Include="View\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginUserControl.xaml.cs">
+      <DependentUpon>LoginUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OndernemingAanmaken.xaml.cs">
+      <DependentUpon>OndernemingAanmaken.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OndernemingAanmakenAanpassenUserControl.xaml.cs">
+      <DependentUpon>OndernemingAanmakenAanpassenUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OndernemingDetail.xaml.cs">
+      <DependentUpon>OndernemingDetail.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\OverzichtOndernemingen.xaml.cs">
       <DependentUpon>OverzichtOndernemingen.xaml</DependentUpon>
     </Compile>
@@ -129,6 +144,26 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LoginUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OndernemingAanmaken.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OndernemingAanmakenAanpassenUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OndernemingDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\OverzichtOndernemingen.xaml">
       <SubType>Designer</SubType>

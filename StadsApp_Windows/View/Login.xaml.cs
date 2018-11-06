@@ -1,8 +1,5 @@
-﻿using StadsApp_Windows.Model;
-using StadsApp_Windows.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -23,22 +20,11 @@ namespace StadsApp_Windows.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class OverzichtOndernemingen : Page
+    public sealed partial class Login : Page
     {
-        public OverzichtOndernemingen()
+        public Login()
         {
             this.InitializeComponent();
-        }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            base.OnNavigatedTo(e);
-            this.DataContext = new OverzichtOndernemingenViewModel();
-        }
-
-        private void btnZoekOnderneming_Click(object sender, RoutedEventArgs e)
-        {
-            /*Zoeken in lijst van overzicht ondernemingen view model naar de tekst in txtZoekOnderneming*/
         }
     }
 }

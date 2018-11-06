@@ -31,5 +31,18 @@ namespace StadsApp_Windows.ViewModel
             var json = await client.GetStringAsync(new Uri("http://localhost:59258/api/ondernemings"));
             Ondernemingen = JsonConvert.DeserializeObject<ObservableCollection<Onderneming>>(json);
         }
+        /*
+
+        public IEnumerable<Onderneming> ZoekOnderneming(Onderneming onderneming)
+        {
+            if (Ondernemingen.Contains(onderneming)) {
+                return Ondernemingen.Where(x => x.Naam == onderneming.Naam);
+            }
+            else
+            {
+                throw new ArgumentException("De onderneming is niet gevonden");
+            }
+        }
+        */
     }
 }
