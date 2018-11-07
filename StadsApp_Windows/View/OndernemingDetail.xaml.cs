@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StadsApp_Windows.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace StadsApp_Windows.View
         public OndernemingDetail()
         {
             this.InitializeComponent();
+            this.DataContext = new OndernemingDetailViewModel();
         }
     }
 }

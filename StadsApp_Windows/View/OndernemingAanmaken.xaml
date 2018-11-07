@@ -9,6 +9,22 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel>
-        <local:OndernemingAanmakenAanpassenUserControl/>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Naam" Width="200"/>
+            <TextBox x:Name="txtNaam" Width="200"/> 
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Adres" Width="200"/>
+            <TextBox x:Name="txtAdres" Width="200"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Categorie/Type onderneming" Width="200"/>
+            <ComboBox Width="200">
+                <ComboBoxItem>
+                    <!--Items van lijst weergeven-->
+                </ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <Button Content="Toevoegen"/>
     </StackPanel>
 </Page>

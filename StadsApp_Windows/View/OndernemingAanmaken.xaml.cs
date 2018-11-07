@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StadsApp_Windows.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace StadsApp_Windows.View
         public OndernemingAanmaken()
         {
             this.InitializeComponent();
+            this.DataContext = new OndernemingAanmakenViewModel();
         }
     }
 }
