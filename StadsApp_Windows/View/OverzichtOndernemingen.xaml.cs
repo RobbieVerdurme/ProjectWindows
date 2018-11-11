@@ -25,6 +25,8 @@ namespace StadsApp_Windows.View
     /// </summary>
     public sealed partial class OverzichtOndernemingen : Page
     {
+        private OverzichtOndernemingenViewModel overzichtvm;
+
         public OverzichtOndernemingen()
         {
             this.InitializeComponent();
@@ -33,13 +35,20 @@ namespace StadsApp_Windows.View
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            this.DataContext = new OverzichtOndernemingenViewModel();
+            overzichtvm = new OverzichtOndernemingenViewModel();
+            this.DataContext = overzichtvm;
         }
 
         private void btnZoekOnderneming_Click(object sender, RoutedEventArgs e)
         {
             /*Zoeken in lijst van overzicht ondernemingen view model naar de tekst in txtZoekOnderneming*/
-            
+            overzichtvm.ZoekOnderneming(new Onderneming() { Naam = txtZoekOnderneming.Text });
+        }
+
+        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            //Console.Out.Write(e.ClickedItem.ToString());
         }
     }
 }

@@ -13,7 +13,7 @@
             <TextBox x:Name="txtZoekOnderneming"/>
             <Button x:Name="btnZoekOnderneming" Content="Zoek" Click="btnZoekOnderneming_Click"/>
             <StackPanel Orientation="Vertical">
-            <ListView ItemsSource="{Binding Ondernemingen}">
+            <ListView x:Name="lvOndernemingen" ItemsSource="{Binding Ondernemingen}" ItemClick="ListView_ItemClick">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>

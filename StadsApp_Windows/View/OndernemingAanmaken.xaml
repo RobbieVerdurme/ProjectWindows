@@ -19,12 +19,12 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Categorie/Type onderneming" Width="200"/>
-            <ComboBox Width="200">
+            <ComboBox Width="200" x:Name="cboSoort">
                 <ComboBoxItem>
                     <!--Items van lijst weergeven-->
                 </ComboBoxItem>
             </ComboBox>
         </StackPanel>
-        <Button Content="Toevoegen"/>
+        <Button Content="Toevoegen" Click="btnToevoegenClicked"/>
     </StackPanel>
 </Page>
