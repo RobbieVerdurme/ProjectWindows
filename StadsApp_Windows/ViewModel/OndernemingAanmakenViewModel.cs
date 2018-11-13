@@ -19,7 +19,7 @@ namespace StadsApp_Windows.ViewModel
                 Soort = soort
             };
 
-            Data.Ondernemingen.Add(onderneming);
+            //Data.Ondernemingen.Add(onderneming);
         }
     }
 }
