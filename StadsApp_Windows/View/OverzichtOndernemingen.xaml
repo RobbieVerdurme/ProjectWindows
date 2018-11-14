@@ -10,7 +10,7 @@
     <ScrollViewer>
         <StackPanel Orientation="Vertical">
             <TextBlock Text="Zoek een onderneming"/>
-            <TextBox x:Name="txtZoekOnderneming"/>
+            <TextBox x:Name="txtZoekOnderneming" TextChanged="btnZoekOnderneming_Click"/>
             <Button x:Name="btnZoekOnderneming" Content="Zoek" Click="btnZoekOnderneming_Click"/>
             <StackPanel Orientation="Vertical">
             <ListView x:Name="lvOndernemingen" ItemsSource="{Binding Ondernemingen}" ItemClick="ListView_ItemClick">

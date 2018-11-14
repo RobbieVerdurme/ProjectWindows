@@ -21,28 +21,31 @@ namespace StadsApp_Windows.ViewModel
         public OverzichtOndernemingenViewModel()
         {
             //Ondernemingen = new ObservableCollection<Onderneming>(DummyDataSource.Ondernemingen/*DATASOURCE*/);
-           GetData();
+           //GetData();
         }
 
 
         //methods
 
-        private async void GetData()
+        public async Task<OverzichtOndernemingenViewModel> GetData()
         {
             HttpClient client = new HttpClient();
             var json = await client.GetStringAsync(new Uri("http://localhost:59258/api/ondernemings"));
             Ondernemingen = JsonConvert.DeserializeObject<ObservableCollection<Onderneming>>(json);
+			return this;
         }
 
-        public IEnumerable<Onderneming> ZoekOnderneming(Onderneming onderneming)
+      
+        public IEnumerable<Onderneming> ZoekOnderneming(String tekst)
         {
-            if (Ondernemingen != null && Ondernemingen.Contains(onderneming)) {
-                return Ondernemingen.Where(x => x.Naam.Contains(onderneming.Naam));
-            }
+            if (tekst == null || tekst.Trim().Equals(""))
+                return Ondernemingen;
+            var o = Ondernemingen.ToList().FindAll(onderneming => onderneming.Naam.Contains(tekst) /*|| onderneming.Adres.Contains(tekst)*/);
+            if (o.Count > 0)
+                return o;
             else
-            {
                 throw new ArgumentException("De onderneming is niet gevonden");
-            }
+            
         }
         
     }

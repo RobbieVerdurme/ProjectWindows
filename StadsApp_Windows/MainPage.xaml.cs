@@ -1,9 +1,14 @@
-﻿using StadsApp_Windows.View;
+﻿using Newtonsoft.Json;
+using StadsApp_Windows.Model;
+using StadsApp_Windows.View;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -28,7 +33,9 @@ namespace StadsApp_Windows
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+		
+
+		private void Button_Click(object sender, RoutedEventArgs e)
         {
             mySplitView.IsPaneOpen = !mySplitView.IsPaneOpen;
         }

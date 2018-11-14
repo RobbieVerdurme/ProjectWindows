@@ -31,24 +31,32 @@ namespace StadsApp_Windows.View
         {
             this.InitializeComponent();
         }
+		
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+		protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
             overzichtvm = new OverzichtOndernemingenViewModel();
+			await overzichtvm.GetData();
             this.DataContext = overzichtvm;
         }
 
         private void btnZoekOnderneming_Click(object sender, RoutedEventArgs e)
         {
             /*Zoeken in lijst van overzicht ondernemingen view model naar de tekst in txtZoekOnderneming*/
-            overzichtvm.ZoekOnderneming(new Onderneming() { Naam = txtZoekOnderneming.Text });
+            overzichtvm.ZoekOnderneming(txtZoekOnderneming.Text);
         }
 
         private void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {
 
             //Console.Out.Write(e.ClickedItem.ToString());
+        }
+
+        private void btnZoekOnderneming_Click(object sender, TextChangedEventArgs e)
+        {
+
+            overzichtvm.ZoekOnderneming(txtZoekOnderneming.Text);
         }
     }
 }
