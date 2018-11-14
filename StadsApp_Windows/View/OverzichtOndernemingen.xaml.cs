@@ -31,11 +31,13 @@ namespace StadsApp_Windows.View
         {
             this.InitializeComponent();
         }
+		
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+		protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
             overzichtvm = new OverzichtOndernemingenViewModel();
+			await overzichtvm.GetData();
             this.DataContext = overzichtvm;
         }
 

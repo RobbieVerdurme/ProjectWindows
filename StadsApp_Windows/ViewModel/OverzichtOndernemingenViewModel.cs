@@ -21,17 +21,18 @@ namespace StadsApp_Windows.ViewModel
         public OverzichtOndernemingenViewModel()
         {
             //Ondernemingen = new ObservableCollection<Onderneming>(DummyDataSource.Ondernemingen/*DATASOURCE*/);
-           GetData();
+           //GetData();
         }
 
 
         //methods
 
-        private async void GetData()
+        public async Task<OverzichtOndernemingenViewModel> GetData()
         {
             HttpClient client = new HttpClient();
             var json = await client.GetStringAsync(new Uri("http://localhost:59258/api/ondernemings"));
             Ondernemingen = JsonConvert.DeserializeObject<ObservableCollection<Onderneming>>(json);
+			return this;
         }
 
         public IEnumerable<Onderneming> ZoekOnderneming(Onderneming onderneming)
