@@ -42,13 +42,19 @@ namespace StadsApp_Windows.View
         private void btnZoekOnderneming_Click(object sender, RoutedEventArgs e)
         {
             /*Zoeken in lijst van overzicht ondernemingen view model naar de tekst in txtZoekOnderneming*/
-            overzichtvm.ZoekOnderneming(new Onderneming() { Naam = txtZoekOnderneming.Text });
+            overzichtvm.ZoekOnderneming(txtZoekOnderneming.Text);
         }
 
         private void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {
 
             //Console.Out.Write(e.ClickedItem.ToString());
+        }
+
+        private void btnZoekOnderneming_Click(object sender, TextChangedEventArgs e)
+        {
+
+            overzichtvm.ZoekOnderneming(txtZoekOnderneming.Text);
         }
     }
 }
