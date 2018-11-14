@@ -30,13 +30,13 @@ namespace StadsApp_Windows.View
         public OverzichtOndernemingen()
         {
             this.InitializeComponent();
+            overzichtvm = new OverzichtOndernemingenViewModel();
+            this.DataContext = overzichtvm;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            overzichtvm = new OverzichtOndernemingenViewModel();
-            this.DataContext = overzichtvm;
         }
 
         private void btnZoekOnderneming_Click(object sender, RoutedEventArgs e)
