@@ -3,6 +3,7 @@ using StadsApp_Windows.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -55,7 +56,6 @@ namespace StadsApp_Windows.View
 
         private void btnZoekOnderneming_Click(object sender, TextChangedEventArgs e)
         {
-
             overzichtvm.ZoekOnderneming(txtZoekOnderneming.Text);
         }
     }
