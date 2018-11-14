@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls;
 
 namespace StadsApp_Windows.ViewModel
 {
-    public class LoginViewModel
+    public class RegistrerenViewModel
     {
-        internal void login(string username, string password)
+        internal void Registreer(TextBox txtUsername, TextBox txtPasword, TextBox txtPasswordConfermation)
         {
             
         }

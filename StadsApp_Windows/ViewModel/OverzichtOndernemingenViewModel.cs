@@ -36,7 +36,7 @@ namespace StadsApp_Windows.ViewModel
 
         public IEnumerable<Onderneming> ZoekOnderneming(Onderneming onderneming)
         {
-            if (Ondernemingen.Contains(onderneming)) {
+            if (Ondernemingen != null && Ondernemingen.Contains(onderneming)) {
                 return Ondernemingen.Where(x => x.Naam.Contains(onderneming.Naam));
             }
             else

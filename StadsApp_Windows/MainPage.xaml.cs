@@ -35,7 +35,7 @@ namespace StadsApp_Windows
 
         private void StackPanel_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            mainFrame.Navigate(typeof(OverzichtOndernemingen/*Page*/)); //navigeren naar pag
+            mainFrame.Navigate(typeof(OverzichtOndernemingen));
         }
 
         private void StackPanel_Tapped_1(object sender, TappedRoutedEventArgs e)

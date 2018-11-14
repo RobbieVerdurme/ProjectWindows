@@ -21,24 +21,24 @@ namespace StadsApp_Windows.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Login : Page
+    public sealed partial class Registreren : Page
     {
-        private LoginViewModel loginvm;
-        public Login()
+        private RegistrerenViewModel registrerenvm;
+        public Registreren()
         {
             this.InitializeComponent();
-            loginvm = new LoginViewModel();
-            this.DataContext = loginvm;
-        }
-
-        private void LoginClicked(object sender, RoutedEventArgs e)
-        {
-            loginvm.login(txtUsername.Text, txtPassword.Text);
+            registrerenvm = new RegistrerenViewModel();
+            this.DataContext = registrerenvm;
         }
 
         private void RegistreerClicked(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Registreren));
+            registrerenvm.Registreer(txtUsername, txtPasword, txtPasswordConfermation);
+        }
+
+        private void BackClicked(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Login));
         }
     }
 }
