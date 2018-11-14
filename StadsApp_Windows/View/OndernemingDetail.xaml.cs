@@ -25,5 +25,7 @@ namespace StadsApp_Windows.View
             this.InitializeComponent();
             this.DataContext = new OndernemingDetailViewModel();
         }
+
+
     }
 }
