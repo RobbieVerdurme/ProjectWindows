@@ -34,15 +34,17 @@ namespace StadsApp_Windows.ViewModel
             Ondernemingen = JsonConvert.DeserializeObject<ObservableCollection<Onderneming>>(json);
         }
 
-        public IEnumerable<Onderneming> ZoekOnderneming(Onderneming onderneming)
+      
+        public IEnumerable<Onderneming> ZoekOnderneming(String tekst)
         {
-            if (Ondernemingen.Contains(onderneming)) {
-                return Ondernemingen.Where(x => x.Naam.Contains(onderneming.Naam));
-            }
+            if (tekst == null || tekst.Trim().Equals(""))
+                return Ondernemingen;
+            var o = Ondernemingen.ToList().FindAll(onderneming => onderneming.Naam.Contains(tekst) /*|| onderneming.Adres.Contains(tekst)*/);
+            if (o.Count > 0)
+                return o;
             else
-            {
                 throw new ArgumentException("De onderneming is niet gevonden");
-            }
+            
         }
         
     }
