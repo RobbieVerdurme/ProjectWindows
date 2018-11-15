@@ -32,9 +32,9 @@ namespace StadsApp_Windows.View
             this.DataContext = ondernemingvm;
         }
 
-        private void btnToevoegenClicked(object sender, RoutedEventArgs e)
+        private async void btnToevoegenClicked(object sender, RoutedEventArgs e)
         {
-            ondernemingvm.AanmakenOnderneming(txtNaam.Text, txtAdres.Text, cboSoort.SelectedItem.ToString());
-        }
+            await ondernemingvm.AanmakenOndernemingAsync(txtNaam.Text, txtAdres.Text, cboSoort.SelectedItem.ToString());
+		}
     }
 }
