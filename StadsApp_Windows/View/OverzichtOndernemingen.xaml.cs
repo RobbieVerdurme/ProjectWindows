@@ -3,6 +3,7 @@ using StadsApp_Windows.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -47,16 +48,28 @@ namespace StadsApp_Windows.View
             overzichtvm.ZoekOnderneming(txtZoekOnderneming.Text);
         }
 
-        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-            //Console.Out.Write(e.ClickedItem.ToString());
-        }
-
         private void btnZoekOnderneming_Click(object sender, TextChangedEventArgs e)
         {
 
             overzichtvm.ZoekOnderneming(txtZoekOnderneming.Text);
+        }
+
+
+
+
+
+
+
+        /************************************************************DETAIL PAGINA****************************************************************************/
+
+        private Onderneming GetOnderneming(Onderneming selectedItem)
+        {
+            return overzichtvm.Ondernemingen.Where(x => x.OndernemingID == selectedItem.OndernemingID).FirstOrDefault();
+        }
+
+        private void StackPanel_Tapped_1(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(OndernemingDetail), GetOnderneming((Onderneming)lvOndernemingen.SelectedItem));
         }
     }
 }
