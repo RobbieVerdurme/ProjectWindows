@@ -4,6 +4,7 @@ using StadsApp_Windows.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -33,26 +34,54 @@ namespace StadsApp_Windows
             this.InitializeComponent();
         }
 
-		
+		private void nvTopLevelNav_Loaded(object sender, RoutedEventArgs e)
+		{
+			// set the initial SelectedItem
+			foreach (NavigationViewItemBase item in nvTopLevelNav.MenuItems)
+			{
+				if (item is NavigationViewItem && item.Tag.ToString() == "Overzicht_Page")
+				{
+					nvTopLevelNav.SelectedItem = item;
+					break;
+				}
+			}
 
-		private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            mySplitView.IsPaneOpen = !mySplitView.IsPaneOpen;
-        }
+			mainFrame.Navigate(typeof(OverzichtOndernemingen));
+		}
 
-        private void StackPanel_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            mainFrame.Navigate(typeof(OverzichtOndernemingen));
-        }
+		private void nvTopLevelNav_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+		{
+		}
 
-        private void StackPanel_Tapped_1(object sender, TappedRoutedEventArgs e)
-        {
-            mainFrame.Navigate(typeof(OndernemingAanmaken));
-        }
+		private void nvTopLevelNav_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+		{
+			
+			if (args.IsSettingsInvoked)
+			{
+				//mainFrame.Navigate(typeof(SettingsPage));
+			}
+			else
+			{
+				TextBlock ItemContent = args.InvokedItem as TextBlock;
+				if (ItemContent != null)
+				{
+					switch (ItemContent.Tag)
+					{
+						case "Overzicht_Page":
+							mainFrame.Navigate(typeof(OverzichtOndernemingen));
+							break;
 
-        private void StackPanel_Tapped_2(object sender, TappedRoutedEventArgs e)
-        {
-            mainFrame.Navigate(typeof(Login));
-        }
-    }
+						case "Toevoegen_Page":
+							mainFrame.Navigate(typeof(OndernemingAanmaken));
+							break;
+
+						case "Login_Page":
+							mainFrame.Navigate(typeof(Login));
+							break;
+
+					}
+				}
+			}
+		}
+	}
 }
