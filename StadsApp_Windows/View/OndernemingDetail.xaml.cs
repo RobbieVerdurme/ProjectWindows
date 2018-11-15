@@ -1,6 +1,8 @@
-﻿using StadsApp_Windows.ViewModel;
+﻿using StadsApp_Windows.Model;
+using StadsApp_Windows.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -14,18 +16,30 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace StadsApp_Windows.View
 {
-    public sealed partial class OndernemingDetail : UserControl
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class OndernemingDetail : Page
     {
+        private OndernemingDetailViewModel detailondernemingvm;
+        public Onderneming GeselecteerdeOnderneming { get; set; }
+
+
         public OndernemingDetail()
         {
             this.InitializeComponent();
-            this.DataContext = new OndernemingDetailViewModel();
+            detailondernemingvm = new OndernemingDetailViewModel();
         }
 
-
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            GeselecteerdeOnderneming = (Onderneming)e.Parameter;
+            this.DataContext = GeselecteerdeOnderneming;
+        }
     }
 }
