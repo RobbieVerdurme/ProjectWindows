@@ -19,7 +19,16 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Vestiging(en):" Width="200"/>
-            
+            <ListView x:Name="lvVestigingen" ItemsSource="{Binding Vestigingen}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Naam}"/>
+                            <TextBlock Text="{Binding Adres}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackPanel>
     </StackPanel>
 </Page>
