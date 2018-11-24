@@ -14,12 +14,21 @@
             <TextBlock Text="{Binding Naam}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Adres onderneming" Width="200"/>
-            <TextBlock Text="{Binding Adres}"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
             <TextBlock Text="Soort onderneming" Width="200"/>
             <TextBlock Text="{Binding Soort}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Vestiging(en):" Width="200"/>
+            <ListView x:Name="lvVestigingen" ItemsSource="{Binding Vestigingen}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Naam}"/>
+                            <TextBlock Text="{Binding Adres}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackPanel>
     </StackPanel>
 </Page>

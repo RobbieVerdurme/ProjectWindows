@@ -13,41 +13,20 @@ namespace StadsApp_Windows.Model
 
         public int OndernemingID { get; set; }
         public String Naam { get; set; }
-        public String Adres { get; set; }
         public String Soort { get; set; }
+        public List<Vestiging> Vestigingen { get; set; } = new List<Vestiging>();
 
-        /* MAG WEG ?
-        //var
-        private string _adres;
-        private string _naam;
-        private string _soort;
-
-        //prop
-        public string Soort {
-            get { return _soort; }
-            set { _soort = value; RaisePropertyChanged("Soort"); }
-        }
-
-
-        public string Naam {
-            get { return _naam; }
-            set { _naam = value; RaisePropertyChanged("Naam"); }
-        }
-
-
-        public string Adres {
-            get { return _adres; }
-            set { _adres = value; RaisePropertyChanged("Adres"); }
-        }
-
-        //construct
-
-        //method
-        public event PropertyChangedEventHandler PropertyChanged; //bestand MVVM_INotifypropertyChanged snippet 3.Data
-        protected void RaisePropertyChanged([CallerMemberName]string propertyName = "")
+        public Onderneming()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            VestigingToevoegen(new Vestiging(1,"Hallooo", "Deerlijkseweg 204"));
+            VestigingToevoegen(new Vestiging(2, "Hallooo222", "Spitaalstraat 22"));
         }
-        */
+
+
+
+        public void VestigingToevoegen(Vestiging vestiging)
+        {
+            this.Vestigingen.Add(vestiging);
+        }
     }
 }

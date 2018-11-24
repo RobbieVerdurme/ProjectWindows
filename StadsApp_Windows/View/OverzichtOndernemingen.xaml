@@ -17,9 +17,8 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Tapped="StackPanel_Tapped_1">
-                            <TextBlock Text="{Binding Naam}"/>
-                            <TextBlock Text="{Binding Adres}"/>
-                            <TextBlock Text="{Binding Soort}"/>
+                                <TextBlock Text="{Binding Naam}"/>
+                                <TextBlock Text="{Binding Soort}"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
