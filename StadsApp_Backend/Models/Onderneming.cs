@@ -11,5 +11,6 @@ namespace StadsApp_Backend.Models
         public String Naam { get; set; }
         public String Adres { get; set; }
         public String Soort { get; set; }
+        public virtual ICollection<Vestiging> Vestigings { get; set; }
     }
 }

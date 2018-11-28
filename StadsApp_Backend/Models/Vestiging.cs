@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,8 +12,11 @@ namespace StadsApp_Backend.Models
     {
         [Key]
         public int VestigingId { get; set; }
-        public int Onderneming { get; set; }
+        [ForeignKey("Onderneming")]
+        public int Ondernemingid { get; set; }
         public string Naam { get; set; }
         public string Adres { get; set; }
+        [JsonIgnore]
+        public virtual Onderneming Onderneming { get; set; }
     }
 }
