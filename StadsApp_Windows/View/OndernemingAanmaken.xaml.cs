@@ -28,7 +28,7 @@ namespace StadsApp_Windows.View
         public OndernemingAanmaken()
         {
             this.InitializeComponent();
-            ondernemingvm = new OndernemingAanmakenViewModel();
+            ondernemingvm = new OndernemingAanmakenViewModel(); 
             this.DataContext = ondernemingvm;
         }
 
