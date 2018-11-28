@@ -21,6 +21,7 @@
                     <DataTemplate>
                         <StackPanel DoubleTapped="StackPanel_DoubleTapped">
                                 <TextBlock Text="{Binding Naam}"/>
+                                <TextBlock Text="{Binding Adres}"/>
                                 <TextBlock Text="{Binding Soort}"/>
                         </StackPanel>
                     </DataTemplate>
