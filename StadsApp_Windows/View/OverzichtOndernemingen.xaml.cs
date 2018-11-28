@@ -100,7 +100,7 @@ namespace StadsApp_Windows.View
             return overzichtvm.Ondernemingen.Where(x => x.OndernemingID == selectedItem.OndernemingID).FirstOrDefault();
         }
 
-        private void StackPanel_Tapped_1(object sender, TappedRoutedEventArgs e)
+        private void StackPanel_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(OndernemingDetail), GetOnderneming((Onderneming)lvOndernemingen.SelectedItem));
         }
