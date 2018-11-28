@@ -36,7 +36,7 @@ namespace StadsApp_Windows.View
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
-        { 
+        {
             base.OnNavigatedTo(e);
             GeselecteerdeOnderneming = (Onderneming)e.Parameter;
             this.DataContext = GeselecteerdeOnderneming;

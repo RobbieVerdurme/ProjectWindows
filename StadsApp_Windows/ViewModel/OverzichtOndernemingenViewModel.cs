@@ -61,7 +61,7 @@ namespace StadsApp_Windows.ViewModel
                 GefilterdeLijst.Clear();
             }
             
-            return GefilterdeLijst; 
+            return GefilterdeLijst;
 
 
         }

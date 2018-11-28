@@ -11,7 +11,7 @@ namespace StadsApp_Windows.Model
     public class Onderneming //: INotifyPropertyChanged
     {
 
-        public int OndernemingID { get; set; } 
+        public int OndernemingID { get; set; }
         public String Naam { get; set; }
         public String Soort { get; set; }
         public List<Vestiging> Vestigingen { get; set; } = new List<Vestiging>();

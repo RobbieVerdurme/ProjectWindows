@@ -14,4 +14,3 @@ namespace StadsApp_Windows.ViewModel
 
 
 }
- 

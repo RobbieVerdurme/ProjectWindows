@@ -9,29 +9,24 @@ using System.Threading.Tasks;
 
 namespace StadsApp_Windows.ViewModel
 {
-	class VestigingAanmakenViewModel
+	class OndernemingAanmakenViewModel
 	{
 
-		public async Task AanmakenVestigingAsync(string naam, string adres)
+		public async Task AanmakenOndernemingAsync(string naam, string adres, string soort)
 		{
-			Vestiging vestiging = new Vestiging(1, naam, adres)
+			Onderneming onderneming = new Onderneming()
 			{
-<<<<<<< HEAD:StadsApp_Windows/ViewModel/OndernemingAanmakenViewModel.cs
-				Naam = naam, 
+				Naam = naam,
 				Adres = adres,
 				Soort = soort
-=======
-				Naam = naam,
-				Adres = adres
->>>>>>> f1ef8b5763207e5b8cd5fbf5f8c2584a9c986a9d:StadsApp_Windows/ViewModel/VestigingAanmakenViewModel.cs
 			};
 
-			var vestigingJson = JsonConvert.SerializeObject(vestiging);
+			var ondernemingJson = JsonConvert.SerializeObject(onderneming);
 
 			HttpClient client = new HttpClient();
 
 			var res = await client.PostAsync("http://localhost:59258/api/ondernemings",
-				new StringContent(vestigingJson,
+				new StringContent(ondernemingJson,
 				System.Text.Encoding.UTF8, "application/json"));
 			if (res.StatusCode == System.Net.HttpStatusCode.Created)
 			{
