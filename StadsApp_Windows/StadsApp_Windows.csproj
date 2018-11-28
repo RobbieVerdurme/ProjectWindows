@@ -124,6 +124,7 @@
     <Compile Include="View\Registreren.xaml.cs">
       <DependentUpon>Registreren.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\VestigingAanmakenViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

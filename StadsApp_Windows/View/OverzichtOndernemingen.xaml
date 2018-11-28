@@ -19,7 +19,7 @@
                 <ListView x:Name="lvOndernemingen" ItemsSource="{Binding GefilterdeLijst}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Tapped="StackPanel_Tapped_1">
+                        <StackPanel DoubleTapped="StackPanel_DoubleTapped">
                                 <TextBlock Text="{Binding Naam}"/>
                                 <TextBlock Text="{Binding Soort}"/>
                         </StackPanel>
