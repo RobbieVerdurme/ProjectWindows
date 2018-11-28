@@ -20,5 +20,7 @@ namespace StadsApp_Backend.Models
         }
 
         public System.Data.Entity.DbSet<StadsApp_Backend.Models.Onderneming> Ondernemings { get; set; }
+
+        public System.Data.Entity.DbSet<StadsApp_Backend.Models.Vestiging> Vestigings { get; set; }
     }
 }
