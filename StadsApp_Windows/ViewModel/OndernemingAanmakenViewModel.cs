@@ -1,25 +1,39 @@
-﻿using StadsApp_Windows.Model;
+﻿using Newtonsoft.Json;
+using StadsApp_Windows.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace StadsApp_Windows.ViewModel
 {
-    public class OndernemingAanmakenViewModel
-    {
+	class OndernemingAanmakenViewModel
+	{
 
-        public void AanmakenOnderneming(string naam, string adres, string soort)
-        {
-           Onderneming onderneming = new Onderneming()
-            {
-                Naam = naam,
-                Adres = adres,
-                Soort = soort
-            };
+		public async Task AanmakenOndernemingAsync(string naam, string adres, string soort)
+		{
+			Onderneming onderneming = new Onderneming()
+			{
+				Naam = naam, 
+				Adres = adres,
+				Soort = soort
+			};
 
-            Data.Ondernemingen.Add(onderneming);
-        }
-    }
+			var ondernemingJson = JsonConvert.SerializeObject(onderneming);
+
+			HttpClient client = new HttpClient();
+
+			var res = await client.PostAsync("http://localhost:59258/api/ondernemings",
+				new StringContent(ondernemingJson,
+				System.Text.Encoding.UTF8, "application/json"));
+			if (res.StatusCode == System.Net.HttpStatusCode.Created)
+			{
+				//success
+				//lst.Add(onderneming);
+			}
+		}
+
+	}
 }

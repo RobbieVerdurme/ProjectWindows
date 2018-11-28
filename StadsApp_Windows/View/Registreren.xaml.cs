@@ -21,20 +21,24 @@ namespace StadsApp_Windows.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class OndernemingAanmaken : Page
+    public sealed partial class Registreren : Page
     {
-        private OndernemingAanmakenViewModel ondernemingvm;
-
-        public OndernemingAanmaken()
+        private RegistrerenViewModel registrerenvm;
+        public Registreren()
         {
             this.InitializeComponent();
-            ondernemingvm = new OndernemingAanmakenViewModel(); 
-            this.DataContext = ondernemingvm;
+            registrerenvm = new RegistrerenViewModel();
+            this.DataContext = registrerenvm;
         }
 
-        private async void btnToevoegenClicked(object sender, RoutedEventArgs e)
+        private void RegistreerClicked(object sender, RoutedEventArgs e)
         {
-            await ondernemingvm.AanmakenOndernemingAsync(txtNaam.Text, txtAdres.Text, cboSoort.SelectedItem.ToString());
-		}
+            registrerenvm.Registreer(txtUsername, txtPasword, txtPasswordConfermation);
+        }
+
+        private void BackClicked(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Login));
+        }
     }
 }

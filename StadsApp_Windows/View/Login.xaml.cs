@@ -23,10 +23,22 @@ namespace StadsApp_Windows.View
     /// </summary>
     public sealed partial class Login : Page
     {
+        private LoginViewModel loginvm;
         public Login()
         {
             this.InitializeComponent();
-            this.DataContext = new LoginViewModel();
+            loginvm = new LoginViewModel();
+            this.DataContext = loginvm;
+        }
+
+        private void LoginClicked(object sender, RoutedEventArgs e)
+        {
+            loginvm.login(txtUsername.Text, txtPassword.Text);
+        }
+
+        private void RegistreerClicked(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Registreren));
         }
     }
 }

@@ -11,4 +11,7 @@ namespace StadsApp_Windows.ViewModel
     {
         public Onderneming GeselecteerdeOnderneming { get; set; }
     }
+
+
 }
+ 

@@ -2,7 +2,7 @@
     x:Class="StadsApp_Windows.View.OndernemingAanmaken"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:StadsApp_Windows.View"
+    xmlns:local="using:StadsApp_Windows.View" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -20,9 +20,11 @@
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Categorie/Type onderneming" Width="200"/>
             <ComboBox Width="200" x:Name="cboSoort">
-                <ComboBoxItem>
-                    <!--Items van lijst weergeven-->
-                </ComboBoxItem>
+                <ComboBox.Items>
+                    <ComboBoxItem IsSelected="True">PlaceHolder1</ComboBoxItem>
+                    <ComboBoxItem>PlaceHolder1</ComboBoxItem>
+
+                </ComboBox.Items>
             </ComboBox>
         </StackPanel>
         <Button Content="Toevoegen" Click="btnToevoegenClicked"/>

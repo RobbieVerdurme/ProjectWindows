@@ -1,9 +1,15 @@
-﻿using StadsApp_Windows.View;
+﻿using Newtonsoft.Json;
+using StadsApp_Windows.Model;
+using StadsApp_Windows.View;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -28,24 +34,54 @@ namespace StadsApp_Windows
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            mySplitView.IsPaneOpen = !mySplitView.IsPaneOpen;
-        }
+		private void nvTopLevelNav_Loaded(object sender, RoutedEventArgs e)
+		{
+			// set the initial SelectedItem
+			foreach (NavigationViewItemBase item in nvTopLevelNav.MenuItems)
+			{
+				if (item is NavigationViewItem && item.Tag.ToString() == "Overzicht_Page")
+				{
+					nvTopLevelNav.SelectedItem = item;
+					break;
+				}
+			}
 
-        private void StackPanel_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            mainFrame.Navigate(typeof(OverzichtOndernemingen/*Page*/)); //navigeren naar pag
-        }
+			mainFrame.Navigate(typeof(OverzichtOndernemingen));
+		}
 
-        private void StackPanel_Tapped_1(object sender, TappedRoutedEventArgs e)
-        {
-            mainFrame.Navigate(typeof(OndernemingAanmaken));
-        }
+		private void nvTopLevelNav_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+		{
+		}
 
-        private void StackPanel_Tapped_2(object sender, TappedRoutedEventArgs e)
-        {
-            mainFrame.Navigate(typeof(Login));
-        }
-    }
+		private void nvTopLevelNav_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+		{
+			
+			if (args.IsSettingsInvoked)
+			{
+				//mainFrame.Navigate(typeof(SettingsPage));
+			}
+			else
+			{
+				TextBlock ItemContent = args.InvokedItem as TextBlock;
+				if (ItemContent != null)
+				{
+					switch (ItemContent.Tag)
+					{
+						case "Overzicht_Page":
+							mainFrame.Navigate(typeof(OverzichtOndernemingen));
+							break;
+
+						case "Toevoegen_Page":
+							mainFrame.Navigate(typeof(OndernemingAanmaken));
+							break;
+
+						case "Login_Page":
+							mainFrame.Navigate(typeof(Login));
+							break;
+
+					}
+				}
+			}
+		}
+	}
 }
