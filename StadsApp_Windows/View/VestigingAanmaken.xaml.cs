@@ -28,13 +28,8 @@ namespace StadsApp_Windows.View
         public OndernemingAanmaken()
         {
             this.InitializeComponent();
-<<<<<<< HEAD
-            ondernemingvm = new OndernemingAanmakenViewModel(); 
-            this.DataContext = ondernemingvm;
-=======
-            ondvm = new VestigingAanmakenViewModel();
+            vestigingvm = new VestigingAanmakenViewModel();
             this.DataContext = vestigingvm;
->>>>>>> f1ef8b5763207e5b8cd5fbf5f8c2584a9c986a9d
         }
 
         private async void btnToevoegenClicked(object sender, RoutedEventArgs e)
