@@ -105,15 +105,15 @@
     <Compile Include="Model\Vestiging.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
-    <Compile Include="ViewModel\VestigingAanmakenViewModel.cs" />
+    <Compile Include="ViewModel\OndernemingAanmakenViewModel.cs" />
     <Compile Include="ViewModel\OndernemingDetailViewModel.cs" />
     <Compile Include="ViewModel\OverzichtOndernemingenViewModel.cs" />
     <Compile Include="ViewModel\RegistrerenViewModel.cs" />
     <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\VestigingAanmaken.xaml.cs">
-      <DependentUpon>VestigingAanmaken.xaml</DependentUpon>
+    <Compile Include="View\OndernemingAanmaken.xaml.cs">
+      <DependentUpon>OndernemingAanmaken.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OndernemingDetail.xaml.cs">
       <DependentUpon>OndernemingDetail.xaml</DependentUpon>
@@ -124,7 +124,6 @@
     <Compile Include="View\Registreren.xaml.cs">
       <DependentUpon>Registreren.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\VestigingAanmakenViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -155,7 +154,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\VestigingAanmaken.xaml">
+    <Page Include="View\OndernemingAanmaken.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
