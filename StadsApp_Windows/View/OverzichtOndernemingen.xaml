@@ -18,6 +18,7 @@
                     <DataTemplate>
                         <StackPanel Tapped="StackPanel_Tapped_1">
                                 <TextBlock Text="{Binding Naam}"/>
+                                <TextBlock Text="{Binding Adres}"/>
                                 <TextBlock Text="{Binding Soort}"/>
                         </StackPanel>
                     </DataTemplate>
