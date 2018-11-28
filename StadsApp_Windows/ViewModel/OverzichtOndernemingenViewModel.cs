@@ -53,7 +53,7 @@ namespace StadsApp_Windows.ViewModel
             {
                 GefilterdeLijst.Clear();
                 o.ForEach(e => GefilterdeLijst.Add(e));
-                return GefilterdeLijst;
+                return GefilterdeLijst; 
             }
             else
             {

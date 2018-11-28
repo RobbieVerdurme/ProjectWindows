@@ -14,7 +14,7 @@ namespace StadsApp_Windows.Model
         public int OndernemingID { get; set; }
         public String Naam { get; set; }
         public String Adres { get; set; }
-        public String Soort { get; set; }
+        public String Soort { get; set; } 
 
         /* MAG WEG ?
         //var

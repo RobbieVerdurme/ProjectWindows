@@ -39,7 +39,7 @@ namespace StadsApp_Windows.View
         {
             base.OnNavigatedTo(e);
             GeselecteerdeOnderneming = (Onderneming)e.Parameter;
-            this.DataContext = GeselecteerdeOnderneming;
+            this.DataContext = GeselecteerdeOnderneming; 
         }
     }
 }

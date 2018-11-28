@@ -30,7 +30,7 @@ namespace StadsApp_Windows.View
             this.InitializeComponent();
             ondernemingvm = new OndernemingAanmakenViewModel();
             this.DataContext = ondernemingvm;
-        }
+        } 
 
         private async void btnToevoegenClicked(object sender, RoutedEventArgs e)
         {

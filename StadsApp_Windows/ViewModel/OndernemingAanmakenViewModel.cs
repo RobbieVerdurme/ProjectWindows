@@ -16,7 +16,7 @@ namespace StadsApp_Windows.ViewModel
 		{
 			Onderneming onderneming = new Onderneming()
 			{
-				Naam = naam,
+				Naam = naam, 
 				Adres = adres,
 				Soort = soort
 			};

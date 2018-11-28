@@ -9,7 +9,7 @@ namespace StadsApp_Windows.ViewModel
 {
     public class OndernemingDetailViewModel
     {
-        public Onderneming GeselecteerdeOnderneming { get; set; }
+        public Onderneming GeselecteerdeOnderneming { get; set; } 
     }
 
 
