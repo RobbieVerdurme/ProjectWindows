@@ -11,7 +11,7 @@ namespace StadsApp_Windows.ViewModel
 {
     class VestigingAanmakenViewModel
     {
-        public async Task AanmakenVestigingAsync(int ondernemingsId, string naam, string adres)
+        public async Task AanmakenVestigingAsync(int ondernemingsId, string naam, string adres, int ondernemingId)
         {
             Vestiging vestiging = new Vestiging(ondernemingsId, naam, adres);
             

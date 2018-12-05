@@ -210,17 +210,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811281559229_initial.cs" />
-    <Compile Include="Migrations\201811281559229_initial.Designer.cs">
-      <DependentUpon>201811281559229_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812051003215_initial1.cs" />
-    <Compile Include="Migrations\201812051003215_initial1.Designer.cs">
-      <DependentUpon>201812051003215_initial1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812051059154_initial1.cs" />
-    <Compile Include="Migrations\201812051059154_initial1.Designer.cs">
-      <DependentUpon>201812051059154_initial1.cs</DependentUpon>
+    <Compile Include="Migrations\201812051105054_initial.cs" />
+    <Compile Include="Migrations\201812051105054_initial.Designer.cs">
+      <DependentUpon>201812051105054_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Onderneming.cs" />
@@ -350,17 +342,6 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811281559229_initial.resx">
-      <DependentUpon>201811281559229_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812051003215_initial1.resx">
-      <DependentUpon>201812051003215_initial1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812051059154_initial1.resx">
-      <DependentUpon>201812051059154_initial1.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
@@ -371,6 +352,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812051105054_initial.resx">
+      <DependentUpon>201812051105054_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
