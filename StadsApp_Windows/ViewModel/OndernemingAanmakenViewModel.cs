@@ -2,6 +2,7 @@
 using StadsApp_Windows.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -9,10 +10,15 @@ using System.Threading.Tasks;
 
 namespace StadsApp_Windows.ViewModel
 {
-	class OndernemingAanmakenViewModel
+	public class OndernemingAanmakenViewModel
 	{
+        public ObservableCollection<String> Soorten { get; set;}
 
-		public async Task AanmakenOndernemingAsync(string naam, string adres, string soort)
+        public OndernemingAanmakenViewModel() {
+            Soorten = new ObservableCollection<string>(new List<string>(new string[] { "Schoenenwinkel", "Restaurant", "Café", "Brasserie", "Hotel", "Kledingwinkel", "Supermarkt", "B&B", "Drankcentrale", "Nachtwinkel", "School", "Frituur", "Broodjeszaak", "Overige" }));
+        }
+
+        public async Task AanmakenOndernemingAsync(string naam, string adres, string soort)
 		{
 			Onderneming onderneming = new Onderneming()
 			{

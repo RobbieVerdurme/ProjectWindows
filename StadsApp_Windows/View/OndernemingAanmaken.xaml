@@ -19,12 +19,7 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Categorie/Type onderneming" Width="200"/>
-            <ComboBox Width="200" x:Name="cboSoort">
-                <ComboBox.Items>
-                    <ComboBoxItem IsSelected="True">PlaceHolder1</ComboBoxItem>
-                    <ComboBoxItem>PlaceHolder1</ComboBoxItem>
-                </ComboBox.Items>
-            </ComboBox>
+            <ComboBox Width="200" x:Name="cboSoort" ItemsSource="{Binding Soorten}"/>
         </StackPanel>
         <Button Content="Toevoegen" Click="btnToevoegenClicked"/>
     </StackPanel>

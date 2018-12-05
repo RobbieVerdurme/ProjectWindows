@@ -1,4 +1,5 @@
-﻿using StadsApp_Windows.Model;
+﻿using GoogleMaps.LocationServices;
+using StadsApp_Windows.Model;
 using StadsApp_Windows.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -43,6 +44,7 @@ namespace StadsApp_Windows.View
             ShowMapAsync();
 			await overzichtvm.GetData();
             this.DataContext = overzichtvm;
+            //test();
         }
 
         private void btnZoekOnderneming_Click(object sender, RoutedEventArgs e)
@@ -90,7 +92,26 @@ namespace StadsApp_Windows.View
         }
 
 
+        //private void test()
+        //{
+        //    string address = "grensstraat, gent";
 
+        //    GoogleLocationService locationService = new GoogleLocationService();
+        //    MapPoint point = locationService.GetLatLongFromAddress(address);
+
+        //    BasicGeoposition latitude = new BasicGeoposition();
+        //    latitude.Latitude = point.Latitude;
+        //    latitude.Longitude = point.Longitude;
+
+        //    Geopoint location = new Geopoint(latitude);
+
+        //    MapIcon postest = new MapIcon();
+        //    postest.Location = location;
+        //    postest.NormalizedAnchorPoint = new Point(0.5, 1.0);
+        //    postest.Title = "test";
+        //    postest.ZIndex = 0;
+        //    MyMap.MapElements.Add(postest);
+        //}
 
 
         /************************************************************DETAIL PAGINA****************************************************************************/
