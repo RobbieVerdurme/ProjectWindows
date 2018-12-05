@@ -42,7 +42,8 @@ namespace StadsApp_Windows.View
 
         private async void VestigingOpslaan(object sender, RoutedEventArgs e)
         {
-            await vestigingvm.AanmakenVestigingAsync(GeselecteerdeOnderneming.OndernemingID, txtNaam.Text, txtAdres.Text, GeselecteerdeOnderneming.OndernemingID);
+            Console.WriteLine("In vestigingOpslaan na button geklikt te hebben");
+            await vestigingvm.AanmakenVestigingAsync(GeselecteerdeOnderneming.OndernemingID, txtNaam.Text, txtAdres.Text);
         }
     }
 }

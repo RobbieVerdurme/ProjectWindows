@@ -1,18 +1,16 @@
 ﻿using Newtonsoft.Json;
 using StadsApp_Windows.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace StadsApp_Windows.ViewModel
 {
     class VestigingAanmakenViewModel
     {
-        public async Task AanmakenVestigingAsync(int ondernemingsId, string naam, string adres, int ondernemingId)
+        public async Task AanmakenVestigingAsync(int ondernemingsId, string naam, string adres)
         {
+            Console.WriteLine("In viewmodel");
             Vestiging vestiging = new Vestiging(ondernemingsId, naam, adres);
             
             var vestigingsJson = JsonConvert.SerializeObject(vestiging);
