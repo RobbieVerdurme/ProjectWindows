@@ -38,7 +38,7 @@ namespace StadsApp_Windows.View
         {
             base.OnNavigatedTo(e);
             overzichtvm = new OverzichtOndernemingenViewModel();
-			//await overzichtvm.GetData();
+			await overzichtvm.GetData();
             this.DataContext = overzichtvm;
         }
 

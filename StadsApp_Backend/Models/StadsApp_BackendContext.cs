@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StadsApp_Windows.Model;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -19,6 +20,6 @@ namespace StadsApp_Backend.Models
         {
         }
 
-        public System.Data.Entity.DbSet<StadsApp_Backend.Models.Onderneming> Ondernemings { get; set; }
+        public System.Data.Entity.DbSet<Onderneming> Ondernemings { get; set; }
     }
 }

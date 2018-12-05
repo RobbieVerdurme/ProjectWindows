@@ -7,6 +7,7 @@ using System.Web.Http;
 
 namespace StadsApp_Backend.Controllers
 {
+    [Authorize]
     public class ValuesController : ApiController
     {
         // GET api/values

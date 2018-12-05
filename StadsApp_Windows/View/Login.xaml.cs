@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -57,23 +58,24 @@ namespace StadsApp_Windows.View
 			ErrorMessage.Text = "";
 			Frame.Navigate(typeof(Registreren));
 		}
-
-		private async Task Login()
+		/*
+		private void Login()
 		{
 			using (var client = new HttpClient())
 			{
 				try
 				{
-					await client.PostAsJsonAsync("http://localhost:59258/api/users", id);
+					//await client.PostAsJsonAsync("http://localhost:53331/api/users", id);
+
 
 				}
 				catch (Exception ex)
 				{
-					await new MessageDialog(ex.Message).ShowAsync();
+					//await new MessageDialog(ex.Message).ShowAsync();
 				}
 			}
 			//Ondernemingen = JsonConvert.DeserializeObject<ObservableCollection<Onderneming>>(json);
 			//GefilterdeLijst = new ObservableCollection<Onderneming>(Ondernemingen.ToList());
-		}
+		}*/
 	}
 }

@@ -23,18 +23,18 @@ namespace StadsApp_Windows.View
     /// </summary>
     public sealed partial class OndernemingAanmaken : Page
     {
-        private VestigingAanmakenViewModel vestigingvm;
+        private OndernemingAanmakenViewModel ondernemingvm;
 
         public OndernemingAanmaken()
         {
             this.InitializeComponent();
-            vestigingvm = new VestigingAanmakenViewModel();
-            this.DataContext = vestigingvm;
+			ondernemingvm = new OndernemingAanmakenViewModel();
+            this.DataContext = ondernemingvm;
         }
 
         private async void btnToevoegenClicked(object sender, RoutedEventArgs e)
         {
-            await vestigingvm.AanmakenVestigingAsync(txtNaam.Text, txtAdres.Text);
+            await ondernemingvm.AanmakenOndernemingAsync(txtNaam.Text, txtAdres.Text, "testsoort");
 		}
     }
 }

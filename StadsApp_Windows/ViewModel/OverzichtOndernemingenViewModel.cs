@@ -32,7 +32,7 @@ namespace StadsApp_Windows.ViewModel
         public async Task<OverzichtOndernemingenViewModel> GetData()
         {
             HttpClient client = new HttpClient();
-            var json = await client.GetStringAsync(new Uri("http://localhost:59258/api/ondernemings"));
+            var json = await client.GetStringAsync(new Uri("http://localhost:53331/api/ondernemings"));
             Ondernemingen = JsonConvert.DeserializeObject<ObservableCollection<Onderneming>>(json);
             GefilterdeLijst = new ObservableCollection<Onderneming>(Ondernemingen.ToList());
 			return this;
