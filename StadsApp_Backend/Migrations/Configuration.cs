@@ -15,11 +15,17 @@ namespace StadsApp_Backend.Migrations
         protected override void Seed(StadsApp_Backend.Models.StadsApp_BackendContext context)
         {
             //  This method will be called after migrating to the latest version.
+            /*
             context.Ondernemings.AddOrUpdate(x => x.OndernemingID,
                 new Models.Onderneming() { OndernemingID = 1, Naam = "Test", Adres = "Bakkerstraat", Soort = "Bakker" },
                 new Models.Onderneming() { OndernemingID = 1, Naam = "Koen", Adres = "Bakkerstraat", Soort = "restaurant" },
                 new Models.Onderneming() { OndernemingID=1, Naam="lidle", Adres="Bakkerstraat", Soort="winkel"}
                 );
+
+            context.Vestigings.AddOrUpdate(x => x.VestigingId,
+                new Models.Vestiging() { VestigingId = 1, Naam="test", Adres="bakkerstraat"}
+                );
+             */
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
