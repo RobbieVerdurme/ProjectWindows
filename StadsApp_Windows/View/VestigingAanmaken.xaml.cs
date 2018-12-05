@@ -2,7 +2,6 @@
 using StadsApp_Windows.ViewModel;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -23,28 +22,27 @@ namespace StadsApp_Windows.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class OndernemingDetail : Page
+    public sealed partial class VestigingAanmaken : Page
     {
-        private OndernemingDetailViewModel detailondernemingvm;
+        private VestigingAanmakenViewModel vestigingvm;
         public Onderneming GeselecteerdeOnderneming { get; set; }
 
-
-        public OndernemingDetail()
+        public VestigingAanmaken()
         {
             this.InitializeComponent();
-            detailondernemingvm = new OndernemingDetailViewModel();
+            vestigingvm = new VestigingAanmakenViewModel();
+            this.DataContext = vestigingvm;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
             GeselecteerdeOnderneming = (Onderneming)e.Parameter;
-            this.DataContext = GeselecteerdeOnderneming;
         }
 
-        private void VestigingToevoegen(object sender, RoutedEventArgs e)
+        private async void VestigingOpslaan(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(VestigingAanmaken), GeselecteerdeOnderneming);
+            await vestigingvm.AanmakenVestigingAsync(GeselecteerdeOnderneming.OndernemingID, txtNaam.Text, txtAdres.Text);
         }
     }
 }

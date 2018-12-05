@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="StadsApp_Windows.View.VestigingAanmaken"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StadsApp_Windows.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel>
+        <TextBlock Text="Aanmaken vestiging"/>
+        <StackPanel Orientation="Horizontal" Padding="10">
+            <TextBlock Text="Naam vestiging:" Padding="10"/>
+            <TextBox x:Name="txtNaam" Width="400"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Padding="10">
+            <TextBlock Text="Adres van vestiging:" Padding="10"/>
+            <TextBox x:Name="txtAdres" Width="400"/>
+        </StackPanel>
+        <Button Content="Vestiging opslaan" Click="VestigingOpslaan"/>
+    </StackPanel>
+</Page>
