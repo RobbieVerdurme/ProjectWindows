@@ -198,6 +198,10 @@
     <Compile Include="Migrations\201810311518545_initial.Designer.cs">
       <DependentUpon>201810311518545_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812051059154_initial1.cs" />
+    <Compile Include="Migrations\201812051059154_initial1.Designer.cs">
+      <DependentUpon>201812051059154_initial1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Onderneming.cs" />
     <Compile Include="Models\StadsApp_BackendContext.cs" />
@@ -307,6 +311,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201810311518545_initial.resx">
       <DependentUpon>201810311518545_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051059154_initial1.resx">
+      <DependentUpon>201812051059154_initial1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
