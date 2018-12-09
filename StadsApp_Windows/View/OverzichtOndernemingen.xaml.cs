@@ -44,7 +44,7 @@ namespace StadsApp_Windows.View
             ShowMapAsync();
 			await overzichtvm.GetData();
             this.DataContext = overzichtvm;
-            //test();
+            test();
         }
 
         private void btnZoekOnderneming_Click(object sender, RoutedEventArgs e)
@@ -92,26 +92,47 @@ namespace StadsApp_Windows.View
         }
 
 
-        //private void test()
-        //{
-        //    string address = "grensstraat, gent";
+        private void test()
+        {
+            foreach (Onderneming onderneming in overzichtvm.Ondernemingen)
+            {
+                foreach(Vestiging vestiging in onderneming.Vestigingen)
+                {
+                    BasicGeoposition begin = new BasicGeoposition();
+                    begin.Latitude = vestiging.Latitude;
+                    begin.Longitude = vestiging.Longitude;
 
-        //    GoogleLocationService locationService = new GoogleLocationService();
-        //    MapPoint point = locationService.GetLatLongFromAddress(address);
+                    Geopoint location = new Geopoint(begin);
 
-        //    BasicGeoposition latitude = new BasicGeoposition();
-        //    latitude.Latitude = point.Latitude;
-        //    latitude.Longitude = point.Longitude;
+                    MapIcon pos = new MapIcon();
+                    pos.Location = location;
+                    pos.NormalizedAnchorPoint = new Point(0.5, 1.0);
+                    pos.Title = vestiging.Naam;
+                    pos.ZIndex = 0;
 
-        //    Geopoint location = new Geopoint(latitude);
+                    MyMap.MapElements.Add(pos);
+                }
+            }
+            
 
-        //    MapIcon postest = new MapIcon();
-        //    postest.Location = location;
-        //    postest.NormalizedAnchorPoint = new Point(0.5, 1.0);
-        //    postest.Title = "test";
-        //    postest.ZIndex = 0;
-        //    MyMap.MapElements.Add(postest);
-        //}
+            //string address = "Grensstraat 194, Gent";
+
+            //GoogleLocationService locationService = new GoogleLocationService();
+            //MapPoint point = locationService.GetLatLongFromAddress(address);
+
+            //BasicGeoposition latitude = new BasicGeoposition();
+            //latitude.Latitude = point.Latitude;
+            //latitude.Longitude = point.Longitude;
+
+            //Geopoint location = new Geopoint(latitude);
+
+            //MapIcon postest = new MapIcon();
+            //postest.Location = location;
+            //postest.NormalizedAnchorPoint = new Point(0.5, 1.0);
+            //postest.Title = "test";
+            //postest.ZIndex = 0;
+            //MyMap.MapElements.Add(postest);
+        }
 
 
         /************************************************************DETAIL PAGINA****************************************************************************/
