@@ -123,7 +123,9 @@ namespace StadsApp_Windows.View
 
         private void StackPanel_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(OndernemingDetail), GetOnderneming((Onderneming)lvOndernemingen.SelectedItem));
+            Onderneming ondern = GetOnderneming((Onderneming)lvOndernemingen.SelectedItem);
+            ondern.Vestigingen.AddRange(overzichtvm.Vestigingen.Where(x => x.OndernemingsID.Equals(ondern.OndernemingID)));
+            this.Frame.Navigate(typeof(OndernemingDetail), ondern);
         }
     }
 }
