@@ -44,7 +44,7 @@ namespace StadsApp_Windows.View
             ShowMapAsync();
 			await overzichtvm.GetData();
             this.DataContext = overzichtvm;
-            test();
+            ToonVestigingenOpMap();
         }
 
         private void btnZoekOnderneming_Click(object sender, RoutedEventArgs e)
@@ -92,25 +92,8 @@ namespace StadsApp_Windows.View
         }
 
 
-        private void test()
+        private void ToonVestigingenOpMap()
         {
-            //string address = "grensstraat, gent";
-
-            //GoogleLocationService locationService = new GoogleLocationService();
-            //MapPoint point = locationService.GetLatLongFromAddress(address);
-
-            //BasicGeoposition latitude = new BasicGeoposition();
-            //latitude.Latitude = point.Latitude;
-            //latitude.Longitude = point.Longitude;
-
-            //Geopoint location = new Geopoint(latitude);
-
-            //MapIcon postest = new MapIcon();
-            //postest.Location = location;
-            //postest.NormalizedAnchorPoint = new Point(0.5, 1.0);
-            //postest.Title = "test";
-            //postest.ZIndex = 0;
-            //MyMap.MapElements.Add(postest);
             BasicGeoposition geoposition = new BasicGeoposition();
             foreach (Vestiging vestiging in overzichtvm.Vestigingen) {
 
@@ -141,7 +124,7 @@ namespace StadsApp_Windows.View
         private void StackPanel_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             Onderneming ondern = GetOnderneming((Onderneming)lvOndernemingen.SelectedItem);
-            ondern.Vestigingen.AddRange(overzichtvm.Vestigingen.Where(x => x.OndernemingsID.Equals(ondern.OndernemingID)));
+            ondern.Vestigingen.AddRange(overzichtvm.Vestigingen.Where(x => x.Ondernemingid.Equals(ondern.OndernemingID)));
             this.Frame.Navigate(typeof(OndernemingDetail), ondern);
         }
     }

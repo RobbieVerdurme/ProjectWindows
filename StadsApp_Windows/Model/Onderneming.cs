@@ -19,8 +19,8 @@ namespace StadsApp_Windows.Model
 
         public Onderneming()
         {
-            VestigingToevoegen(new Vestiging(1,"Hallooo", "Deerlijkseweg 204"));
-            VestigingToevoegen(new Vestiging(2, "Hallooo222", "Spitaalstraat 22"));
+            VestigingToevoegen(new Vestiging(1,"Hallooo", "Deerlijkseweg 204", 0,0));
+            VestigingToevoegen(new Vestiging(2, "Hallooo222", "Spitaalstraat 22",0,0));
         }
 
 

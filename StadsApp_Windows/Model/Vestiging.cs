@@ -12,7 +12,7 @@ namespace StadsApp_Windows.Model
         private GoogleLocationService locationservice;
         public int VestigingID { get; set; }
         public string Naam { get; set; }
-        public int OndernemingsID { get; set; }
+        public int Ondernemingid { get; set; }
         public string Adres { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
@@ -23,17 +23,17 @@ namespace StadsApp_Windows.Model
         {
             this.Naam = naam;
             this.Adres = adres;
-            this.OndernemingsID = ondernemingsId;
+            this.Ondernemingid = ondernemingsId;
             if(!adres.Equals("") || adres != null)
             {
-                SetLatAndLong();
+                //SetLatAndLong();
             }
             
         }
 
         public Vestiging(int ondernemingsId, string naam, string adres, double latitude, double longitude)
         {
-            this.OndernemingsID = ondernemingsId;
+            this.Ondernemingid = ondernemingsId;
             this.Naam = naam;
             this.Adres = adres;
             this.Latitude = latitude;
