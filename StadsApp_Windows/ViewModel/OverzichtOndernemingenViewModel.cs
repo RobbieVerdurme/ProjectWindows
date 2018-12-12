@@ -31,7 +31,7 @@ namespace StadsApp_Windows.ViewModel
             Ondernemingen = JsonConvert.DeserializeObject<ObservableCollection<Onderneming>>(json);
             GefilterdeLijst = new ObservableCollection<Onderneming>(Ondernemingen.ToList());
 
-            var jsonVestigingen = await client.GetStringAsync(new Uri("http://localhost:59258/api/vestigings"));
+            var jsonVestigingen = await client.GetStringAsync(new Uri("http://localhost:53331/api/vestigings"));
             Vestigingen = JsonConvert.DeserializeObject<ObservableCollection<Vestiging>>(jsonVestigingen);
 			return this;
         }

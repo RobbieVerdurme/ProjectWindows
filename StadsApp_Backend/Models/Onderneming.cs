@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StadsApp_Backend.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -6,26 +7,24 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StadsApp_Windows.Model
+namespace StadsApp_Backend.Model
 {
     public class Onderneming //: INotifyPropertyChanged
     {
-		private int v;
-
 		public int OndernemingID { get; set; }
         public String Naam { get; set; }
         public String Soort { get; set; }
 		public String Adres { get; set; }
-        public List<Vestiging> Vestigingen { get; set; } = new List<Vestiging>();
+		public virtual ICollection<Vestiging> Vestigings { get; set; }
 
-        public Onderneming()
+		public Onderneming()
         {
 
         }
 
-		public Onderneming(int v, string naam, string adres, string soort)
+		public Onderneming(int ondernemingId, string naam, string adres, string soort)
 		{
-			this.v = v;
+			OndernemingID = ondernemingId;
 			Naam = naam;
 			Adres = adres;
 			Soort = soort;
@@ -33,7 +32,7 @@ namespace StadsApp_Windows.Model
 
 		public void VestigingToevoegen(Vestiging vestiging)
         {
-            this.Vestigingen.Add(vestiging);
+            this.Vestigings.Add(vestiging);
         }
     }
 }

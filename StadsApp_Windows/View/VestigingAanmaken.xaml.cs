@@ -21,20 +21,20 @@ namespace StadsApp_Windows.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class OndernemingAanmaken : Page
+    public sealed partial class VestigingAanmaken : Page
     {
-        private OndernemingAanmakenViewModel ondernemingvm;
+        private VestigingAanmakenViewModel vestigingvm;
 
-        public OndernemingAanmaken()
+        public VestigingAanmaken()
         {
-            this.InitializeComponent();
-			ondernemingvm = new OndernemingAanmakenViewModel();
-            this.DataContext = ondernemingvm;
+			vestigingvm = new VestigingAanmakenViewModel();
+            this.DataContext = vestigingvm;
         }
 
-        private async void btnToevoegenClicked(object sender, RoutedEventArgs e)
+        private async void VestigingOpslaan(object sender, RoutedEventArgs e)
         {
-            await ondernemingvm.AanmakenOndernemingAsync(txtNaam.Text, txtAdres.Text, "testsoort");
+			await vestigingvm.AanmakenVestigingAsync(txtNaam.Text, txtAdres.Text, "testsoort");
 		}
-    }
+
+	}
 }

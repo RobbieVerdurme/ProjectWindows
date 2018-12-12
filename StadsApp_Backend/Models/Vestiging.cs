@@ -1,24 +1,25 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using StadsApp_Backend.Model;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace StadsApp_Windows.Model
+namespace StadsApp_Backend.Models
 {
-    public class Vestiging
-    {
-        public int VestigingID { get; set; }
-        public string Naam { get; set; }
-        public int OndernemingsID { get; set; }
-        public string Adres { get; set; }
-
-
-        public Vestiging(int ondernemingsId, string naam, string adres)
-        {
-            this.Naam = naam;
-            this.Adres = adres;
-            this.OndernemingsID = ondernemingsId;
-        }
-    }
+	public class Vestiging
+	{
+		[Key]
+		public int VestigingId { get; set; }
+		[ForeignKey("Onderneming")]
+		public int Ondernemingid { get; set; }
+		public string Naam { get; set; }
+		public string Adres { get; set; }
+		public double Latitude { get; set; }
+		public double Longitude { get; set; }
+		[JsonIgnore]
+		public virtual Onderneming Onderneming { get; set; }
+	}
 }

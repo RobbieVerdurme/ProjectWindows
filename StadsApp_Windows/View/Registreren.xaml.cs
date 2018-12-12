@@ -85,7 +85,7 @@ namespace StadsApp_Windows.View
 			}
 
 			//Go to main page
-			Frame.Navigate(typeof(MainPage));
+			Frame.Navigate(typeof(OverzichtOndernemingen));
 
 		}
 	}

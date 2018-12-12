@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace StadsApp_Windows.ViewModel
 {
-	class OndernemingAanmakenViewModel
+	class VestigingAanmakenViewModel
 	{
 
-		public async Task AanmakenOndernemingAsync(string naam, string adres, string soort)
+		public async Task AanmakenVestigingAsync(string naam, string adres, string soort)
 		{
 			Onderneming vestiging = new Onderneming(1, naam, adres, soort)
 			{

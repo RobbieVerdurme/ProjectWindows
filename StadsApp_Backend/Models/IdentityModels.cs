@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using StadsApp_Backend.Model;
 
 namespace StadsApp_Backend.Models
 {
@@ -30,6 +31,6 @@ namespace StadsApp_Backend.Models
             return new ApplicationDbContext();
         }
 
-		public System.Data.Entity.DbSet<StadsApp_Windows.Model.Onderneming> Ondernemings { get; set; }
+		public System.Data.Entity.DbSet<Onderneming> Ondernemings { get; set; }
 	}
 }
