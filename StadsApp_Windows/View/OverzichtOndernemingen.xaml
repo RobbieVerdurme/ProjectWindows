@@ -11,6 +11,9 @@
     <ScrollViewer>
         <StackPanel Orientation="Vertical">
             <Maps:MapControl x:Name="MyMap"
+                             ZoomInteractionMode="GestureAndControl"
+                             TiltInteractionMode="GestureAndControl"
+                             MapServiceToken="AoWARYPX03T888ECAT8sys1vnWi7IcZgd3R6wIdRead81JGWKX4VkTJId61Dooyy"
                     Height="400"/>
             <TextBlock Text="Zoek een onderneming"/>
             <TextBox x:Name="txtZoekOnderneming" TextChanged="btnZoekOnderneming_Click"/>

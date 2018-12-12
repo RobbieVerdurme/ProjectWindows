@@ -17,6 +17,7 @@ namespace StadsApp_Windows.Model
         public double Latitude { get; set; }
         public double Longitude { get; set; }
 
+        public Vestiging() { }
 
         public Vestiging(int ondernemingsId, string naam, string adres)
         {
@@ -25,7 +26,7 @@ namespace StadsApp_Windows.Model
             this.OndernemingsID = ondernemingsId;
             if(!adres.Equals("") || adres != null)
             {
-                SetLatAndLong();
+                //SetLatAndLong();
             }
             
         }
