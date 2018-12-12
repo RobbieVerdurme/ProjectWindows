@@ -13,8 +13,7 @@
             <Maps:MapControl x:Name="MyMap"
                              ZoomInteractionMode="GestureAndControl"
                              TiltInteractionMode="GestureAndControl"
-                             MapServiceToken="AoWARYPX03T888ECAT8sys1vnWi7IcZgd3R6wIdRead81JGWKX4VkTJId61Dooyy"
-                    Height="400"/>
+                             MapServiceToken="AoWARYPX03T888ECAT8sys1vnWi7IcZgd3R6wIdRead81JGWKX4VkTJId61Dooyy"/>
             <TextBlock Text="Zoek een onderneming"/>
             <TextBox x:Name="txtZoekOnderneming" TextChanged="btnZoekOnderneming_Click"/>
             <Button x:Name="btnZoekOnderneming" Content="Zoek" Click="btnZoekOnderneming_Click"/>
