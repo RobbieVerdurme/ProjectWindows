@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace StadsApp_Windows.ViewModel
 {
-    class VestigingAanmakenViewModel
+    public class VestigingAanmakenViewModel
     {
+        /************************************************************AANMAKEN VESTIGING****************************************************************************/
         public async Task AanmakenVestigingAsync(int ondernemingsId, string naam, string adres)
         {
             Vestiging vestiging = new Vestiging(ondernemingsId, naam, adres);

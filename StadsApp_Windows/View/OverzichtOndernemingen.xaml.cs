@@ -47,6 +47,7 @@ namespace StadsApp_Windows.View
             ToonVestigingenOpMap();
         }
 
+        /************************************************************FILTER****************************************************************************/
         private void btnZoekOnderneming_Click(object sender, RoutedEventArgs e)
         {
             /*Zoeken in lijst van overzicht ondernemingen view model naar de tekst in txtZoekOnderneming*/
@@ -59,6 +60,7 @@ namespace StadsApp_Windows.View
             overzichtvm.ZoekOnderneming(txtZoekOnderneming.Text);
         }
 
+        /************************************************************MAP CONTROLS****************************************************************************/
         public async void ShowMapAsync()
         {
             var accessStatus = await Geolocator.RequestAccessAsync();
