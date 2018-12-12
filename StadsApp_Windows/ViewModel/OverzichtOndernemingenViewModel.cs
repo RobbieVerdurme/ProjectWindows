@@ -13,32 +13,30 @@ namespace StadsApp_Windows.ViewModel
 {
     public class OverzichtOndernemingenViewModel
     {
-        //var
-
         //prop
         public ObservableCollection<Onderneming> Ondernemingen { get; set; }
         public ObservableCollection<Onderneming> GefilterdeLijst { get; set; }
+        public ObservableCollection<Vestiging> Vestigingen { get; set; }
 
         //constructor
-        public OverzichtOndernemingenViewModel()
-        {
-            //Ondernemingen = new ObservableCollection<Onderneming>(DummyDataSource.Ondernemingen/*DATASOURCE*/);
-           //GetData();
-        }
+        public OverzichtOndernemingenViewModel(){}
 
 
         //methods
-
+        /************************************************************DATA OPHALEN DATABASE****************************************************************************/
         public async Task<OverzichtOndernemingenViewModel> GetData()
         {
             HttpClient client = new HttpClient();
             var json = await client.GetStringAsync(new Uri("http://localhost:53331/api/ondernemings"));
             Ondernemingen = JsonConvert.DeserializeObject<ObservableCollection<Onderneming>>(json);
             GefilterdeLijst = new ObservableCollection<Onderneming>(Ondernemingen.ToList());
+
+            var jsonVestigingen = await client.GetStringAsync(new Uri("http://localhost:59258/api/vestigings"));
+            Vestigingen = JsonConvert.DeserializeObject<ObservableCollection<Vestiging>>(jsonVestigingen);
 			return this;
         }
 
-      
+        /************************************************************FILTER****************************************************************************/
         public IEnumerable<Onderneming> ZoekOnderneming(String tekst)
         {
             if (tekst == null || tekst.Trim().Equals(""))

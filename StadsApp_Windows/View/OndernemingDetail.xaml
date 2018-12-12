@@ -30,5 +30,6 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackPanel>
+        <Button Content="Vestiging toevoegen" Click="VestigingToevoegen"/>
     </StackPanel>
 </Page>

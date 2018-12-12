@@ -1,7 +1,7 @@
-﻿using StadsApp_Windows.Model;
-using StadsApp_Windows.ViewModel;
+﻿using StadsApp_Windows.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -23,28 +23,25 @@ namespace StadsApp_Windows.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class OndernemingDetail : Page
+    public sealed partial class OndernemingAanmaken : Page
     {
-        private OndernemingDetailViewModel detailondernemingvm;
-        public Onderneming GeselecteerdeOnderneming { get; set; }
+        private OndernemingAanmakenViewModel ondernemingvm;
+        
 
-
-        public OndernemingDetail()
+        public OndernemingAanmaken()
         {
             this.InitializeComponent();
-            detailondernemingvm = new OndernemingDetailViewModel();
+            ondernemingvm = new OndernemingAanmakenViewModel();
+            
+            this.DataContext = ondernemingvm;
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        private async void btnToevoegenClicked(object sender, RoutedEventArgs e)
         {
-            base.OnNavigatedTo(e);
-            GeselecteerdeOnderneming = (Onderneming)e.Parameter;
-            this.DataContext = GeselecteerdeOnderneming;
-        }
-
-        private void VestigingToevoegen(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(VestigingAanmaken), GeselecteerdeOnderneming);
+            await ondernemingvm.AanmakenOndernemingAsync(txtNaam.Text, txtAdres.Text, ondernemingvm.Soorten[cboSoort.SelectedIndex]);
+            txtNaam.Text = "";
+            txtAdres.Text = "";
+            this.Frame.Navigate(typeof( OverzichtOndernemingen));
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="StadsApp_Windows.View.OndernemingAanmaken"
+    x:Class="StadsApp_Windows.View.VestigingAanmaken"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:StadsApp_Windows.View"
@@ -9,14 +9,15 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Naam" Width="200"/>
-            <TextBox x:Name="txtNaam" Width="200"/> 
+        <TextBlock Text="Aanmaken vestiging"/>
+        <StackPanel Orientation="Horizontal" Padding="10">
+            <TextBlock Text="Naam vestiging:" Padding="10"/>
+            <TextBox x:Name="txtNaam" Width="400"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Adres" Width="200"/>
-            <TextBox x:Name="txtAdres" Width="200"/>
+        <StackPanel Orientation="Horizontal" Padding="10">
+            <TextBlock Text="Adres van vestiging:" Padding="10"/>
+            <TextBox x:Name="txtAdres" Width="400"/>
         </StackPanel>
-        <Button Content="Toevoegen" Click="btnToevoegenClicked"/>
+        <Button Content="Vestiging opslaan" Click="VestigingOpslaan"/>
     </StackPanel>
 </Page>

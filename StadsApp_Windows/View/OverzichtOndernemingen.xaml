@@ -5,10 +5,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="using:StadsApp_Windows"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <ScrollViewer>
         <StackPanel Orientation="Vertical">
+            <Maps:MapControl x:Name="MyMap"
+                    Height="400"/>
             <TextBlock Text="Zoek een onderneming"/>
             <TextBox x:Name="txtZoekOnderneming" TextChanged="btnZoekOnderneming_Click"/>
             <Button x:Name="btnZoekOnderneming" Content="Zoek" Click="btnZoekOnderneming_Click"/>
@@ -16,8 +19,9 @@
                 <ListView x:Name="lvOndernemingen" ItemsSource="{Binding GefilterdeLijst}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Tapped="StackPanel_Tapped_1">
+                        <StackPanel DoubleTapped="StackPanel_DoubleTapped">
                                 <TextBlock Text="{Binding Naam}"/>
+                                <TextBlock Text="{Binding Adres}"/>
                                 <TextBlock Text="{Binding Soort}"/>
                         </StackPanel>
                     </DataTemplate>
