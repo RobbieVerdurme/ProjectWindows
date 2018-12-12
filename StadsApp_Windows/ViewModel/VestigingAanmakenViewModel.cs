@@ -17,7 +17,7 @@ namespace StadsApp_Windows.ViewModel
 
             HttpClient client = new HttpClient();
 
-            var res = await client.PostAsync("http://localhost:59258/api/vestigings",
+            var res = await client.PostAsync("http://localhost:59258/api/Vestigings",
                 new StringContent(vestigingsJson,
                 System.Text.Encoding.UTF8, "application/json"));
             if (res.StatusCode == System.Net.HttpStatusCode.Created)

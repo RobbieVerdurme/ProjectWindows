@@ -18,6 +18,7 @@ namespace StadsApp_Windows.ViewModel
         //prop
         public ObservableCollection<Onderneming> Ondernemingen { get; set; }
         public ObservableCollection<Onderneming> GefilterdeLijst { get; set; }
+        public ObservableCollection<Vestiging> Vestigingen { get; set; }
 
         //constructor
         public OverzichtOndernemingenViewModel()
@@ -35,6 +36,9 @@ namespace StadsApp_Windows.ViewModel
             var json = await client.GetStringAsync(new Uri("http://localhost:59258/api/ondernemings"));
             Ondernemingen = JsonConvert.DeserializeObject<ObservableCollection<Onderneming>>(json);
             GefilterdeLijst = new ObservableCollection<Onderneming>(Ondernemingen.ToList());
+
+            var jsonVestigingen = await client.GetStringAsync(new Uri("http://localhost:59258/api/vestigings"));
+            Vestigingen = JsonConvert.DeserializeObject<ObservableCollection<Vestiging>>(jsonVestigingen);
 			return this;
         }
 
@@ -62,6 +66,8 @@ namespace StadsApp_Windows.ViewModel
             }
             
             return GefilterdeLijst;
+
+
         }
         
     }

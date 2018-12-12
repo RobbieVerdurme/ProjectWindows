@@ -16,8 +16,6 @@ namespace StadsApp_Backend.Models
         public int Ondernemingid { get; set; }
         public string Naam { get; set; }
         public string Adres { get; set; }
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
         [JsonIgnore]
         public virtual Onderneming Onderneming { get; set; }
     }
