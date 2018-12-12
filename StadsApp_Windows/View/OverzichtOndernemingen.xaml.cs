@@ -44,7 +44,7 @@ namespace StadsApp_Windows.View
             ShowMapAsync();
 			await overzichtvm.GetData();
             this.DataContext = overzichtvm;
-            //test();
+            test();
         }
 
         private void btnZoekOnderneming_Click(object sender, RoutedEventArgs e)
@@ -92,26 +92,43 @@ namespace StadsApp_Windows.View
         }
 
 
-        //private void test()
-        //{
-        //    string address = "grensstraat, gent";
+        private void test()
+        {
+            //string address = "grensstraat, gent";
 
-        //    GoogleLocationService locationService = new GoogleLocationService();
-        //    MapPoint point = locationService.GetLatLongFromAddress(address);
+            //GoogleLocationService locationService = new GoogleLocationService();
+            //MapPoint point = locationService.GetLatLongFromAddress(address);
 
-        //    BasicGeoposition latitude = new BasicGeoposition();
-        //    latitude.Latitude = point.Latitude;
-        //    latitude.Longitude = point.Longitude;
+            //BasicGeoposition latitude = new BasicGeoposition();
+            //latitude.Latitude = point.Latitude;
+            //latitude.Longitude = point.Longitude;
 
-        //    Geopoint location = new Geopoint(latitude);
+            //Geopoint location = new Geopoint(latitude);
 
-        //    MapIcon postest = new MapIcon();
-        //    postest.Location = location;
-        //    postest.NormalizedAnchorPoint = new Point(0.5, 1.0);
-        //    postest.Title = "test";
-        //    postest.ZIndex = 0;
-        //    MyMap.MapElements.Add(postest);
-        //}
+            //MapIcon postest = new MapIcon();
+            //postest.Location = location;
+            //postest.NormalizedAnchorPoint = new Point(0.5, 1.0);
+            //postest.Title = "test";
+            //postest.ZIndex = 0;
+            //MyMap.MapElements.Add(postest);
+            BasicGeoposition geoposition = new BasicGeoposition();
+            foreach (Vestiging vestiging in overzichtvm.Vestigingen) {
+
+                Debug.Write(vestiging.Naam);
+
+                geoposition.Latitude = vestiging.Latitude;
+                geoposition.Longitude = vestiging.Longitude;
+
+                Geopoint location = new Geopoint(geoposition);
+                MapIcon mapicon = new MapIcon();
+
+                mapicon.Location = location;
+                mapicon.NormalizedAnchorPoint = new Point(0.5, 1.0);
+                mapicon.Title = vestiging.Naam;
+                mapicon.ZIndex = 0;
+                MyMap.MapElements.Add(mapicon);
+            }
+        }
 
 
         /************************************************************DETAIL PAGINA****************************************************************************/

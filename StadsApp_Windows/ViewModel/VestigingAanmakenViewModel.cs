@@ -10,7 +10,6 @@ namespace StadsApp_Windows.ViewModel
     {
         public async Task AanmakenVestigingAsync(int ondernemingsId, string naam, string adres)
         {
-            Console.WriteLine("In viewmodel");
             Vestiging vestiging = new Vestiging(ondernemingsId, naam, adres);
             
             var vestigingsJson = JsonConvert.SerializeObject(vestiging);
