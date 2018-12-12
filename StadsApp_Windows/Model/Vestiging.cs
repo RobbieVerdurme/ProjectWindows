@@ -25,7 +25,7 @@ namespace StadsApp_Windows.Model
             this.OndernemingsID = ondernemingsId;
             if(!adres.Equals("") || adres != null)
             {
-                SetLatAndLong();
+                //SetLatAndLong();
             }
             
         }
