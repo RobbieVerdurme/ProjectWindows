@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -42,8 +43,10 @@ namespace StadsApp_Windows.View
 
         private async void VestigingOpslaan(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("In vestigingOpslaan na button geklikt te hebben");
             await vestigingvm.AanmakenVestigingAsync(GeselecteerdeOnderneming.OndernemingID, txtNaam.Text, txtAdres.Text);
+            txtNaam.Text = "";
+            txtAdres.Text = "";
+            this.Frame.Navigate(typeof(OndernemingDetail), GeselecteerdeOnderneming);
         }
     }
 }

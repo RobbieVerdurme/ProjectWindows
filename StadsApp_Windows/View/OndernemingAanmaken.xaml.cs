@@ -39,6 +39,9 @@ namespace StadsApp_Windows.View
         private async void btnToevoegenClicked(object sender, RoutedEventArgs e)
         {
             await ondernemingvm.AanmakenOndernemingAsync(txtNaam.Text, txtAdres.Text, ondernemingvm.Soorten[cboSoort.SelectedIndex]);
-		}
+            txtNaam.Text = "";
+            txtAdres.Text = "";
+            this.Frame.Navigate(typeof( OverzichtOndernemingen));
+        }
     }
 }
