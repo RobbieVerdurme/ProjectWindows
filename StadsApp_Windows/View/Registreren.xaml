@@ -8,20 +8,23 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Username" Width="200"/>
-            <TextBox x:Name="txtUsername" Width="200"/>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Orientation="Vertical">
+            <TextBlock x:Name="Title" Text="Registreer nieuwe gebruiker" FontSize="24" Margin="4" TextAlignment="Center"/>
+
+            <TextBlock x:Name="ErrorMessage" Text="" FontSize="20" Margin="4" Foreground="Red" TextAlignment="Center"/>
+
+            <TextBlock Text="Vul uw gegevens in" Margin="0,0,0,20"
+               TextWrapping="Wrap" Width="300"
+               TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+
+            <TextBox x:Name="UsernameTextBox" Margin="4" Width="250" Header="Username" PlaceholderText="Username"/>
+            <PasswordBox x:Name="PasswordBox" Margin="4" Width="250" Header="Paswoord" PlaceholderText="Paswoord"/>
+            <PasswordBox x:Name="PasswordRepeatBox" Margin="4" Width="250" Header="Verificatie" PlaceholderText="Paswoord"/>
+
+            <Button x:Name="PassportRegisterButton" Content="Register" Background="DodgerBlue" Foreground="White"
+        Click="RegisterButton_Click_Async" Width="80" HorizontalAlignment="Center" Margin="0,20"/>
+
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Password" Width="200"/>
-            <TextBox x:Name="txtPasword" Width="200"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Paswoord" Width="200"/>
-            <TextBox x:Name="txtPasswordConfermation" Width="200"/>
-        </StackPanel>
-        <Button Content="Registreer" Click="RegistreerClicked"/>
-        <Button Content="Back" Click="BackClicked"/>
-    </StackPanel>
+    </Grid>
 </Page>

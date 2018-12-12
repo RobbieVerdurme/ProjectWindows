@@ -1,11 +1,9 @@
-﻿using StadsApp_Windows.Model;
-using StadsApp_Windows.ViewModel;
+﻿using StadsApp_Windows.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -26,27 +24,17 @@ namespace StadsApp_Windows.View
     public sealed partial class VestigingAanmaken : Page
     {
         private VestigingAanmakenViewModel vestigingvm;
-        public Onderneming GeselecteerdeOnderneming { get; set; }
 
         public VestigingAanmaken()
         {
-            this.InitializeComponent();
-            vestigingvm = new VestigingAanmakenViewModel();
+			vestigingvm = new VestigingAanmakenViewModel();
             this.DataContext = vestigingvm;
-        }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            base.OnNavigatedTo(e);
-            GeselecteerdeOnderneming = (Onderneming)e.Parameter;
         }
 
         private async void VestigingOpslaan(object sender, RoutedEventArgs e)
         {
-            await vestigingvm.AanmakenVestigingAsync(GeselecteerdeOnderneming.OndernemingID, txtNaam.Text, txtAdres.Text);
-            txtNaam.Text = "";
-            txtAdres.Text = "";
-            this.Frame.Navigate(typeof(OndernemingDetail), GeselecteerdeOnderneming);
-        }
-    }
+			await vestigingvm.AanmakenVestigingAsync(txtNaam.Text, txtAdres.Text, "testsoort");
+		}
+
+	}
 }
