@@ -1,9 +1,14 @@
-﻿using StadsApp_Windows.ViewModel;
+﻿using Newtonsoft.Json;
+using StadsApp_Windows.Model;
+using StadsApp_Windows.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -23,22 +28,54 @@ namespace StadsApp_Windows.View
     /// </summary>
     public sealed partial class Login : Page
     {
-        private LoginViewModel loginvm;
         public Login()
         {
             this.InitializeComponent();
-            loginvm = new LoginViewModel();
-            this.DataContext = loginvm;
         }
 
         private void LoginClicked(object sender, RoutedEventArgs e)
         {
-            loginvm.login(txtUsername.Text, txtPassword.Text);
+			bool success = true;
+
+			if(success)
+			{
+				var vault = new Windows.Security.Credentials.PasswordVault();
+				vault.Add(new Windows.Security.Credentials.PasswordCredential("StadsApp", UsernameTextBox.Text, PasswordTextBox.Password));
+			}
         }
 
         private void RegistreerClicked(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Registreren));
         }
-    }
+
+		private void PassportSignInButton_Click(object sender, RoutedEventArgs e)
+		{
+			ErrorMessage.Text = "";
+		}
+		private void RegisterButtonTextBlock_OnPointerPressed(object sender, PointerRoutedEventArgs e)
+		{
+			ErrorMessage.Text = "";
+			Frame.Navigate(typeof(Registreren));
+		}
+		/*
+		private void Login()
+		{
+			using (var client = new HttpClient())
+			{
+				try
+				{
+					//await client.PostAsJsonAsync("http://localhost:53331/api/users", id);
+
+
+				}
+				catch (Exception ex)
+				{
+					//await new MessageDialog(ex.Message).ShowAsync();
+				}
+			}
+			//Ondernemingen = JsonConvert.DeserializeObject<ObservableCollection<Onderneming>>(json);
+			//GefilterdeLijst = new ObservableCollection<Onderneming>(Ondernemingen.ToList());
+		}*/
+	}
 }

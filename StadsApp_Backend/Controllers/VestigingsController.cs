@@ -12,107 +12,107 @@ using StadsApp_Backend.Models;
 
 namespace StadsApp_Backend.Controllers
 {
-    public class VestigingsController : ApiController
-    {
-        private StadsApp_BackendContext db = new StadsApp_BackendContext();
+	public class VestigingsController : ApiController
+	{
+		private StadsApp_BackendContext db = new StadsApp_BackendContext();
 
-        // GET: api/Vestigings
-        public IQueryable<Vestiging> GetVestigings()
-        {
-            return db.Vestigings;
-        }
+		// GET: api/Vestigings
+		public IQueryable<Vestiging> GetVestigings()
+		{
+			return db.Vestigings;
+		}
 
-        // GET: api/Vestigings/5
-        [ResponseType(typeof(Vestiging))]
-        public IHttpActionResult GetVestiging(int id)
-        {
-            Vestiging vestiging = db.Vestigings.Find(id);
-            if (vestiging == null)
-            {
-                return NotFound();
-            }
+		// GET: api/Vestigings/5
+		[ResponseType(typeof(Vestiging))]
+		public IHttpActionResult GetVestiging(int id)
+		{
+			Vestiging vestiging = db.Vestigings.Find(id);
+			if (vestiging == null)
+			{
+				return NotFound();
+			}
 
-            return Ok(vestiging);
-        }
+			return Ok(vestiging);
+		}
 
-        // PUT: api/Vestigings/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutVestiging(int id, Vestiging vestiging)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+		// PUT: api/Vestigings/5
+		[ResponseType(typeof(void))]
+		public IHttpActionResult PutVestiging(int id, Vestiging vestiging)
+		{
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
 
-            if (id != vestiging.VestigingId)
-            {
-                return BadRequest();
-            }
+			if (id != vestiging.VestigingId)
+			{
+				return BadRequest();
+			}
 
-            db.Entry(vestiging).State = EntityState.Modified;
+			db.Entry(vestiging).State = EntityState.Modified;
 
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!VestigingExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+			try
+			{
+				db.SaveChanges();
+			}
+			catch (DbUpdateConcurrencyException)
+			{
+				if (!VestigingExists(id))
+				{
+					return NotFound();
+				}
+				else
+				{
+					throw;
+				}
+			}
 
-            return StatusCode(HttpStatusCode.NoContent);
-        }
+			return StatusCode(HttpStatusCode.NoContent);
+		}
 
-        // POST: api/Vestigings
-        [ResponseType(typeof(Vestiging))]
-        public IHttpActionResult PostVestiging(Vestiging vestiging)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+		// POST: api/Vestigings
+		[ResponseType(typeof(Vestiging))]
+		public IHttpActionResult PostVestiging(Vestiging vestiging)
+		{
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
 
-            db.Vestigings.Add(vestiging);
-            db.SaveChanges();
+			db.Vestigings.Add(vestiging);
+			db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = vestiging.VestigingId }, vestiging);
-        }
+			return CreatedAtRoute("DefaultApi", new { id = vestiging.VestigingId }, vestiging);
+		}
 
-        // DELETE: api/Vestigings/5
-        [ResponseType(typeof(Vestiging))]
-        public IHttpActionResult DeleteVestiging(int id)
-        {
-            Vestiging vestiging = db.Vestigings.Find(id);
-            if (vestiging == null)
-            {
-                return NotFound();
-            }
+		// DELETE: api/Vestigings/5
+		[ResponseType(typeof(Vestiging))]
+		public IHttpActionResult DeleteVestiging(int id)
+		{
+			Vestiging vestiging = db.Vestigings.Find(id);
+			if (vestiging == null)
+			{
+				return NotFound();
+			}
 
-            db.Vestigings.Remove(vestiging);
-            db.SaveChanges();
+			db.Vestigings.Remove(vestiging);
+			db.SaveChanges();
 
-            return Ok(vestiging);
-        }
+			return Ok(vestiging);
+		}
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing)
+			{
+				db.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        private bool VestigingExists(int id)
-        {
-            return db.Vestigings.Count(e => e.VestigingId == id) > 0;
-        }
-    }
+		private bool VestigingExists(int id)
+		{
+			return db.Vestigings.Count(e => e.VestigingId == id) > 0;
+		}
+	}
 }

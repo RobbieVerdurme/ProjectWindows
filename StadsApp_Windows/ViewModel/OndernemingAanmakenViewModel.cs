@@ -31,7 +31,7 @@ namespace StadsApp_Windows.ViewModel
 
 			HttpClient client = new HttpClient();
 
-			var res = await client.PostAsync("http://localhost:59258/api/ondernemings",
+			var res = await client.PostAsync("http://localhost:53331/api/ondernemings",
 				new StringContent(ondernemingJson,
 				System.Text.Encoding.UTF8, "application/json"));
 			if (res.StatusCode == System.Net.HttpStatusCode.Created)
