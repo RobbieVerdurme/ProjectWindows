@@ -48,8 +48,6 @@ namespace StadsApp_Windows.View
 				return;
 			}
 
-			var user = new UserCredentials(UsernameTextBox.Text, PasswordTextBox.Password);
-
 			//Login user
 			var client = new HttpClient();
 			client.BaseAddress = new Uri("http://localhost:53331");
@@ -85,6 +83,8 @@ namespace StadsApp_Windows.View
 			//Save user credentials
 			var vault = new Windows.Security.Credentials.PasswordVault();
 			vault.Add(new Windows.Security.Credentials.PasswordCredential("StadsApp", UsernameTextBox.Text, PasswordTextBox.Password));
+
+			Frame.Navigate(typeof(OverzichtOndernemingen));
 		}
 
         private void RegistreerClicked(object sender, RoutedEventArgs e)
@@ -96,19 +96,6 @@ namespace StadsApp_Windows.View
 		{
 			ErrorMessage.Text = "";
 			Frame.Navigate(typeof(Registreren));
-		}
-		
-		private class UserCredentials
-		{
-			public string Username { get; set; }
-			public string Password { get; set; }
-			public string Grant_type = "password";
-
-			public UserCredentials(string username, string password)
-			{
-				Username = username;
-				Password = password;
-			}
 		}
 
 	}
