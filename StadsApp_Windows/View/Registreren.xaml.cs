@@ -54,6 +54,10 @@ namespace StadsApp_Windows.View
 				ErrorMessage.Text = "Please enter a username";
 				return;
 			}
+			if(!IsValidEmail(UsernameTextBox.Text))
+			{
+				ErrorMessage.Text = "Not a valid email";
+			}
 			if (string.IsNullOrEmpty(PasswordBox.Password))
 			{
 				ErrorMessage.Text = "Please enter a password";
@@ -61,7 +65,7 @@ namespace StadsApp_Windows.View
 			}
 			if (string.IsNullOrEmpty(PasswordRepeatBox.Password))
 			{
-				ErrorMessage.Text = "Please enter the password validation";
+				ErrorMessage.Text = "Please enter the password";
 				return;
 			}
 			if (PasswordBox.Password != PasswordRepeatBox.Password)
@@ -80,13 +84,26 @@ namespace StadsApp_Windows.View
 			//Log error message
 			if(!res.IsSuccessStatusCode)
 			{
-				ErrorMessage.Text = res.ReasonPhrase;
+				ErrorMessage.Text = res.StatusCode + " " + res.ReasonPhrase;
 				return;
 			}
 
 			//Go to main page
 			Frame.Navigate(typeof(OverzichtOndernemingen));
 
+		}
+
+		bool IsValidEmail(string email)
+		{
+			try
+			{
+				var addr = new System.Net.Mail.MailAddress(email);
+				return addr.Address == email;
+			}
+			catch
+			{
+				return false;
+			}
 		}
 	}
 }

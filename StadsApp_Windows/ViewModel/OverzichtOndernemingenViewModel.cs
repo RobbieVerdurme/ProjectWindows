@@ -17,10 +17,16 @@ namespace StadsApp_Windows.ViewModel
         public ObservableCollection<Onderneming> Ondernemingen { get; set; }
         public ObservableCollection<Onderneming> GefilterdeLijst { get; set; }
         public ObservableCollection<Vestiging> Vestigingen { get; set; }
+<<<<<<< HEAD
         public ObservableCollection<Event> Events { get; set; }
+=======
+        public ObservableCollection<string> Soorten { get; set; }
+>>>>>>> 1399195153ef66f0792da7e65dd0f75fad8cbba7
 
         //constructor
-        public OverzichtOndernemingenViewModel(){}
+        public OverzichtOndernemingenViewModel(){
+            Soorten = new ObservableCollection<string>(new List<string>(new string[] { "Alle","Schoenenwinkel", "Restaurant", "Café", "Brasserie", "Hotel", "Kledingwinkel", "Supermarkt", "B&B", "Drankcentrale", "Nachtwinkel", "School", "Frituur", "Broodjeszaak", "Overige" }));
+        }
 
 
         //methods
@@ -41,15 +47,36 @@ namespace StadsApp_Windows.ViewModel
         }
 
         /************************************************************FILTER****************************************************************************/
-        public IEnumerable<Onderneming> ZoekOnderneming(String tekst)
+        public IEnumerable<Onderneming> ZoekOnderneming(String tekst, String soort)
         {
-            if (tekst == null || tekst.Trim().Equals(""))
+            GefilterdeLijst.Clear();
+            var o = new List<Onderneming>();
+            o = Ondernemingen.ToList().Where(onderneming => onderneming.Naam.Contains(tekst) && onderneming.Soort.Contains(soort)).ToList();
+            
+            if (o.Count > 0)
             {
+                o.ForEach(ond => GefilterdeLijst.Add(ond));
+            } else
+            {
+                //o = Ondernemingen.ToList();//.Where(ond => ond.Naam.Contains("") && ond.Soort.Contains("")).ToList();
+                //o.ForEach(ond => GefilterdeLijst.Add(ond));
+            }
+            return GefilterdeLijst;
+            /*var o = new List<Onderneming>();
+
+            if((soort.Trim().Equals("") || soort.Equals(null)) && (tekst.Trim().Equals("") || tekst.Equals(null))) {
                 GefilterdeLijst.Clear();
                 Ondernemingen.ToList().ForEach(e => GefilterdeLijst.Add(e));
                 return GefilterdeLijst;
             }
-            var o = Ondernemingen.ToList().FindAll(onderneming => onderneming.Naam.Contains(tekst) /*|| onderneming.Adres.Contains(tekst)*/);
+            else if(soort.Trim().Equals("") || soort.Equals(null))
+            {
+                o = Ondernemingen.ToList().FindAll(onderneming => onderneming.Naam.Contains(tekst));
+            }
+            else if((tekst.Trim().Equals("") || tekst.Equals(null)) && !soort.Equals("Alle"))
+            {
+                o = Ondernemingen.ToList().FindAll(onderneming => onderneming.Soort.Equals(soort));
+            }
 
             if (o.Count > 0)
             {
@@ -62,8 +89,37 @@ namespace StadsApp_Windows.ViewModel
                 //throw new ArgumentException("De onderneming is niet gevonden");
                 GefilterdeLijst.Clear();
             }
-            
             return GefilterdeLijst;
+
+
+
+            /*if (soort.Trim().Equals("") || soort.Equals(null))
+            {
+                if (tekst == null || tekst.Trim().Equals(""))
+                {
+                    GefilterdeLijst.Clear();
+                    Ondernemingen.ToList().ForEach(e => GefilterdeLijst.Add(e));
+                    return GefilterdeLijst;
+                }
+                o = Ondernemingen.ToList().FindAll(onderneming => onderneming.Naam.Contains(tekst) /*|| onderneming.Adres.Contains(tekst)*//*);*/
+
+                
+            /*} else if()
+
+
+            if (o.Count > 0)
+            {
+                GefilterdeLijst.Clear();
+                o.ForEach(e => GefilterdeLijst.Add(e));
+                return GefilterdeLijst;
+            }
+            else
+            {
+                //throw new ArgumentException("De onderneming is niet gevonden");
+                GefilterdeLijst.Clear();
+            }
+
+            return GefilterdeLijst;*/
 
 
         }

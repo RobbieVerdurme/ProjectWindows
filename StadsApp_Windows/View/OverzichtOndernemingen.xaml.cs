@@ -30,6 +30,7 @@ namespace StadsApp_Windows.View
     public sealed partial class OverzichtOndernemingen : Page
     {
         private OverzichtOndernemingenViewModel overzichtvm;
+        //public ObservableCollection<string> Soorten;
 
         public OverzichtOndernemingen()
         {
@@ -41,9 +42,12 @@ namespace StadsApp_Windows.View
         {
             base.OnNavigatedTo(e);
             overzichtvm = new OverzichtOndernemingenViewModel();
-            ShowMapAsync();
-			await overzichtvm.GetData();
+            await overzichtvm.GetData();
             this.DataContext = overzichtvm;
+            this.cboSoorten.SelectedValue = "Alle";
+            ShowMapAsync();
+			
+            //this.cboSoorten.SelectedIndex = 0;
             ToonVestigingenOpMap();
         }
 
@@ -51,13 +55,33 @@ namespace StadsApp_Windows.View
         private void btnZoekOnderneming_Click(object sender, RoutedEventArgs e)
         {
             /*Zoeken in lijst van overzicht ondernemingen view model naar de tekst in txtZoekOnderneming*/
-            overzichtvm.ZoekOnderneming(txtZoekOnderneming.Text);
+            filter(txtZoekOnderneming.Text, overzichtvm.Soorten[cboSoorten.SelectedIndex]);
+            //overzichtvm.ZoekOnderneming(txtZoekOnderneming.Text, overzichtvm.Soorten[cboSoorten.SelectedIndex]);
         }
 
         private void btnZoekOnderneming_Click(object sender, TextChangedEventArgs e)
         {
+            filter(txtZoekOnderneming.Text, overzichtvm.Soorten[cboSoorten.SelectedIndex]);
+            //overzichtvm.ZoekOnderneming(txtZoekOnderneming.Text, overzichtvm.Soorten[cboSoorten.SelectedIndex]);
+        }
 
-            overzichtvm.ZoekOnderneming(txtZoekOnderneming.Text);
+
+        private void btnZoekOnderneming_Click(FrameworkElement sender, DataContextChangedEventArgs args)
+        {
+          try {
+                filter(txtZoekOnderneming.Text, overzichtvm.Soorten[cboSoorten.SelectedIndex]);
+            } catch(ArgumentOutOfRangeException e)
+            {
+                filter(txtZoekOnderneming.Text, "");
+            }
+        }
+
+        private void filter(string naam, string soort)
+        {
+            if (soort.Equals("Alle"))
+                soort = "";
+
+            overzichtvm.ZoekOnderneming(naam, soort);
         }
 
         /************************************************************MAP CONTROLS****************************************************************************/
@@ -127,5 +151,6 @@ namespace StadsApp_Windows.View
             ondern.Events.AddRange(overzichtvm.Events.Where(x => x.OndernemingsID.Equals(ondern.OndernemingID)));
             this.Frame.Navigate(typeof(OndernemingDetail), ondern);
         }
+
     }
 }
