@@ -23,21 +23,21 @@
             <Button x:Name="btnZoekOnderneming" Content="Zoek" Click="btnZoekOnderneming_Click"/>
             <StackPanel Orientation="Vertical">
                 <ListView x:Name="lvOndernemingen" ItemsSource="{Binding GefilterdeLijst}">
-                     <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Categorie/Type onderneming" Width="200"/>
-            <ComboBox Width="200" x:Name="cboSoort" ItemsSource="{Binding Soorten}" SelectedValue="Alle"/>
-        </StackPanel>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel DoubleTapped="StackPanel_DoubleTapped">
+                     <!--<StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Categorie/Type onderneming" Width="200"/>
+                        <ComboBox Width="200" x:Name="cboSoort" ItemsSource="{Binding Soorten}" SelectedValue="Alle"/>
+                    </StackPanel>-->
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel DoubleTapped="StackPanel_DoubleTapped">
                                 <TextBlock Text="{Binding Naam}"/>
                                 <TextBlock Text="{Binding Adres}"/>
                                 <TextBlock Text="{Binding Soort}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
         </StackPanel>
     </ScrollViewer>
 </Page>
