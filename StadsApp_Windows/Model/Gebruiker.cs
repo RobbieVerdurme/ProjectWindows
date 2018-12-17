@@ -15,6 +15,6 @@ namespace StadsApp_Windows.Model
         public string Username { get; set; }
         public string Password { get; set; }
         public ObservableCollection<Onderneming> Ondernemingenvolgen {get;set;}
-        
+        public string Access_token { get; set; }
     }
 }

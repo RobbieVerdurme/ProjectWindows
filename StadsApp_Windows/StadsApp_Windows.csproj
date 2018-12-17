@@ -100,6 +100,7 @@
     </Compile>
     <Compile Include="Model\AccountBindingModels.cs" />
     <Compile Include="Model\Gebruiker.cs" />
+    <Compile Include="Model\Globals.cs" />
     <Compile Include="Model\Klant.cs" />
     <Compile Include="Model\Ondernemer.cs" />
     <Compile Include="Model\Onderneming.cs" />
