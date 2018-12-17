@@ -39,8 +39,13 @@ namespace StadsApp_Windows.View
         private async void btnToevoegenClicked(object sender, RoutedEventArgs e)
         {
             await ondernemingvm.AanmakenOndernemingAsync(txtNaam.Text, txtAdres.Text, ondernemingvm.Soorten[cboSoort.SelectedIndex]);
-            txtNaam.Text = "";
-            txtAdres.Text = "";
+            ContentDialog dialog = new ContentDialog()
+            {
+                Title = "Onderneming toegevoegd",
+                Content = $"U hebt een onderneming toegevoegd. Met de Naam {txtNaam.Text} en adres voor het hoofdkantoor {txtAdres.Text}",
+                CloseButtonText = "OK"
+            };
+            await dialog.ShowAsync();
             this.Frame.Navigate(typeof( OverzichtOndernemingen));
         }
     }
