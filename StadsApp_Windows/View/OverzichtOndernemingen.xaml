@@ -12,11 +12,21 @@
         <StackPanel Orientation="Vertical">
             <Maps:MapControl x:Name="MyMap"
                     Height="400"/>
-            <TextBlock Text="Zoek een onderneming"/>
-            <TextBox x:Name="txtZoekOnderneming" TextChanged="btnZoekOnderneming_Click"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Zoek een onderneming"/>
+                <TextBox x:Name="txtZoekOnderneming" Width="400px"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Categorie/Type onderneming" Width="200"/>
+                <ComboBox Width="200" x:Name="cboSoorten" ItemsSource="{Binding Soorten}"/>
+            </StackPanel>
             <Button x:Name="btnZoekOnderneming" Content="Zoek" Click="btnZoekOnderneming_Click"/>
             <StackPanel Orientation="Vertical">
                 <ListView x:Name="lvOndernemingen" ItemsSource="{Binding GefilterdeLijst}">
+                     <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Categorie/Type onderneming" Width="200"/>
+            <ComboBox Width="200" x:Name="cboSoort" ItemsSource="{Binding Soorten}" SelectedValue="Alle"/>
+        </StackPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel DoubleTapped="StackPanel_DoubleTapped">
