@@ -3,7 +3,7 @@ namespace StadsApp_Backend.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class inital : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
@@ -13,8 +13,8 @@ namespace StadsApp_Backend.Migrations
                     {
                         OndernemingID = c.Int(nullable: false, identity: true),
                         Naam = c.String(),
-                        Adres = c.String(),
                         Soort = c.String(),
+                        Adres = c.String(),
                     })
                 .PrimaryKey(t => t.OndernemingID);
             
