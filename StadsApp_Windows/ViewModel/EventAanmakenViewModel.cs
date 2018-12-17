@@ -12,9 +12,7 @@ namespace StadsApp_Windows.ViewModel
 {
     public class EventAanmakenViewModel
     {
-        public async Task AanmakenEventAsync(int ondernemingId, string naam, string beschrijving, string adres, DateTimeOffset date) {
-            Event evnt = new Event(ondernemingId, naam, beschrijving, adres, date.Date);
-
+        public async Task AanmakenEventAsync(Event evnt) {
             var eventJson = JsonConvert.SerializeObject(evnt);
 
             HttpClient client = new HttpClient();

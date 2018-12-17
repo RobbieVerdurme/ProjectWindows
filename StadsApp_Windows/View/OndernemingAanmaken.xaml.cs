@@ -1,4 +1,5 @@
-﻿using StadsApp_Windows.ViewModel;
+﻿using StadsApp_Windows.Model;
+using StadsApp_Windows.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -38,7 +39,13 @@ namespace StadsApp_Windows.View
 
         private async void btnToevoegenClicked(object sender, RoutedEventArgs e)
         {
-            await ondernemingvm.AanmakenOndernemingAsync(txtNaam.Text, txtAdres.Text, ondernemingvm.Soorten[cboSoort.SelectedIndex]);
+            Onderneming onderneming = new Onderneming()
+            {
+                Naam = txtNaam.Text,
+                Adres = txtAdres.Text,
+                Soort = ondernemingvm.Soorten[cboSoort.SelectedIndex]
+            };
+            await ondernemingvm.AanmakenOndernemingAsync(onderneming);
             ContentDialog dialog = new ContentDialog()
             {
                 Title = "Onderneming toegevoegd",
