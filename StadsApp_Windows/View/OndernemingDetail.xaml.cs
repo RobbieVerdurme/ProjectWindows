@@ -61,6 +61,7 @@ namespace StadsApp_Windows.View
 
         }
 
+        /************************************************************Naar vestiging gaan****************************************************************************/
         private void StackPanel_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             Vestiging v = GetVestiging((Vestiging)lvVestigingen.SelectedItem);
