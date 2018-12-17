@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Appointments;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -44,8 +45,39 @@ namespace StadsApp_Windows.View
 
         private void VestigingToevoegen(object sender, RoutedEventArgs e)
         {
-            var onderneming = GeselecteerdeOnderneming;
             this.Frame.Navigate(typeof(VestigingAanmaken), GeselecteerdeOnderneming);
+        }
+
+        private void EventToevoegen(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(EventAanmaken), GeselecteerdeOnderneming);
+        }
+        /************************************************************Event In Kalender Zetten****************************************************************************/
+        private async void Event_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var appointment = new Appointment();
+            Event evnt = GetEvent((Event)lvEvents.SelectedItem);
+
+            appointment.Subject = evnt.Naam;
+            appointment.Details = evnt.Beschrijving;
+            appointment.Location = evnt.Adres;
+            appointment.StartTime = evnt.Date;
+            appointment.AllDay = true;
+
+            var rect = OndernemingDetail.GetElementRect(this as FrameworkElement);
+            string appointmentId = await AppointmentManager.ShowAddAppointmentAsync(appointment, rect, Windows.UI.Popups.Placement.Default);
+        }
+
+        private Event GetEvent(Event selectedItem)
+        {
+            return GeselecteerdeOnderneming.Events.Where(x => x.EventId == selectedItem.EventId).FirstOrDefault();
+        }
+
+        public static Rect GetElementRect(FrameworkElement element)
+        {
+            GeneralTransform buttonTransform = element.TransformToVisual(null);
+            Point point = buttonTransform.TransformPoint(new Point());
+            return new Rect(point, new Size(element.ActualWidth, element.ActualHeight));
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using StadsApp_Backend.Model;
+using StadsApp_Windows.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -23,5 +24,7 @@ namespace StadsApp_Backend.Models
 		public System.Data.Entity.DbSet<Onderneming> Ondernemings { get; set; }
 
 		public System.Data.Entity.DbSet<Vestiging> Vestigings { get; set; }
-	}
+
+        public System.Data.Entity.DbSet<Event> Events { get; set; }
+    }
 }
