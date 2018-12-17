@@ -26,7 +26,9 @@ namespace StadsApp_Windows.Model
             this.Ondernemingid = ondernemingsId;
             if(!adres.Equals("") || adres != null)
             {
-                SetLatAndLong();
+                //SetLatAndLong();
+                Latitude = 41.2412;
+                Longitude = 2.1026;
             }
             
         }

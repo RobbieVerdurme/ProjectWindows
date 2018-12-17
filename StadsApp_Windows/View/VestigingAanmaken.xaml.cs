@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -43,10 +44,10 @@ namespace StadsApp_Windows.View
 
         private async void VestigingOpslaan(object sender, RoutedEventArgs e)
         {
-			await vestigingvm.AanmakenVestigingAsync(ond.OndernemingID, txtNaam.Text, txtAdres.Text);
+            await vestigingvm.AanmakenVestigingAsync(ond.OndernemingID, txtNaam.Text, txtAdres.Text);
             ContentDialog dialog = new ContentDialog() {
                 Title = "Vestiging toegevoegd",
-                Content = $"U hebt een vestiging toegevoegd aan ${ond.Naam}",
+                Content = $"U hebt een vestiging toegevoegd aan {ond.Naam}. Met de Naam {txtNaam.Text} en adres {txtAdres.Text}",
                 CloseButtonText = "OK"
             };
             await dialog.ShowAsync();
