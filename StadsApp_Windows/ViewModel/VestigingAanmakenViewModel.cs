@@ -14,12 +14,11 @@ namespace StadsApp_Windows.ViewModel
 
 		public async Task AanmakenVestigingAsync(int ondId, string naam, string adres)
 		{
-			Vestiging vestiging = new Vestiging(ondId, naam, adres)
-			{
-				Naam = naam,
-				Adres = adres,
-				Ondernemingid = ondId
-			};
+            Vestiging vestiging = new Vestiging(ondId, naam, adres)
+            {
+                Latitude = 0,
+                Longitude = 0
+            };
 
 			var vestigingJson = JsonConvert.SerializeObject(vestiging);
 

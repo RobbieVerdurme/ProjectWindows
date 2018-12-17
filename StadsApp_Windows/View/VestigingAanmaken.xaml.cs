@@ -25,7 +25,7 @@ namespace StadsApp_Windows.View
     public sealed partial class VestigingAanmaken : Page
     {
         private VestigingAanmakenViewModel vestigingvm;
-        private Onderneming ond;
+        public Onderneming Onderneming { get; set; }
 
         public VestigingAanmaken()
         {
@@ -33,16 +33,16 @@ namespace StadsApp_Windows.View
             vestigingvm = new VestigingAanmakenViewModel();
         }
 
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            base.OnNavigatedFrom(e);
-            ond = (Onderneming)e.Parameter;
+            base.OnNavigatedTo(e);
+            this.Onderneming = (Onderneming)e.Parameter;
             this.DataContext = vestigingvm;
         }
 
         private async void VestigingOpslaan(object sender, RoutedEventArgs e)
         {
-			await vestigingvm.AanmakenVestigingAsync(ond.OndernemingID, txtNaam.Text, txtAdres.Text);
+			await vestigingvm.AanmakenVestigingAsync(Onderneming.OndernemingID, txtNaam.Text, txtAdres.Text);
 		}
 
 	}

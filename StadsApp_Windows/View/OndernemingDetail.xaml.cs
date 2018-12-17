@@ -32,7 +32,7 @@ namespace StadsApp_Windows.View
         public OndernemingDetail()
         {
             this.InitializeComponent();
-            detailondernemingvm = new OndernemingDetailViewModel();
+            //detailondernemingvm = new OndernemingDetailViewModel();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -44,6 +44,7 @@ namespace StadsApp_Windows.View
 
         private void VestigingToevoegen(object sender, RoutedEventArgs e)
         {
+            var onderneming = GeselecteerdeOnderneming;
             this.Frame.Navigate(typeof(VestigingAanmaken), GeselecteerdeOnderneming);
         }
     }

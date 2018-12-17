@@ -24,10 +24,10 @@ namespace StadsApp_Windows.Model
             this.Naam = naam;
             this.Adres = adres;
             this.Ondernemingid = ondernemingsId;
-            if(!adres.Equals("") || adres != null)
+            /*if(!adres.Equals("") || adres != null)
             {
                 SetLatAndLong();
-            }
+            }*/
             
         }
 
