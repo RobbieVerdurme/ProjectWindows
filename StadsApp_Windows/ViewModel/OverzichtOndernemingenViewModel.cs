@@ -17,11 +17,8 @@ namespace StadsApp_Windows.ViewModel
         public ObservableCollection<Onderneming> Ondernemingen { get; set; }
         public ObservableCollection<Onderneming> GefilterdeLijst { get; set; }
         public ObservableCollection<Vestiging> Vestigingen { get; set; }
-<<<<<<< HEAD
         public ObservableCollection<Event> Events { get; set; }
-=======
         public ObservableCollection<string> Soorten { get; set; }
->>>>>>> 1399195153ef66f0792da7e65dd0f75fad8cbba7
 
         //constructor
         public OverzichtOndernemingenViewModel(){
