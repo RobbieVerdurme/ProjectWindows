@@ -11,7 +11,7 @@
     <AssemblyName>StadsApp_Windows</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17763.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17134.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -113,6 +113,9 @@
     <Compile Include="ViewModel\OndernemingDetailViewModel.cs" />
     <Compile Include="ViewModel\OverzichtOndernemingenViewModel.cs" />
     <Compile Include="ViewModel\RegistrerenViewModel.cs" />
+    <Compile Include="View\DetailVestiging.xaml.cs">
+      <DependentUpon>DetailVestiging.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\EventAanmaken.xaml.cs">
       <DependentUpon>EventAanmaken.xaml</DependentUpon>
     </Compile>
@@ -159,6 +162,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\DetailVestiging.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\EventAanmaken.xaml">
       <SubType>Designer</SubType>

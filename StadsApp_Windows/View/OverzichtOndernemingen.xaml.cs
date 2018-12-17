@@ -148,7 +148,7 @@ namespace StadsApp_Windows.View
         {
             Onderneming ondern = GetOnderneming((Onderneming)lvOndernemingen.SelectedItem);
             ondern.Vestigingen.AddRange(overzichtvm.Vestigingen.Where(x => x.Ondernemingid.Equals(ondern.OndernemingID)));
-            ondern.Events.AddRange(overzichtvm.Events.Where(x => x.OndernemingsID.Equals(ondern.OndernemingID)));
+            //ondern.Events.AddRange(overzichtvm.Events.Where(x => x.OndernemingsID.Equals(ondern.OndernemingID)));
             this.Frame.Navigate(typeof(OndernemingDetail), ondern);
         }
 

@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="StadsApp_Windows.View.DetailVestiging"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StadsApp_Windows.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Naam vestiging: "/>
+            <TextBlock Text="{Binding Naam}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Adres: "/>
+            <TextBlock Text="{Binding Adres}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Events:" Width="200"/>
+            <ListView x:Name="lvEvents" ItemsSource="{Binding Events}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Tapped="Event_Tapped">
+                            <TextBlock Text="{Binding Naam}"/>
+                            <TextBlock Text="{Binding Beschrijving}"/>
+                            <TextBlock Text="{Binding Date}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        <Button Content="Event toevoegen" Click="EventToevoegen"/>
+    </StackPanel>
+</Page>
