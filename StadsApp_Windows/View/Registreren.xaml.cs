@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text.RegularExpressions;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -57,6 +58,7 @@ namespace StadsApp_Windows.View
 			if(!IsValidEmail(UsernameTextBox.Text))
 			{
 				ErrorMessage.Text = "Not a valid email";
+				return;
 			}
 			if (string.IsNullOrEmpty(PasswordBox.Password))
 			{
@@ -71,6 +73,11 @@ namespace StadsApp_Windows.View
 			if (PasswordBox.Password != PasswordRepeatBox.Password)
 			{
 				ErrorMessage.Text = "Passwords do not match";
+				return;
+			}
+			if (!CheckStrength(PasswordBox.Password))
+			{
+				ErrorMessage.Text = "Passwords is not strong enough";
 				return;
 			}
 			
@@ -104,6 +111,15 @@ namespace StadsApp_Windows.View
 			{
 				return false;
 			}
+		}
+
+		private bool CheckStrength(string password)
+		{
+
+			string MatchEmailPattern = "(?!^[0-9]*$)(?!^[a-zA-Z]*$)^(.{8,15})$";
+
+			if (password != null) return Regex.IsMatch(password, MatchEmailPattern);
+			else return false;
 		}
 	}
 }
