@@ -43,7 +43,8 @@ namespace StadsApp_Windows.View
         private async void PromotieOpslaan(object sender, RoutedEventArgs e)
         {
             double percentage;
-            await promotievm.AanmakenPromotieAsync(GeselecteerdeOnderneming.OndernemingID, Double.TryParse(txtPercentagePromotie.Text, out percentage) ? percentage:0.0, txtBeschrijvingPromotie.Text, calVan.Date.Value.Date, calTot.Date.Value.Date);
+            Promotie promotie = new Promotie(GeselecteerdeOnderneming.OndernemingID, Double.TryParse(txtPercentagePromotie.Text, out percentage) ? percentage : 0.0, txtBeschrijvingPromotie.Text, calVan.Date.Value.Date, calTot.Date.Value.Date);
+            await promotievm.AanmakenPromotieAsync(promotie);
             ContentDialog dialog = new ContentDialog()
             {
                 Title = "Promotie toegevoegd",
@@ -51,6 +52,7 @@ namespace StadsApp_Windows.View
                 CloseButtonText = "OK"
             };
             await dialog.ShowAsync();
+            GeselecteerdeOnderneming.Promoties.Add(promotie);
             this.Frame.Navigate(typeof(OndernemingDetail), GeselecteerdeOnderneming);
         }
     }

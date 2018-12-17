@@ -26,6 +26,7 @@ namespace StadsApp_Windows.View
     /// </summary>
     public sealed partial class OndernemingDetail : Page
     {
+        public OverzichtOndernemingenViewModel overzichtvm;
         public Onderneming GeselecteerdeOnderneming { get; set; }
 
 

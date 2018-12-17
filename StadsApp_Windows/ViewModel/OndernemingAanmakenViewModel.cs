@@ -18,15 +18,8 @@ namespace StadsApp_Windows.ViewModel
             Soorten = new ObservableCollection<string>(new List<string>(new string[] { "Schoenenwinkel", "Restaurant", "Café", "Brasserie", "Hotel", "Kledingwinkel", "Supermarkt", "B&B", "Drankcentrale", "Nachtwinkel", "School", "Frituur", "Broodjeszaak", "Overige" }));
         }
 
-        public async Task AanmakenOndernemingAsync(string naam, string adres, string soort)
+        public async Task AanmakenOndernemingAsync(Onderneming onderneming)
 		{
-			Onderneming onderneming = new Onderneming()
-			{
-				Naam = naam,
-				Adres = adres,
-				Soort = soort
-			};
-
 			var ondernemingJson = JsonConvert.SerializeObject(onderneming);
 
 			HttpClient client = new HttpClient();
