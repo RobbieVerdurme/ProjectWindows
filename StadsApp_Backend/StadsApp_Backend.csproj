@@ -236,13 +236,14 @@
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OndernemingsController.cs" />
+    <Compile Include="Controllers\PromotiesController.cs" />
     <Compile Include="Controllers\VestigingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812171530067_inital.cs" />
-    <Compile Include="Migrations\201812171530067_inital.Designer.cs">
-      <DependentUpon>201812171530067_inital.cs</DependentUpon>
+    <Compile Include="Migrations\201812171743386_inital1.cs" />
+    <Compile Include="Migrations\201812171743386_inital1.Designer.cs">
+      <DependentUpon>201812171743386_inital1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -250,6 +251,7 @@
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Onderneming.cs" />
+    <Compile Include="Models\Promotie.cs" />
     <Compile Include="Models\StadsApp_BackendContext.cs" />
     <Compile Include="Models\Vestiging.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -349,8 +351,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812171530067_inital.resx">
-      <DependentUpon>201812171530067_inital.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812171743386_inital1.resx">
+      <DependentUpon>201812171743386_inital1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

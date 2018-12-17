@@ -5,9 +5,13 @@
     xmlns:local="using:StadsApp_Windows.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodel="using:StadsApp_Windows.ViewModel"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Page.Resources>
+        <viewmodel:DateConverter x:Key="dateConverter"/>
+    </Page.Resources>
+    
     <StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Naam onderneming" Width="200"/>
@@ -48,6 +52,24 @@
             </ListView>
         </StackPanel>
             <Button Content="Event toevoegen" Click="EventToevoegen"/>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Promoties:" Width="200"/>
+                <ListView x:Name="lvPromoties" ItemsSource="{Binding Promoties}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Tapped="Promotie_Tapped">
+                                <TextBlock Text="{Binding Beschrijving}"/>
+                                <TextBlock Text="{Binding Percentage}"/>
+                                <TextBlock Text="{Binding Van, Converter={StaticResource dateConverter}}"/>
+                                <TextBlock Text="{Binding Tot, Converter={StaticResource dateConverter}}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+            <Button Content="Promotie toevoegen" Click="PromotieToevoegen"/>
+            
         </StackPanel>
     </StackPanel>
 </Page>

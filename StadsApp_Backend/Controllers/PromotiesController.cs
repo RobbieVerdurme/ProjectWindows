@@ -13,44 +13,44 @@ using StadsApp_Backend.Models;
 
 namespace StadsApp_Backend.Controllers
 {
-    public class EventsController : ApiController
+    public class PromotiesController : ApiController
     {
         private StadsApp_BackendContext db = new StadsApp_BackendContext();
 
-        // GET: api/Events
-        public IQueryable<Event> GetEvents()
+        // GET: api/Promoties
+        public IQueryable<Promotie> GetPromoties()
         {
-            return db.Events;
+            return db.Promoties;
         }
 
-        // GET: api/Events/5
-        [ResponseType(typeof(Event))]
-        public IHttpActionResult GetEvent(int id)
+        // GET: api/Promoties/5
+        [ResponseType(typeof(Promotie))]
+        public IHttpActionResult GetPromotie(int id)
         {
-            Event @event = db.Events.Find(id);
-            if (@event == null)
+            Promotie promotie = db.Promoties.Find(id);
+            if (promotie == null)
             {
                 return NotFound();
             }
 
-            return Ok(@event);
+            return Ok(promotie);
         }
 
-        // PUT: api/Events/5
+        // PUT: api/Promoties/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutEvent(int id, Event @event)
+        public IHttpActionResult PutPromotie(int id, Promotie promotie)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != @event.EventId)
+            if (id != promotie.PromotieID)
             {
                 return BadRequest();
             }
 
-            db.Entry(@event).State = EntityState.Modified;
+            db.Entry(promotie).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace StadsApp_Backend.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EventExists(id))
+                if (!PromotieExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace StadsApp_Backend.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Events
-        [ResponseType(typeof(Event))]
-        public IHttpActionResult PostEvent(Event @event)
+        // POST: api/Promoties
+        [ResponseType(typeof(Promotie))]
+        public IHttpActionResult PostPromotie(Promotie promotie)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Events.Add(@event);
+            db.Promoties.Add(promotie);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = @event.EventId }, @event);
+            return CreatedAtRoute("DefaultApi", new { id = promotie.PromotieID }, promotie);
         }
 
-        // DELETE: api/Events/5
-        [ResponseType(typeof(Event))]
-        public IHttpActionResult DeleteEvent(int id)
+        // DELETE: api/Promoties/5
+        [ResponseType(typeof(Promotie))]
+        public IHttpActionResult DeletePromotie(int id)
         {
-            Event @event = db.Events.Find(id);
-            if (@event == null)
+            Promotie promotie = db.Promoties.Find(id);
+            if (promotie == null)
             {
                 return NotFound();
             }
 
-            db.Events.Remove(@event);
+            db.Promoties.Remove(promotie);
             db.SaveChanges();
 
-            return Ok(@event);
+            return Ok(promotie);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +111,9 @@ namespace StadsApp_Backend.Controllers
             base.Dispose(disposing);
         }
 
-        private bool EventExists(int id)
+        private bool PromotieExists(int id)
         {
-            return db.Events.Count(e => e.EventId == id) > 0;
+            return db.Promoties.Count(e => e.PromotieID == id) > 0;
         }
     }
 }

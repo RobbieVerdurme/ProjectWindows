@@ -7,13 +7,13 @@ namespace StadsApp_Backend.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class inital : IMigrationMetadata
+    public sealed partial class inital1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(inital));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(inital1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201812171530067_inital"; }
+            get { return "201812171743386_inital1"; }
         }
         
         string IMigrationMetadata.Source

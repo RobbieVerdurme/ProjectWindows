@@ -26,14 +26,12 @@ namespace StadsApp_Windows.View
     /// </summary>
     public sealed partial class OndernemingDetail : Page
     {
-        private OndernemingDetailViewModel detailondernemingvm;
         public Onderneming GeselecteerdeOnderneming { get; set; }
 
 
         public OndernemingDetail()
         {
             this.InitializeComponent();
-            //detailondernemingvm = new OndernemingDetailViewModel();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -42,7 +40,7 @@ namespace StadsApp_Windows.View
             GeselecteerdeOnderneming = (Onderneming)e.Parameter;
             this.DataContext = GeselecteerdeOnderneming;
         }
-
+        /************************************************************Toevoegen****************************************************************************/
         private void VestigingToevoegen(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(VestigingAanmaken), GeselecteerdeOnderneming);
@@ -51,6 +49,11 @@ namespace StadsApp_Windows.View
         private void EventToevoegen(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(EventAanmaken), GeselecteerdeOnderneming);
+        }
+
+        private void PromotieToevoegen(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(PromotieAanmaken), GeselecteerdeOnderneming);
         }
         /************************************************************Event In Kalender Zetten****************************************************************************/
         private async void Event_Tapped(object sender, TappedRoutedEventArgs e)
@@ -78,6 +81,11 @@ namespace StadsApp_Windows.View
             GeneralTransform buttonTransform = element.TransformToVisual(null);
             Point point = buttonTransform.TransformPoint(new Point());
             return new Rect(point, new Size(element.ActualWidth, element.ActualHeight));
+        }
+        /************************************************************Promotie pdf Genereren****************************************************************************/
+        private void Promotie_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
         }
     }
 }
