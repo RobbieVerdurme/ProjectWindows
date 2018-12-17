@@ -10,23 +10,19 @@ namespace StadsApp_Windows.Model
 {
     public class Onderneming //: INotifyPropertyChanged
     {
-		private int v;
-
 		public int OndernemingID { get; set; }
         public String Naam { get; set; }
         public String Soort { get; set; }
 		public String Adres { get; set; }
         public List<Vestiging> Vestigingen { get; set; } = new List<Vestiging>();
-        
+        public List<Event> Events { get; set; } = new List<Event>();
+        public List<Promotie> Promoties { get; set; } = new List<Promotie>();
 
-        public Onderneming()
-        {
+        public Onderneming(){}
 
-        }
-
-		public Onderneming(int v, string naam, string adres, string soort)
+		public Onderneming(int ondernemingId, string naam, string adres, string soort)
 		{
-			this.v = v;
+			this.OndernemingID = ondernemingId;
 			Naam = naam;
 			Adres = adres;
 			Soort = soort;
@@ -37,6 +33,13 @@ namespace StadsApp_Windows.Model
             this.Vestigingen.Add(vestiging);
         }
 
-        
+        public void EventToevoegen(Event evnt) {
+            this.Events.Add(evnt);
+        }
+
+        public void PromotieToevoegen(Promotie promotie)
+        {
+            this.Promoties.Add(promotie);
+        }
     }
 }

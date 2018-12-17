@@ -18,6 +18,7 @@ namespace StadsApp_Windows.ViewModel
         public ObservableCollection<Onderneming> GefilterdeLijst { get; set; }
         public ObservableCollection<Vestiging> Vestigingen { get; set; }
         public ObservableCollection<Event> Events { get; set; }
+        public ObservableCollection<Promotie> Promoties { get; set; }
         public ObservableCollection<string> Soorten { get; set; }
 
         //constructor
@@ -40,6 +41,9 @@ namespace StadsApp_Windows.ViewModel
 
             var jsonEvents = await client.GetStringAsync(new Uri("http://localhost:53331/api/events"));
             Events = JsonConvert.DeserializeObject<ObservableCollection<Event>>(jsonEvents);
+
+            var jsonPromoties = await client.GetStringAsync(new Uri("http://localhost:53331/api/promoties"));
+            Promoties = JsonConvert.DeserializeObject<ObservableCollection<Promotie>>(jsonPromoties);
             return this;
         }
 
