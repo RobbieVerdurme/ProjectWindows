@@ -55,37 +55,16 @@ namespace StadsApp_Windows.View
         {
             this.Frame.Navigate(typeof(PromotieAanmaken), GeselecteerdeOnderneming);
         }
-        /************************************************************Event In Kalender Zetten****************************************************************************/
-        private async void Event_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            var appointment = new Appointment();
-            Event evnt = GetEvent((Event)lvEvents.SelectedItem);
-
-            appointment.Subject = evnt.Naam;
-            appointment.Details = evnt.Beschrijving;
-            appointment.Location = evnt.Adres;
-            appointment.StartTime = evnt.Date;
-            appointment.AllDay = true;
-
-            var rect = OndernemingDetail.GetElementRect(this as FrameworkElement);
-            string appointmentId = await AppointmentManager.ShowAddAppointmentAsync(appointment, rect, Windows.UI.Popups.Placement.Default);
-        }
-
-        private Event GetEvent(Event selectedItem)
-        {
-            return GeselecteerdeOnderneming.Events.Where(x => x.EventId == selectedItem.EventId).FirstOrDefault();
-        }
-
-        public static Rect GetElementRect(FrameworkElement element)
-        {
-            GeneralTransform buttonTransform = element.TransformToVisual(null);
-            Point point = buttonTransform.TransformPoint(new Point());
-            return new Rect(point, new Size(element.ActualWidth, element.ActualHeight));
-        }
+        
         /************************************************************Promotie pdf Genereren****************************************************************************/
         private void Promotie_Tapped(object sender, TappedRoutedEventArgs e)
         {
 
+        }
+
+        private void StackPanel_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(DetailVestiging), (Vestiging)lvVestigingen.SelectedItem);
         }
     }
 }
