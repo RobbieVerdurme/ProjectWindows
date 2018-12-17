@@ -55,8 +55,8 @@ namespace StadsApp_Windows.View
 
 			var keyValues = new List<KeyValuePair<string, string>>();
 			keyValues.Add(new KeyValuePair<string, string>("grant_type", "password"));
-			keyValues.Add(new KeyValuePair<string, string>("password", UsernameTextBox.Text));
-			keyValues.Add(new KeyValuePair<string, string>("username", PasswordTextBox.Password));
+			keyValues.Add(new KeyValuePair<string, string>("username", UsernameTextBox.Text));
+			keyValues.Add(new KeyValuePair<string, string>("password", PasswordTextBox.Password));
 
 			request.Content = new FormUrlEncodedContent(keyValues);
 			var response = await client.SendAsync(request);
