@@ -8,8 +8,8 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using StadsApp_Backend.Model;
 using StadsApp_Backend.Models;
-using StadsApp_Windows.Model;
 
 namespace StadsApp_Backend.Controllers
 {

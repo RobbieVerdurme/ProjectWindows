@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StadsApp_Windows.Model
+namespace StadsApp_Backend.Model
 {
     public class Promotie
     {
