@@ -27,7 +27,7 @@ namespace StadsApp_Windows.View
     public sealed partial class VestigingAanmaken : Page
     {
         private VestigingAanmakenViewModel vestigingvm;
-        private Onderneming ond;
+        private Onderneming GeselecteerdeOnderneming { get; set; }
 
         public VestigingAanmaken()
         {
@@ -38,20 +38,22 @@ namespace StadsApp_Windows.View
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedFrom(e);
-            ond = (Onderneming)e.Parameter;
+            GeselecteerdeOnderneming = (Onderneming)e.Parameter;
             this.DataContext = vestigingvm;
         }
 
         private async void VestigingOpslaan(object sender, RoutedEventArgs e)
         {
-            await vestigingvm.AanmakenVestigingAsync(ond.OndernemingID, txtNaam.Text, txtAdres.Text);
+            Vestiging vestiging = new Vestiging(GeselecteerdeOnderneming.OndernemingID, txtNaam.Text, txtAdres.Text);
+            await vestigingvm.AanmakenVestigingAsync(vestiging);
             ContentDialog dialog = new ContentDialog() {
                 Title = "Vestiging toegevoegd",
-                Content = $"U hebt een vestiging toegevoegd aan {ond.Naam}. Met de Naam {txtNaam.Text} en adres {txtAdres.Text}",
+                Content = $"U hebt een vestiging toegevoegd aan {GeselecteerdeOnderneming.Naam}. Met de naam {txtNaam.Text} en adres {txtAdres.Text}",
                 CloseButtonText = "OK"
             };
             await dialog.ShowAsync();
-            this.Frame.Navigate(typeof(OndernemingDetail), ond);
+            GeselecteerdeOnderneming.Vestigingen.Add(vestiging);
+            this.Frame.Navigate(typeof(OndernemingDetail), GeselecteerdeOnderneming);
 		}
 
 	}

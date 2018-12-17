@@ -11,10 +11,8 @@ namespace StadsApp_Windows.ViewModel
 {
     public class PromotieAanmakenViewModel
     {
-        public async Task AanmakenPromotieAsync(int ondernemingId, double percentage, String beschrijving, DateTime van, DateTime tot)
+        public async Task AanmakenPromotieAsync(Promotie promotie)
         {
-            Promotie promotie = new Promotie(ondernemingId, percentage, beschrijving, van, tot);
-
             var promotieJson = JsonConvert.SerializeObject(promotie);
 
             HttpClient client = new HttpClient();

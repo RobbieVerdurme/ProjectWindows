@@ -12,14 +12,8 @@ namespace StadsApp_Windows.ViewModel
 	class VestigingAanmakenViewModel
 	{
 
-		public async Task AanmakenVestigingAsync(int ondId, string naam, string adres)
+		public async Task AanmakenVestigingAsync(Vestiging vestiging)
 		{
-            Vestiging vestiging = new Vestiging(ondId, naam, adres)
-            {
-                Latitude = 0,
-                Longitude = 0
-            };
-
 			var vestigingJson = JsonConvert.SerializeObject(vestiging);
 
 			HttpClient client = new HttpClient();
