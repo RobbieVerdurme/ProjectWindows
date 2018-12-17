@@ -2,6 +2,7 @@
 using StadsApp_Windows.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -33,7 +34,7 @@ namespace StadsApp_Windows.View
             vestigingvm = new VestigingAanmakenViewModel();
         }
 
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedFrom(e);
             ond = (Onderneming)e.Parameter;
@@ -43,6 +44,13 @@ namespace StadsApp_Windows.View
         private async void VestigingOpslaan(object sender, RoutedEventArgs e)
         {
 			await vestigingvm.AanmakenVestigingAsync(ond.OndernemingID, txtNaam.Text, txtAdres.Text);
+            ContentDialog dialog = new ContentDialog() {
+                Title = "Vestiging toegevoegd",
+                Content = $"U hebt een vestiging toegevoegd aan ${ond.Naam}",
+                CloseButtonText = "OK"
+            };
+            await dialog.ShowAsync();
+            this.Frame.Navigate(typeof(OndernemingDetail), ond);
 		}
 
 	}
