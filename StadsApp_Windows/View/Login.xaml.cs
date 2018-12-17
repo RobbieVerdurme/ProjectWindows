@@ -1,9 +1,11 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using StadsApp_Windows.Model;
 using StadsApp_Windows.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -33,49 +35,81 @@ namespace StadsApp_Windows.View
             this.InitializeComponent();
         }
 
-        private void LoginClicked(object sender, RoutedEventArgs e)
+        private async void PassportSignInButton_Click(object sender, RoutedEventArgs e)
         {
-			bool success = true;
-
-			if(success)
+			if (string.IsNullOrEmpty(UsernameTextBox.Text))
 			{
-				var vault = new Windows.Security.Credentials.PasswordVault();
-				vault.Add(new Windows.Security.Credentials.PasswordCredential("StadsApp", UsernameTextBox.Text, PasswordTextBox.Password));
+				ErrorMessage.Text = "Please enter a username";
+				return;
 			}
-        }
+			if (string.IsNullOrEmpty(PasswordTextBox.Password))
+			{
+				ErrorMessage.Text = "Please enter a password";
+				return;
+			}
+
+			var user = new UserCredentials(UsernameTextBox.Text, PasswordTextBox.Password);
+
+			//Login user
+			var client = new HttpClient();
+			client.BaseAddress = new Uri("http://localhost:53331");
+			var request = new HttpRequestMessage(HttpMethod.Post, "/token");
+
+			var keyValues = new List<KeyValuePair<string, string>>();
+			keyValues.Add(new KeyValuePair<string, string>("grant_type", "password"));
+			keyValues.Add(new KeyValuePair<string, string>("password", UsernameTextBox.Text));
+			keyValues.Add(new KeyValuePair<string, string>("username", PasswordTextBox.Password));
+
+			request.Content = new FormUrlEncodedContent(keyValues);
+			var response = await client.SendAsync(request);
+			
+			//Log error message
+			if (!response.IsSuccessStatusCode)
+			{
+				ErrorMessage.Text = response.StatusCode + " " + response.ReasonPhrase;
+				return;
+			}
+
+			//Save user in global variables
+			Ondernemer o = new Ondernemer();
+			o.Username = UsernameTextBox.Text;
+
+			var result = response.Content.ReadAsStringAsync().Result;
+			Dictionary<string, string> tokenDictionary =
+			   JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
+			string token = tokenDictionary["access_token"];
+			o.Access_token = token;
+
+			Globals.loggedInGebruiker = o;
+
+			//Save user credentials
+			var vault = new Windows.Security.Credentials.PasswordVault();
+			vault.Add(new Windows.Security.Credentials.PasswordCredential("StadsApp", UsernameTextBox.Text, PasswordTextBox.Password));
+		}
 
         private void RegistreerClicked(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Registreren));
         }
-
-		private void PassportSignInButton_Click(object sender, RoutedEventArgs e)
-		{
-			ErrorMessage.Text = "";
-		}
+		
 		private void RegisterButtonTextBlock_OnPointerPressed(object sender, PointerRoutedEventArgs e)
 		{
 			ErrorMessage.Text = "";
 			Frame.Navigate(typeof(Registreren));
 		}
-		/*
-		private void Login()
+		
+		private class UserCredentials
 		{
-			using (var client = new HttpClient())
+			public string Username { get; set; }
+			public string Password { get; set; }
+			public string Grant_type = "password";
+
+			public UserCredentials(string username, string password)
 			{
-				try
-				{
-					//await client.PostAsJsonAsync("http://localhost:53331/api/users", id);
-
-
-				}
-				catch (Exception ex)
-				{
-					//await new MessageDialog(ex.Message).ShowAsync();
-				}
+				Username = username;
+				Password = password;
 			}
-			//Ondernemingen = JsonConvert.DeserializeObject<ObservableCollection<Onderneming>>(json);
-			//GefilterdeLijst = new ObservableCollection<Onderneming>(Ondernemingen.ToList());
-		}*/
+		}
+
 	}
 }
