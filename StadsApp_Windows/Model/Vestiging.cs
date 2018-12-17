@@ -44,7 +44,7 @@ namespace StadsApp_Windows.Model
         private void SetLatAndLong()
         {
             if(locationservice == null) {
-                locationservice = new GoogleLocationService("AIzaSyDCTeDD7AKM3KKNl3vyGu3SpZ3EhseYKSA");
+                locationservice = new GoogleLocationService("AIzaSyBNlBpJ6zueh7xNcd3bj2hcgDVlK5bGDKQ");
             }
             
             MapPoint point = locationservice.GetLatLongFromAddress(Adres);
