@@ -108,6 +108,7 @@
     <Compile Include="Model\Promotie.cs" />
     <Compile Include="Model\Vestiging.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\DateConverter.cs" />
     <Compile Include="ViewModel\EventAanmakenViewModel.cs" />
     <Compile Include="ViewModel\OndernemingAanmakenViewModel.cs" />
@@ -209,6 +210,9 @@
   <ItemGroup>
     <PackageReference Include="GoogleMaps.LocationServices">
       <Version>1.2.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="iTextSharp">
+      <Version>5.5.13</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.1.7</Version>

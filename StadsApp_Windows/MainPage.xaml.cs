@@ -29,9 +29,11 @@ namespace StadsApp_Windows
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private IObservable<Gebruiker> gebruiker;
         public MainPage()
         {
             this.InitializeComponent();
+            //gebruiker = Globals.loggedInGebruiker;
         }
 
 		private void nvTopLevelNav_Loaded(object sender, RoutedEventArgs e)
