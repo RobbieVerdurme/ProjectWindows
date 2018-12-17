@@ -35,7 +35,7 @@ namespace StadsApp_Windows.View
             this.InitializeComponent();
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
             GeselecteerdeOnderneming = (Onderneming)e.Parameter;
