@@ -42,7 +42,7 @@ namespace StadsApp_Windows.View
 
         private async void VestigingOpslaan(object sender, RoutedEventArgs e)
         {
-			await vestigingvm.AanmakenVestigingAsync(txtNaam.Text, txtAdres.Text, "testsoort");
+			await vestigingvm.AanmakenVestigingAsync(ond.OndernemingID, txtNaam.Text, txtAdres.Text);
 		}
 
 	}
