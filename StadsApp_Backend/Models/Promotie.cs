@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using StadsApp_Backend.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StadsApp_Backend.Model
+namespace StadsApp_Windows.Model
 {
     public class Promotie
     {
