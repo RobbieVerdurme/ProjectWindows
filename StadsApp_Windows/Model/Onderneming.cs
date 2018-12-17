@@ -17,7 +17,7 @@ namespace StadsApp_Windows.Model
         public String Soort { get; set; }
 		public String Adres { get; set; }
         public List<Vestiging> Vestigingen { get; set; } = new List<Vestiging>();
-        public List<Event> Events { get; set; } = new List<Event>();
+        
 
         public Onderneming()
         {
@@ -37,8 +37,6 @@ namespace StadsApp_Windows.Model
             this.Vestigingen.Add(vestiging);
         }
 
-        public void EventToevoegen(Event evnt) {
-            this.Events.Add(evnt);
-        }
+        
     }
 }

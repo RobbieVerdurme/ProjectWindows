@@ -24,7 +24,7 @@ namespace StadsApp_Windows.View
     /// </summary>
     public sealed partial class EventAanmaken : Page
     {
-        public Onderneming GeselecteerdeOnderneming;
+        public Vestiging GeselecteerdeVestiging;
         public EventAanmakenViewModel eventAamakenvm;
 
         public EventAanmaken()
@@ -36,21 +36,21 @@ namespace StadsApp_Windows.View
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            this.GeselecteerdeOnderneming = (Onderneming)e.Parameter;
+            this.GeselecteerdeVestiging = (Vestiging)e.Parameter;
             this.DataContext = eventAamakenvm;
         }
 
         private async void EventToevoegen(object sender, RoutedEventArgs e)
         {
-            await eventAamakenvm.AanmakenEventAsync(GeselecteerdeOnderneming.OndernemingID, txtNaamEvent.Text, txtBeschrijvingEvent.Text, txtAdresEvent.Text, calDate.Date.Value);
+            await eventAamakenvm.AanmakenEventAsync(GeselecteerdeVestiging.VestigingID, txtNaamEvent.Text, txtBeschrijvingEvent.Text, calDate.Date.Value);
             ContentDialog dialog = new ContentDialog()
             {
                 Title = "Event toegevoegd",
-                Content = $"U hebt een Event toegevoegd aan {GeselecteerdeOnderneming.Naam}. Met de Naam {txtNaamEvent.Text}",
+                Content = $"U hebt een Event toegevoegd aan {GeselecteerdeVestiging.Naam}. Met de naam {txtNaamEvent.Text}",
                 CloseButtonText = "OK"
             };
             await dialog.ShowAsync();
-            this.Frame.Navigate(typeof(OndernemingDetail), GeselecteerdeOnderneming);
+            this.Frame.Navigate(typeof(DetailVestiging), GeselecteerdeVestiging);
         }
     }
 }

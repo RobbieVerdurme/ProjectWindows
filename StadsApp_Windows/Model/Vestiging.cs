@@ -16,6 +16,7 @@ namespace StadsApp_Windows.Model
         public string Adres { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
+        public List<Event> Events { get; set; } = new List<Event>();
 
         public Vestiging() { }
 
@@ -39,6 +40,11 @@ namespace StadsApp_Windows.Model
             this.Latitude = latitude;
             this.Longitude = longitude;
 
+        }
+
+        public void EventToevoegen(Event evnt)
+        {
+            this.Events.Add(evnt);
         }
 
         private void SetLatAndLong()

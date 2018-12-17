@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using StadsApp_Backend.Model;
+using StadsApp_Backend.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -12,15 +13,14 @@ namespace StadsApp_Windows.Model
 {
     public class Event
     {
-        [ForeignKey("Onderneming")]
-        public int Ondernemingsid { get; set; }
+        [ForeignKey("Vestiging")]
+        public int Vestigingid { get; set; }
         [Key]
         public int EventId { get; set; }
         public String Naam { get; set; }
         public String Beschrijving { get; set; }
-        public String Adres { get; set; }
         public DateTime Date { get; set; }
         [JsonIgnore]
-        public virtual Onderneming Onderneming { get; set; }
+        public virtual Vestiging Vestiging { get; set; }
     }
 }

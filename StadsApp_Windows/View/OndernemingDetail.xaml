@@ -18,36 +18,21 @@
             <TextBlock Text="{Binding Soort}"/>
         </StackPanel>
         <StackPanel Orientation="Vertical">
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Vestiging(en):" Width="200"/>
-            <ListView x:Name="lvVestigingen" ItemsSource="{Binding Vestigingen}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel>
-                            <TextBlock Text="{Binding Naam}"/>
-                            <TextBlock Text="{Binding Adres}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackPanel>
-        <Button Content="Vestiging toevoegen" Click="VestigingToevoegen"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Vestiging(en):" Width="200"/>
+                <ListView x:Name="lvVestigingen" ItemsSource="{Binding Vestigingen}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel DoubleTapped="StackPanel_DoubleTapped">
+                                <TextBlock Text="{Binding Naam}"/>
+                                <TextBlock Text="{Binding Adres}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+            <Button Content="Vestiging toevoegen" Click="VestigingToevoegen"/>
 
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Events:" Width="200"/>
-            <ListView x:Name="lvEvents" ItemsSource="{Binding Events}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Tapped="Event_Tapped">
-                            <TextBlock Text="{Binding Naam}"/>
-                            <TextBlock Text="{Binding Beschrijving}"/>
-                            <TextBlock Text="{Binding Adres}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackPanel>
-            <Button Content="Event toevoegen" Click="EventToevoegen"/>
         </StackPanel>
     </StackPanel>
 </Page>

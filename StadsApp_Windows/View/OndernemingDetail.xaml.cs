@@ -33,13 +33,15 @@ namespace StadsApp_Windows.View
         public OndernemingDetail()
         {
             this.InitializeComponent();
-            //detailondernemingvm = new OndernemingDetailViewModel();
+            
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
             GeselecteerdeOnderneming = (Onderneming)e.Parameter;
+            detailondernemingvm = new OndernemingDetailViewModel();
+            await detailondernemingvm.GetData();
             this.DataContext = GeselecteerdeOnderneming;
         }
 
@@ -48,36 +50,16 @@ namespace StadsApp_Windows.View
             this.Frame.Navigate(typeof(VestigingAanmaken), GeselecteerdeOnderneming);
         }
 
-        private void EventToevoegen(object sender, RoutedEventArgs e)
+        private void StackPanel_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(EventAanmaken), GeselecteerdeOnderneming);
-        }
-        /************************************************************Event In Kalender Zetten****************************************************************************/
-        private async void Event_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            var appointment = new Appointment();
-            Event evnt = GetEvent((Event)lvEvents.SelectedItem);
-
-            appointment.Subject = evnt.Naam;
-            appointment.Details = evnt.Beschrijving;
-            appointment.Location = evnt.Adres;
-            appointment.StartTime = evnt.Date;
-            appointment.AllDay = true;
-
-            var rect = OndernemingDetail.GetElementRect(this as FrameworkElement);
-            string appointmentId = await AppointmentManager.ShowAddAppointmentAsync(appointment, rect, Windows.UI.Popups.Placement.Default);
+            Vestiging v = GetVestiging((Vestiging)lvVestigingen.SelectedItem);
+            v.Events.AddRange(detailondernemingvm.Events.Where(x => x.VestigingID.Equals(v.VestigingID)));
+            this.Frame.Navigate(typeof(DetailVestiging), v);
         }
 
-        private Event GetEvent(Event selectedItem)
+        private Vestiging GetVestiging(Vestiging selectedItem)
         {
-            return GeselecteerdeOnderneming.Events.Where(x => x.EventId == selectedItem.EventId).FirstOrDefault();
-        }
-
-        public static Rect GetElementRect(FrameworkElement element)
-        {
-            GeneralTransform buttonTransform = element.TransformToVisual(null);
-            Point point = buttonTransform.TransformPoint(new Point());
-            return new Rect(point, new Size(element.ActualWidth, element.ActualHeight));
+            return GeselecteerdeOnderneming.Vestigingen.Where(x => x.VestigingID.Equals(selectedItem.VestigingID)).FirstOrDefault();
         }
     }
 }

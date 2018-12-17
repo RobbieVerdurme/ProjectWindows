@@ -18,10 +18,6 @@
             <TextBox x:Name="txtBeschrijvingEvent" PlaceholderText="Beschrijving event"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Adres"/>
-            <TextBox x:Name="txtAdresEvent" PlaceholderText="Adres event"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
             <TextBlock Text="Datum"/>
             <CalendarDatePicker x:Name="calDate" />
         </StackPanel>
