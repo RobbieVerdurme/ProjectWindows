@@ -15,7 +15,6 @@ namespace StadsApp_Windows.Model
         public String Soort { get; set; }
 		public String Adres { get; set; }
         public List<Vestiging> Vestigingen { get; set; } = new List<Vestiging>();
-        public List<Event> Events { get; set; } = new List<Event>();
         public List<Promotie> Promoties { get; set; } = new List<Promotie>();
 
         public Onderneming(){}
@@ -31,10 +30,6 @@ namespace StadsApp_Windows.Model
 		public void VestigingToevoegen(Vestiging vestiging)
         {
             this.Vestigingen.Add(vestiging);
-        }
-
-        public void EventToevoegen(Event evnt) {
-            this.Events.Add(evnt);
         }
 
         public void PromotieToevoegen(Promotie promotie)

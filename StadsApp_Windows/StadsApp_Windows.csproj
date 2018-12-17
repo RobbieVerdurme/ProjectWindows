@@ -111,6 +111,7 @@
     <Compile Include="ViewModel\DateConverter.cs" />
     <Compile Include="ViewModel\EventAanmakenViewModel.cs" />
     <Compile Include="ViewModel\OndernemingAanmakenViewModel.cs" />
+    <Compile Include="ViewModel\OndernemingDetailViewModel.cs" />
     <Compile Include="ViewModel\PromotieAanmakenViewModel.cs" />
     <Compile Include="ViewModel\VestigingAanmakenViewModel.cs" />
     <Compile Include="ViewModel\OverzichtOndernemingenViewModel.cs" />

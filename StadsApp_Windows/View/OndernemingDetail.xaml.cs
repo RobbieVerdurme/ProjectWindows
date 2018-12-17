@@ -26,6 +26,7 @@ namespace StadsApp_Windows.View
     /// </summary>
     public sealed partial class OndernemingDetail : Page
     {
+        private OndernemingDetailViewModel detailondernemingvm;
         public Onderneming GeselecteerdeOnderneming { get; set; }
 
 
@@ -38,17 +39,15 @@ namespace StadsApp_Windows.View
         {
             base.OnNavigatedTo(e);
             GeselecteerdeOnderneming = (Onderneming)e.Parameter;
+            detailondernemingvm = new OndernemingDetailViewModel();
+            await detailondernemingvm.GetData();
             this.DataContext = GeselecteerdeOnderneming;
         }
+
         /************************************************************Toevoegen****************************************************************************/
         private void VestigingToevoegen(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(VestigingAanmaken), GeselecteerdeOnderneming);
-        }
-
-        private void EventToevoegen(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(EventAanmaken), GeselecteerdeOnderneming);
         }
 
         private void PromotieToevoegen(object sender, RoutedEventArgs e)
@@ -64,7 +63,14 @@ namespace StadsApp_Windows.View
 
         private void StackPanel_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(DetailVestiging), (Vestiging)lvVestigingen.SelectedItem);
+            Vestiging v = GetVestiging((Vestiging)lvVestigingen.SelectedItem);
+            v.Events.AddRange(detailondernemingvm.Events.Where(x => x.VestigingID.Equals(v.VestigingID)));
+            this.Frame.Navigate(typeof(DetailVestiging), v);
+        }
+
+        private Vestiging GetVestiging(Vestiging selectedItem)
+        {
+            return GeselecteerdeOnderneming.Vestigingen.Where(x => x.VestigingID.Equals(selectedItem.VestigingID)).FirstOrDefault();
         }
     }
 }
