@@ -42,7 +42,8 @@ namespace StadsApp_Windows.View
 
         private async void EventToevoegen(object sender, RoutedEventArgs e)
         {
-            await eventAamakenvm.AanmakenEventAsync(GeselecteerdeVestiging.VestigingID, txtNaamEvent.Text, txtBeschrijvingEvent.Text, calDate.Date.Value);
+            Event evnt = new Event(GeselecteerdeVestiging.VestigingID, txtNaamEvent.Text, txtBeschrijvingEvent.Text, calDate.Date.Value.Date);
+            await eventAamakenvm.AanmakenEventAsync(evnt);
             ContentDialog dialog = new ContentDialog()
             {
                 Title = "Event toegevoegd",
@@ -50,6 +51,7 @@ namespace StadsApp_Windows.View
                 CloseButtonText = "OK"
             };
             await dialog.ShowAsync();
+            this.GeselecteerdeVestiging.Events.Add(evnt);
             this.Frame.Navigate(typeof(DetailVestiging), GeselecteerdeVestiging);
         }
     }
