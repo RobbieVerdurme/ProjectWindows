@@ -26,6 +26,6 @@ namespace StadsApp_Backend.Models
 
         public System.Data.Entity.DbSet<Event> Events { get; set; }
 
-        //public System.Data.Entity.DbSet<StadsApp_Backend.Model.Promotie> Promoties { get; set; }
+        public System.Data.Entity.DbSet<StadsApp_Backend.Model.Promotie> Promoties { get; set; }
     }
 }
