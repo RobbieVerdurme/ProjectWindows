@@ -12,17 +12,17 @@
         <viewmodel:DateConverter x:Key="dateConverter"/>
     </Page.Resources>
 
-    <StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Naam onderneming" Width="200"/>
-            <TextBlock Text="{Binding Naam}"/>
+    <StackPanel Padding="30 0 0 0">
+        <StackPanel Orientation="Horizontal" Padding="20">
+            <TextBlock Text="{Binding Naam}" FontWeight="Bold" FontSize="30"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
+            
+        <StackPanel Orientation="Horizontal" Padding="10">
             <TextBlock Text="Soort onderneming" Width="200"/>
-            <TextBlock Text="{Binding Soort}"/>
+            <TextBlock Text="{Binding Soort}" FontWeight="Bold"/>
         </StackPanel>
         <StackPanel Orientation="Vertical">
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Padding="20">
                 <TextBlock Text="Vestiging(en):" Width="200"/>
                 <ListView x:Name="lvVestigingen" ItemsSource="{Binding Vestigingen}">
                     <ListView.ItemTemplate>
@@ -37,7 +37,7 @@
             </StackPanel>
             <Button Content="Vestiging toevoegen" Click="VestigingToevoegen"/>
             
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Padding="20 30 20 20">
                 <TextBlock Text="Promoties:" Width="200"/>
                 <ListView x:Name="lvPromoties" ItemsSource="{Binding Promoties}">
                     <ListView.ItemTemplate>

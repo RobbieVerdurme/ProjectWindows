@@ -24,6 +24,7 @@ namespace StadsApp_Windows.ViewModel
         //constructor
         public OverzichtOndernemingenViewModel(){
             Soorten = new ObservableCollection<string>(new List<string>(new string[] { "Alle","Schoenenwinkel", "Restaurant", "Café", "Brasserie", "Hotel", "Kledingwinkel", "Supermarkt", "B&B", "Drankcentrale", "Nachtwinkel", "School", "Frituur", "Broodjeszaak", "Overige" }));
+            Soorten.OrderBy(s => s.ToString());
         }
 
 
@@ -62,7 +63,7 @@ namespace StadsApp_Windows.ViewModel
                 //o = Ondernemingen.ToList();//.Where(ond => ond.Naam.Contains("") && ond.Soort.Contains("")).ToList();
                 //o.ForEach(ond => GefilterdeLijst.Add(ond));
             }
-            return GefilterdeLijst;
+            return GefilterdeLijst.OrderBy(ond => ond.Naam).ThenBy(ond => ond.Soort);
             /*var o = new List<Onderneming>();
 
             if((soort.Trim().Equals("") || soort.Equals(null)) && (tekst.Trim().Equals("") || tekst.Equals(null))) {

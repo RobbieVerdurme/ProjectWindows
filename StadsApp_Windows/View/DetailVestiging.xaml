@@ -12,21 +12,20 @@
         <viewmodel:DateConverter x:Key="dateConverter"/>
     </Page.Resources>
     
-    <StackPanel Orientation="Vertical">
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Naam vestiging: "/>
-            <TextBlock Text="{Binding Naam}" />
+    <StackPanel Orientation="Vertical" Padding="20">
+        <StackPanel Orientation="Horizontal" Padding="20">
+            <TextBlock Text="{Binding Naam}" FontWeight="Bold" FontSize="30" />
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Adres: "/>
-            <TextBlock Text="{Binding Adres}"/>
+            <TextBlock Text="{Binding Adres}" Padding="20 0 0 0"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Events:" Width="200"/>
+            <TextBlock Text="Events:" Width="70"/>
             <ListView x:Name="lvEvents" ItemsSource="{Binding Events}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Tapped="Event_Tapped">
+                        <StackPanel Tapped="Event_Tapped" Padding="10">
                             <TextBlock Text="{Binding Naam}"/>
                             <TextBlock Text="{Binding Beschrijving}"/>
                             <TextBlock Text="{Binding Date, Converter={StaticResource dateConverter}}"/>
@@ -35,6 +34,6 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackPanel>
-        <Button Content="Event toevoegen" Click="EventToevoegen"/>
+        <Button Content="Event toevoegen" Click="EventToevoegen" Margin="0 20 0 0"/>
     </StackPanel>
 </Page>

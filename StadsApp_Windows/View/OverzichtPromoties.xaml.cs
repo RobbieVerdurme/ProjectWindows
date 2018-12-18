@@ -25,6 +25,7 @@ namespace StadsApp_Windows.View
     public sealed partial class OverzichtPromoties : Page
     {
         public OverzichtPromotiesViewModel overzichtPromotiesvm;
+        public OverzichtOndernemingenViewModel overzichtOndvm;
 
         public OverzichtPromoties()
         {
@@ -35,8 +36,19 @@ namespace StadsApp_Windows.View
         {
             base.OnNavigatedFrom(e);
             this.overzichtPromotiesvm = new OverzichtPromotiesViewModel();
+            this.overzichtOndvm = new OverzichtOndernemingenViewModel();
             await overzichtPromotiesvm.GetData();
             this.DataContext = overzichtPromotiesvm;
+            await overzichtOndvm.GetData();
+        }
+
+        private void StackPanel_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            Promotie p = (Promotie)lvPromoties.SelectedItem;
+            Onderneming o = overzichtPromotiesvm.Ondernemingen.Where(ond => ond.OndernemingID.Equals(p.OndernemingID)).FirstOrDefault();
+            o.Vestigingen.AddRange(overzichtOndvm.Vestigingen.Where(x => x.Ondernemingid.Equals(o.OndernemingID)));
+            o.Promoties.AddRange(overzichtPromotiesvm.Promoties.Where(x => x.OndernemingID.Equals(o.OndernemingID)));
+            this.Frame.Navigate(typeof(OndernemingDetail), o);
         }
     }
 }

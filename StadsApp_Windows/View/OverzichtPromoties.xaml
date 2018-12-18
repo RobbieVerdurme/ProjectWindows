@@ -13,11 +13,14 @@
     </Page.Resources>
     
     <StackPanel Orientation="Vertical">
+        <StackPanel>
+            <TextBlock Text="Vindt hier de onderneming die u zoekt" TextAlignment="Center" FontSize="25px" TextDecorations="Underline"/>
+        </StackPanel>
         <StackPanel Orientation="Vertical">
             <ListView x:Name="lvPromoties" ItemsSource="{Binding Promoties}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel>
+                        <StackPanel DoubleTapped="StackPanel_DoubleTapped">
                             <TextBlock Text="{Binding Beschrijving}"/>
                             <TextBlock Text="{Binding Percentage}"/>
                             <TextBlock Text="{Binding Van, Converter={StaticResource dateConverter}}"/>

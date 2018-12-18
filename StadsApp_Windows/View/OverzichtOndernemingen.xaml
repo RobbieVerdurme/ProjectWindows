@@ -11,17 +11,20 @@
     <ScrollViewer>
         <StackPanel Orientation="Vertical">
             <Maps:MapControl x:Name="MyMap"
-                    Height="400"/>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Zoek een onderneming"/>
+                    Height="275"/>
+            <StackPanel>
+                <TextBlock Text="Vindt hier de onderneming die u zoekt" TextAlignment="Center" FontSize="25px" TextDecorations="Underline"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Padding="10" Margin="0 10 0 0">
+                <TextBlock Text="Zoek een onderneming op naam:" Padding="0 0 10 0"/>
                 <TextBox x:Name="txtZoekOnderneming" Width="400px"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Padding="10">
                 <TextBlock Text="Categorie/Type onderneming" Width="200"/>
                 <ComboBox Width="200" x:Name="cboSoorten" ItemsSource="{Binding Soorten}"/>
             </StackPanel>
-            <Button x:Name="btnZoekOnderneming" Content="Zoek" Click="btnZoekOnderneming_Click"/>
-            <StackPanel Orientation="Vertical">
+            <Button x:Name="btnZoekOnderneming" Content="Zoek" Click="btnZoekOnderneming_Click" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+            <StackPanel Orientation="Horizontal">
                 <ListView x:Name="lvOndernemingen" ItemsSource="{Binding GefilterdeLijst}">
                      <!--<StackPanel Orientation="Horizontal">
                         <TextBlock Text="Categorie/Type onderneming" Width="200"/>
@@ -31,7 +34,7 @@
                         <DataTemplate>
                             <StackPanel DoubleTapped="StackPanel_DoubleTapped">
                                 <TextBlock Text="{Binding Naam}"/>
-                                <TextBlock Text="{Binding Adres}"/>
+                                <!--<TextBlock Text="{Binding Adres}"/>-->
                                 <TextBlock Text="{Binding Soort}"/>
                             </StackPanel>
                         </DataTemplate>

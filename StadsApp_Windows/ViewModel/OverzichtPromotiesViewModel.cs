@@ -23,6 +23,7 @@ namespace StadsApp_Windows.ViewModel
 
             var jsonPromoties = await client.GetStringAsync(new Uri("http://localhost:53331/api/promoties"));
             Promoties = JsonConvert.DeserializeObject<ObservableCollection<Promotie>>(jsonPromoties);
+            Promoties.OrderBy(x => x.Van);
             return this;
         }
     }

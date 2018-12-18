@@ -55,7 +55,14 @@ namespace StadsApp_Windows.View
         private void btnZoekOnderneming_Click(object sender, RoutedEventArgs e)
         {
             /*Zoeken in lijst van overzicht ondernemingen view model naar de tekst in txtZoekOnderneming*/
-            filter(txtZoekOnderneming.Text, overzichtvm.Soorten[cboSoorten.SelectedIndex]);
+            try
+            {
+                filter(txtZoekOnderneming.Text, overzichtvm.Soorten[cboSoorten.SelectedIndex]);
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                filter(txtZoekOnderneming.Text, "");
+            }
             //overzichtvm.ZoekOnderneming(txtZoekOnderneming.Text, overzichtvm.Soorten[cboSoorten.SelectedIndex]);
         }
 
