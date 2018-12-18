@@ -80,7 +80,7 @@ namespace StadsApp_Windows.View
             Promotie p = (Promotie)lvPromoties.SelectedItem;
 
             Document doc = new Document();
-            PdfWriter.GetInstance(doc, new FileStream("C:\\Users\\Simon Anckaert\\Desktop", FileMode.Create));
+            
             doc.Open();
             Paragraph p1 = new Paragraph("Veel plezier met uw kortingsbon!!");
             Paragraph p2 = new Paragraph($"Dankzij {GeselecteerdeOnderneming.Naam} heeft U een kortingsbon ontvangen ter waarde van {p.Percentage}%. " +
@@ -94,6 +94,7 @@ namespace StadsApp_Windows.View
             doc.Add(p4);
             doc.Add(p5);
             doc.Close();
+            PdfWriter.GetInstance(doc, new FileStream("C:\\Users\\Simon Anckaert\\Desktop", FileMode.Create));
             ContentDialog dialog = new ContentDialog()
             {
                 Title = "PDF gedownload",
