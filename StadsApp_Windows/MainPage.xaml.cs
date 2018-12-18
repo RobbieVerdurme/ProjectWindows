@@ -77,6 +77,10 @@ namespace StadsApp_Windows
 							mainFrame.Navigate(typeof(OndernemingAanmaken));
 							break;
 
+                        case "OverzichtPromoties_Page":
+                            mainFrame.Navigate(typeof(OverzichtPromoties));
+                            break;
+
 						case "Login_Page":
 							mainFrame.Navigate(typeof(Login));
 							break;
