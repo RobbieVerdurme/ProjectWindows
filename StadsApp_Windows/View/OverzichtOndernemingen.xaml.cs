@@ -55,7 +55,14 @@ namespace StadsApp_Windows.View
         private void btnZoekOnderneming_Click(object sender, RoutedEventArgs e)
         {
             /*Zoeken in lijst van overzicht ondernemingen view model naar de tekst in txtZoekOnderneming*/
-            //filter(txtZoekOnderneming.Text, overzichtvm.Soorten[cboSoorten.SelectedIndex]);
+            try
+            {
+                filter(txtZoekOnderneming.Text, overzichtvm.Soorten[cboSoorten.SelectedIndex]);
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                filter(txtZoekOnderneming.Text, "");
+            }
             //overzichtvm.ZoekOnderneming(txtZoekOnderneming.Text, overzichtvm.Soorten[cboSoorten.SelectedIndex]);
         }
 
@@ -147,8 +154,7 @@ namespace StadsApp_Windows.View
         private void StackPanel_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             Onderneming ondern = GetOnderneming((Onderneming)lvOndernemingen.SelectedItem);
-            ondern.Vestigingen.AddRange(overzichtvm.Vestigingen.Where(x => x.Ondernemingid.Equals(ondern.OndernemingID)));
-            //ondern.Events.AddRange(overzichtvm.Events.Where(x => x.OndernemingsID.Equals(ondern.OndernemingID)));
+            ondern.Vestigingen.AddRange(overzichtvm.Vestigingen.Where(x => x.Ondernemingid.Equals(ondern.OndernemingID)));            
             ondern.Promoties.AddRange(overzichtvm.Promoties.Where(x => x.OndernemingID.Equals(ondern.OndernemingID)));
             this.Frame.Navigate(typeof(OndernemingDetail), ondern);
         }

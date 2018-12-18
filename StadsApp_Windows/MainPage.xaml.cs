@@ -29,9 +29,11 @@ namespace StadsApp_Windows
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private IObservable<Gebruiker> gebruiker;
         public MainPage()
         {
             this.InitializeComponent();
+            //gebruiker = Globals.loggedInGebruiker;
         }
 
 		private void nvTopLevelNav_Loaded(object sender, RoutedEventArgs e)
@@ -74,6 +76,10 @@ namespace StadsApp_Windows
 						case "Toevoegen_Page":
 							mainFrame.Navigate(typeof(OndernemingAanmaken));
 							break;
+
+                        case "OverzichtPromoties_Page":
+                            mainFrame.Navigate(typeof(OverzichtPromoties));
+                            break;
 
 						case "Login_Page":
 							mainFrame.Navigate(typeof(Login));

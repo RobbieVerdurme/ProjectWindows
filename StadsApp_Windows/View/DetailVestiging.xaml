@@ -5,32 +5,36 @@
     xmlns:local="using:StadsApp_Windows.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodel="using:StadsApp_Windows.ViewModel"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <StackPanel Orientation="Vertical">
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Naam vestiging: "/>
-            <TextBlock Text="{Binding Naam}" />
+    <Page.Resources>
+        <viewmodel:DateConverter x:Key="dateConverter"/>
+    </Page.Resources>
+    
+    <StackPanel Orientation="Vertical" Padding="20">
+        <StackPanel Orientation="Horizontal" Padding="20">
+            <TextBlock Text="{Binding Naam}" FontWeight="Bold" FontSize="30" />
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Adres: "/>
-            <TextBlock Text="{Binding Adres}"/>
+            <TextBlock Text="{Binding Adres}" Padding="20 0 0 0"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Events:" Width="200"/>
+            <TextBlock Text="Events:" Width="70"/>
             <ListView x:Name="lvEvents" ItemsSource="{Binding Events}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Tapped="Event_Tapped">
+                        <StackPanel Tapped="Event_Tapped" Padding="10">
                             <TextBlock Text="{Binding Naam}"/>
                             <TextBlock Text="{Binding Beschrijving}"/>
-                            <TextBlock Text="{Binding Date}"/>
+                            <TextBlock Text="{Binding Date, Converter={StaticResource dateConverter}}"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </StackPanel>
-        <Button Content="Event toevoegen" Click="EventToevoegen"/>
+        <Button Content="Event toevoegen" Click="EventToevoegen" Margin="0 20 0 0"/>
+        <Button Content="Vestiging verwijderen" Click="Verwijderen" Margin="0 30 0 0 "/>
     </StackPanel>
 </Page>
