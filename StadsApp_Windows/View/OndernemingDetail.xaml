@@ -54,5 +54,6 @@
             </StackPanel>
             <Button Content="Promotie toevoegen" Click="PromotieToevoegen"/>
         </StackPanel>
+        <Button Content="Onderneming verwijderen" Click="Verwijderen" Margin="0 30 0 0"/>
     </StackPanel>
 </Page>

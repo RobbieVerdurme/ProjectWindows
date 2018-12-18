@@ -116,6 +116,12 @@ namespace StadsApp_Windows.View
         {
             return GeselecteerdeOnderneming.Vestigingen.Where(x => x.VestigingID.Equals(selectedItem.VestigingID)).FirstOrDefault();
         }
+
+        protected async void Verwijderen(object sender, RoutedEventArgs e)
+        {
+            await detailondernemingvm.VerwijderOnderneming(GeselecteerdeOnderneming);
+            this.Frame.Navigate(typeof(OverzichtOndernemingen));
+        }
     }
     //public sealed class SaveFileDialog : FileDialog { }
 }

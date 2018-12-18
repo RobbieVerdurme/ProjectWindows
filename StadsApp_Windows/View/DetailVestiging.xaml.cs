@@ -1,4 +1,5 @@
 ﻿using StadsApp_Windows.Model;
+using StadsApp_Windows.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -25,10 +26,12 @@ namespace StadsApp_Windows.View
     public sealed partial class DetailVestiging : Page
     {
         private Vestiging Vestiging;
+        private VestigingDetailViewModel vmDetail;
 
         public DetailVestiging()
         {
             this.InitializeComponent();
+            vmDetail = new VestigingDetailViewModel();
             
         }
 
@@ -70,6 +73,12 @@ namespace StadsApp_Windows.View
             GeneralTransform buttonTransform = element.TransformToVisual(null);
             Point point = buttonTransform.TransformPoint(new Point());
             return new Rect(point, new Size(element.ActualWidth, element.ActualHeight));
+        }
+
+        protected async void Verwijderen(object sender, RoutedEventArgs e)
+        {
+            await vmDetail.Verwijder(Vestiging);
+            this.Frame.Navigate(typeof(OverzichtOndernemingen));
         }
     }
 }

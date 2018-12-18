@@ -118,6 +118,7 @@
     <Compile Include="ViewModel\VestigingAanmakenViewModel.cs" />
     <Compile Include="ViewModel\OverzichtOndernemingenViewModel.cs" />
     <Compile Include="ViewModel\RegistrerenViewModel.cs" />
+    <Compile Include="ViewModel\VestigingDetailViewModel.cs" />
     <Compile Include="View\DetailVestiging.xaml.cs">
       <DependentUpon>DetailVestiging.xaml</DependentUpon>
     </Compile>

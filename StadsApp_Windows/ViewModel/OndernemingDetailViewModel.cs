@@ -25,5 +25,12 @@ namespace StadsApp_Windows.ViewModel
             Events = JsonConvert.DeserializeObject<ObservableCollection<Event>>(jsonEvents);
             return this;
         }
+
+        public async Task<OndernemingDetailViewModel> VerwijderOnderneming(Onderneming o)
+        {
+            HttpClient client = new HttpClient();
+            var json = await client.DeleteAsync(new Uri("http://localhost:53331/api/ondernemings/" + o.OndernemingID));
+            return this;
+        }
     }
 }

@@ -35,5 +35,6 @@
             </ListView>
         </StackPanel>
         <Button Content="Event toevoegen" Click="EventToevoegen" Margin="0 20 0 0"/>
+        <Button Content="Vestiging verwijderen" Click="Verwijderen" Margin="0 30 0 0 "/>
     </StackPanel>
 </Page>
