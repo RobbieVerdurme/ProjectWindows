@@ -801,7 +801,6 @@ C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bi
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\WindowsBase.dll
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\mscorlib.dll
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\netstandard.dll
-C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\obj\x86\Debug\StadsApp_Windows.csprojAssemblyReference.cache
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\obj\x86\Debug\View\DetailVestiging.g.i.cs
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\obj\x86\Debug\View\DetailVestiging.g.cs
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\obj\x86\Debug\View\OverzichtPromoties.g.i.cs
@@ -920,4 +919,4 @@ C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\ob
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\obj\x86\Debug\ProjectArchitectures.txt
-C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636758516200000000.json
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\obj\x86\Debug\StadsApp_Windows.csprojAssemblyReference.cache

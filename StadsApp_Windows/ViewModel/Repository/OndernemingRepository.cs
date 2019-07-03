@@ -50,7 +50,7 @@ namespace StadsApp_Windows.ViewModel.Repository
             Promoties = JsonConvert.DeserializeObject<ObservableCollection<Promotie>>(jsonPromoties);
 
             //soorten onderneming
-            //var jsonSoorten = await client.GetStringAsync(new Uri($"{BaseUrl}/soorten"));
+            //var jsonSoorten = await client.GetStringAsync(new Uri($"{BaseUrl}/soortondernemings"));
             //Soorten = JsonConvert.DeserializeObject<ObservableCollection<String>>(jsonSoorten);
             Soorten = new ObservableCollection<string>(new List<string>(new string[] { "Alle", "Schoenenwinkel", "Restaurant", "Café", "Brasserie", "Hotel", "Kledingwinkel", "Supermarkt", "B&B", "Drankcentrale", "Nachtwinkel", "School", "Frituur", "Broodjeszaak", "Overige" }));
         }

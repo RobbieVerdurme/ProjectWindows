@@ -250,7 +250,6 @@ C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bi
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csi.exe.config
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csi.rsp
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
@@ -328,7 +327,6 @@ C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bi
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.dll
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.Razor.dll
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\WebGrease.dll
-C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Net.Http.Formatting.xml
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Http.xml
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Http.Owin.xml
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Http.WebHost.xml
@@ -361,10 +359,10 @@ C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bi
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.Web.xml
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csprojAssemblyReference.cache
-C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.Migrations.initial.resources
-C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.GenerateResource.cache
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.CoreCompileInputs.cache
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.CopyComplete
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.dll
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.pdb
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csprojAssemblyReference.cache
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.Migrations.inital.resources
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.GenerateResource.cache
