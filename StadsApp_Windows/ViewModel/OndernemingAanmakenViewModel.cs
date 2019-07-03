@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using StadsApp_Windows.Model;
+using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,26 +13,21 @@ namespace StadsApp_Windows.ViewModel
 {
 	public class OndernemingAanmakenViewModel
 	{
+        //var
+        private OndernemingRepository OndernemingRepo;
         public ObservableCollection<String> Soorten { get; set;}
 
-        public OndernemingAanmakenViewModel() {
-            Soorten = new ObservableCollection<string>(new List<string>(new string[] { "Schoenenwinkel", "Restaurant", "Café", "Brasserie", "Hotel", "Kledingwinkel", "Supermarkt", "B&B", "Drankcentrale", "Nachtwinkel", "School", "Frituur", "Broodjeszaak", "Overige" }));
+
+        //constr
+        public OndernemingAanmakenViewModel(OndernemingRepository ondRepo) {
+            this.OndernemingRepo = ondRepo;
+            this.Soorten = ondRepo.Soorten;
         }
 
+        //meth
         public async Task AanmakenOndernemingAsync(Onderneming onderneming)
 		{
-			var ondernemingJson = JsonConvert.SerializeObject(onderneming);
-
-			HttpClient client = new HttpClient();
-
-			var res = await client.PostAsync("http://localhost:53331/api/ondernemings",
-				new StringContent(ondernemingJson,
-				System.Text.Encoding.UTF8, "application/json"));
-			if (res.StatusCode == System.Net.HttpStatusCode.Created)
-			{
-				//success
-				//lst.Add(onderneming);
-			}
+            await OndernemingRepo.AanmakenOndernemingAsync(onderneming);
 		}
 
 	}

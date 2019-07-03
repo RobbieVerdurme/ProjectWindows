@@ -114,7 +114,9 @@
     <Compile Include="ViewModel\OndernemingAanmakenViewModel.cs" />
     <Compile Include="ViewModel\OndernemingDetailViewModel.cs" />
     <Compile Include="ViewModel\OverzichtPromotiesViewModel.cs" />
+    <Compile Include="ViewModel\ParamDTO\ParamDTO.cs" />
     <Compile Include="ViewModel\PromotieAanmakenViewModel.cs" />
+    <Compile Include="ViewModel\Repository\OndernemingRepository.cs" />
     <Compile Include="ViewModel\VestigingAanmakenViewModel.cs" />
     <Compile Include="ViewModel\OverzichtOndernemingenViewModel.cs" />
     <Compile Include="ViewModel\RegistrerenViewModel.cs" />

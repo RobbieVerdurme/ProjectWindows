@@ -1,4 +1,5 @@
 ﻿using StadsApp_Windows.Model;
+using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +9,21 @@ using System.Threading.Tasks;
 
 namespace StadsApp_Windows.ViewModel
 {
-    class VestigingDetailViewModel
+    public class VestigingDetailViewModel
     {
-        public async Task<VestigingDetailViewModel> Verwijder(Vestiging v)
+        //var
+        private OndernemingRepository OndernemingRepo;
+
+        //constr
+        public VestigingDetailViewModel(OndernemingRepository ondRepo)
         {
-            HttpClient client = new HttpClient();
-            var json = await client.DeleteAsync(new Uri("http://localhost:53331/api/vestigings/" + v.VestigingID));
-            return this;
+            this.OndernemingRepo = ondRepo;
+        }
+
+        //meth
+        public async Task VerwijderVestigingAsync(Vestiging v)
+        {
+            await OndernemingRepo.VerwijderVestigingAsync(v);
         }
     }
 }

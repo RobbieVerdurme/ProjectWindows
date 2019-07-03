@@ -1,0 +1,370 @@
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\ApplicationInsights.config
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\StadsApp_Backend.dll.config
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\StadsApp_Backend.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\StadsApp_Backend.pdb
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csc.exe
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csc.exe.config
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csc.rsp
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csi.exe
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csi.exe.config
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csi.rsp
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.AppContext.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Console.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.IO.Compression.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.ValueTuple.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\vbc.exe
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\vbc.exe.config
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\vbc.rsp
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\VBCSCompiler.exe
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\Antlr3.Runtime.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\EntityFramework.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\EntityFramework.SqlServer.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.Web.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\Newtonsoft.Json.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Net.Http.Formatting.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Helpers.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Http.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Http.WebHost.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Mvc.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Optimization.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Razor.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.Razor.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\WebGrease.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\EntityFramework.xml
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\EntityFramework.SqlServer.xml
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\Newtonsoft.Json.xml
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Net.Http.Formatting.xml
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Helpers.xml
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Http.xml
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Http.WebHost.xml
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Mvc.xml
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Optimization.xml
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Razor.xml
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.xml
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.Razor.xml
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\Antlr3.Runtime.pdb
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.Web.xml
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csprojAssemblyReference.cache
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.CoreCompileInputs.cache
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.CopyComplete
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.pdb
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Net.Http.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.Claims.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.Migrations.initial.resources
+C:\Users\Boeferrob\Desktop\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.GenerateResource.cache
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\ApplicationInsights.config
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\StadsApp_Backend.dll.config
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\StadsApp_Backend.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\StadsApp_Backend.pdb
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csc.exe
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csc.exe.config
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csc.rsp
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csi.exe
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csi.exe.config
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csi.rsp
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.AppContext.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Console.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.IO.Compression.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.Claims.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.ValueTuple.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\vbc.exe
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\vbc.exe.config
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\vbc.rsp
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\VBCSCompiler.exe
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Antlr3.Runtime.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\EntityFramework.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\EntityFramework.SqlServer.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.Web.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Newtonsoft.Json.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Net.Http.Formatting.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Helpers.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Http.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Http.WebHost.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Mvc.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Optimization.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Razor.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.Razor.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\WebGrease.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\EntityFramework.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\EntityFramework.SqlServer.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Newtonsoft.Json.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Net.Http.Formatting.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Helpers.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Http.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Http.WebHost.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Mvc.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Optimization.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Razor.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.Razor.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Antlr3.Runtime.pdb
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.Web.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csprojAssemblyReference.cache
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.CoreCompileInputs.cache
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.CopyComplete
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.pdb
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Owin.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Http.Owin.dll
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Http.Owin.xml
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.Migrations.initial.resources
+C:\Users\Boeferrob\Google Drive\School\Hogent\3deJaar\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.GenerateResource.cache
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\ApplicationInsights.config
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\StadsApp_Backend.dll.config
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\StadsApp_Backend.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\StadsApp_Backend.pdb
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csc.exe
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csc.exe.config
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csc.rsp
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csi.exe
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csi.exe.config
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\csi.rsp
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.AppContext.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Console.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.IO.Compression.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.Claims.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.ValueTuple.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\vbc.exe
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\vbc.exe.config
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\vbc.rsp
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\VBCSCompiler.exe
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Antlr3.Runtime.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\EntityFramework.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\EntityFramework.SqlServer.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.Web.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Newtonsoft.Json.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Owin.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Helpers.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Http.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Http.Owin.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Http.WebHost.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Mvc.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Optimization.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Razor.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.Razor.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\WebGrease.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Net.Http.Formatting.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Http.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Http.Owin.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Http.WebHost.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Newtonsoft.Json.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Helpers.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Mvc.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Optimization.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.Razor.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Web.WebPages.Razor.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Antlr3.Runtime.pdb
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\EntityFramework.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\EntityFramework.SqlServer.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.Web.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csprojAssemblyReference.cache
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.Migrations.initial.resources
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.GenerateResource.cache
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.CoreCompileInputs.cache
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.CopyComplete
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.pdb

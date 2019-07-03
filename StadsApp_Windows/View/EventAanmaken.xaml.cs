@@ -1,18 +1,10 @@
 ﻿using StadsApp_Windows.Model;
 using StadsApp_Windows.ViewModel;
+using StadsApp_Windows.ViewModel.ParamDTO;
+using StadsApp_Windows.ViewModel.Repository;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -24,19 +16,25 @@ namespace StadsApp_Windows.View
     /// </summary>
     public sealed partial class EventAanmaken : Page
     {
+        //var
         public Vestiging GeselecteerdeVestiging;
         public EventAanmakenViewModel eventAamakenvm;
+        private OndernemingRepository OndernemingRepo;
 
+        //constr
         public EventAanmaken()
         {
             this.InitializeComponent();
-            eventAamakenvm = new EventAanmakenViewModel();
         }
 
+        //meth
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            this.GeselecteerdeVestiging = (Vestiging)e.Parameter;
+            ParamDTO param = (ParamDTO)e.Parameter;
+            this.GeselecteerdeVestiging = param.gekozenVestiging;
+            this.OndernemingRepo = param.ondernemingRepo;
+            eventAamakenvm = new EventAanmakenViewModel(param.ondernemingRepo);
             this.DataContext = eventAamakenvm;
         }
 
@@ -44,15 +42,12 @@ namespace StadsApp_Windows.View
         {
             Event evnt = new Event(GeselecteerdeVestiging.VestigingID, txtNaamEvent.Text, txtBeschrijvingEvent.Text, calDate.Date.Value.Date);
             await eventAamakenvm.AanmakenEventAsync(evnt);
-            ContentDialog dialog = new ContentDialog()
-            {
-                Title = "Event toegevoegd",
-                Content = $"U hebt een Event toegevoegd aan {GeselecteerdeVestiging.Naam}. Met de naam {txtNaamEvent.Text}",
-                CloseButtonText = "OK"
-            };
-            await dialog.ShowAsync();
             this.GeselecteerdeVestiging.Events.Add(evnt);
-            this.Frame.Navigate(typeof(DetailVestiging), GeselecteerdeVestiging);
+            this.Frame.Navigate(typeof(DetailVestiging), new ParamDTO()
+            {
+                ondernemingRepo = this.OndernemingRepo,
+                gekozenVestiging = this.GeselecteerdeVestiging
+            });
         }
     }
 }

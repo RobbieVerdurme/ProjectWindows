@@ -1,6 +1,8 @@
 ﻿using GoogleMaps.LocationServices;
 using StadsApp_Windows.Model;
 using StadsApp_Windows.ViewModel;
+using StadsApp_Windows.ViewModel.ParamDTO;
+using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -30,7 +32,7 @@ namespace StadsApp_Windows.View
     public sealed partial class OverzichtOndernemingen : Page
     {
         private OverzichtOndernemingenViewModel overzichtvm;
-        //public ObservableCollection<string> Soorten;
+        private OndernemingRepository ondernemingRepo;
 
         public OverzichtOndernemingen()
         {
@@ -41,13 +43,11 @@ namespace StadsApp_Windows.View
 		protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            overzichtvm = new OverzichtOndernemingenViewModel();
-            await overzichtvm.GetData();
+            this.ondernemingRepo = (OndernemingRepository)e.Parameter;
+            overzichtvm = new OverzichtOndernemingenViewModel(ondernemingRepo);
             this.DataContext = overzichtvm;
             this.cboSoorten.SelectedValue = "Alle";
             ShowMapAsync();
-			
-            //this.cboSoorten.SelectedIndex = 0;
             ToonVestigingenOpMap();
         }
 
@@ -128,18 +128,22 @@ namespace StadsApp_Windows.View
         private void ToonVestigingenOpMap()
         {
             BasicGeoposition geoposition = new BasicGeoposition();
-            foreach (Vestiging vestiging in overzichtvm.Vestigingen) {
-                geoposition.Latitude = vestiging.Latitude;
-                geoposition.Longitude = vestiging.Longitude;
+            if(overzichtvm.Vestigingen != null)
+            {
+                foreach (Vestiging vestiging in overzichtvm.Vestigingen)
+                {
+                    geoposition.Latitude = vestiging.Latitude;
+                    geoposition.Longitude = vestiging.Longitude;
 
-                Geopoint location = new Geopoint(geoposition);
-                MapIcon mapicon = new MapIcon();
+                    Geopoint location = new Geopoint(geoposition);
+                    MapIcon mapicon = new MapIcon();
 
-                mapicon.Location = location;
-                mapicon.NormalizedAnchorPoint = new Point(0.5, 1.0);
-                mapicon.Title = vestiging.Naam;
-                mapicon.ZIndex = 0;
-                MyMap.MapElements.Add(mapicon);
+                    mapicon.Location = location;
+                    mapicon.NormalizedAnchorPoint = new Point(0.5, 1.0);
+                    mapicon.Title = vestiging.Naam;
+                    mapicon.ZIndex = 0;
+                    MyMap.MapElements.Add(mapicon);
+                }
             }
         }
 
@@ -148,15 +152,21 @@ namespace StadsApp_Windows.View
 
         private Onderneming GetOnderneming(Onderneming selectedItem)
         {
+            //repo?
             return overzichtvm.Ondernemingen.Where(x => x.OndernemingID == selectedItem.OndernemingID).FirstOrDefault();
         }
 
         private void StackPanel_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
+            //repo?
             Onderneming ondern = GetOnderneming((Onderneming)lvOndernemingen.SelectedItem);
             ondern.Vestigingen.AddRange(overzichtvm.Vestigingen.Where(x => x.Ondernemingid.Equals(ondern.OndernemingID)));            
             ondern.Promoties.AddRange(overzichtvm.Promoties.Where(x => x.OndernemingID.Equals(ondern.OndernemingID)));
-            this.Frame.Navigate(typeof(OndernemingDetail), ondern);
+            this.Frame.Navigate(typeof(OndernemingDetail), new ParamDTO()
+            {
+                gekozenOnderneming = ondern,
+                ondernemingRepo = this.ondernemingRepo
+            });
         }
 
     }

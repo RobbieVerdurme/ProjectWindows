@@ -1,0 +1,60 @@
+﻿<Page
+    x:Class="StadsApp_Windows.View.OndernemingDetail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StadsApp_Windows.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodel="using:StadsApp_Windows.ViewModel"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <viewmodel:DateConverter x:Key="dateConverter"/>
+    </Page.Resources>
+
+    <StackPanel Padding="30 0 0 0">
+        <StackPanel Orientation="Horizontal" Padding="20">
+            <TextBlock Text="{Binding Naam}" FontWeight="Bold" FontSize="30"/>
+        </StackPanel>
+            
+        <StackPanel Orientation="Horizontal" Padding="10">
+            <TextBlock Text="Soort onderneming" Width="200"/>
+            <TextBlock Text="{Binding Soort}" FontWeight="Bold"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" Padding="20">
+                <TextBlock Text="Vestiging(en):" Width="200"/>
+                <ListView x:ConnectionId='7' x:Name="lvVestigingen" ItemsSource="{Binding Vestigingen}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel x:ConnectionId='8'                                       >
+                                <TextBlock Text="{Binding Naam}"/>
+                                <TextBlock Text="{Binding Adres}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+            <Button x:ConnectionId='3' Content="Vestiging toevoegen"                           />
+            
+            <StackPanel Orientation="Horizontal" Padding="20 30 20 20">
+                <TextBlock Text="Promoties:" Width="200"/>
+                <ListView x:ConnectionId='5' x:Name="lvPromoties" ItemsSource="{Binding Promoties}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel x:ConnectionId='6'                         >
+                                <TextBlock Text="{Binding Beschrijving}"/>
+                                <TextBlock Text="{Binding Percentage}"/>
+                                <TextBlock Text="{Binding Van, Converter={StaticResource dateConverter}}"/>
+                                <TextBlock Text="{Binding Tot, Converter={StaticResource dateConverter}}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+            <Button x:ConnectionId='4' Content="Promotie toevoegen"                          />
+        </StackPanel>
+        <Button x:ConnectionId='2' Content="Onderneming verwijderen"                     Margin="0 30 0 0"/>
+    </StackPanel>
+</Page>
+

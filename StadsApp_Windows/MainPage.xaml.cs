@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using StadsApp_Windows.Model;
 using StadsApp_Windows.View;
+using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -29,13 +30,19 @@ namespace StadsApp_Windows
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        //var
+        private OndernemingRepository OndernemingRepo;
         private IObservable<Gebruiker> gebruiker;
+
+        //constr
         public MainPage()
         {
             this.InitializeComponent();
+            OndernemingRepo = new OndernemingRepository();
             //gebruiker = Globals.loggedInGebruiker;
         }
 
+        //meth
 		private void nvTopLevelNav_Loaded(object sender, RoutedEventArgs e)
 		{
 			// set the initial SelectedItem
@@ -48,11 +55,7 @@ namespace StadsApp_Windows
 				}
 			}
 
-			mainFrame.Navigate(typeof(OverzichtOndernemingen));
-		}
-
-		private void nvTopLevelNav_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
-		{
+			mainFrame.Navigate(typeof(OverzichtOndernemingen), OndernemingRepo);
 		}
 
 		private void nvTopLevelNav_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
@@ -70,15 +73,15 @@ namespace StadsApp_Windows
 					switch (ItemContent.Tag)
 					{
 						case "Overzicht_Page":
-							mainFrame.Navigate(typeof(OverzichtOndernemingen));
+							mainFrame.Navigate(typeof(OverzichtOndernemingen), OndernemingRepo);
 							break;
 
 						case "Toevoegen_Page":
-							mainFrame.Navigate(typeof(OndernemingAanmaken));
+							mainFrame.Navigate(typeof(OndernemingAanmaken), OndernemingRepo);
 							break;
 
                         case "OverzichtPromoties_Page":
-                            mainFrame.Navigate(typeof(OverzichtPromoties));
+                            mainFrame.Navigate(typeof(OverzichtPromoties), OndernemingRepo);
                             break;
 
 						case "Login_Page":

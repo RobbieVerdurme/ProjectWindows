@@ -1,5 +1,7 @@
 ﻿using StadsApp_Windows.Model;
 using StadsApp_Windows.ViewModel;
+using StadsApp_Windows.ViewModel.ParamDTO;
+using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -26,19 +28,25 @@ namespace StadsApp_Windows.View
     /// </summary>
     public sealed partial class VestigingAanmaken : Page
     {
+        //var
         private VestigingAanmakenViewModel vestigingvm;
         private Onderneming GeselecteerdeOnderneming { get; set; }
+        private OndernemingRepository OndernemingRepo;
 
+        //constr
         public VestigingAanmaken()
         {
             this.InitializeComponent();
-            vestigingvm = new VestigingAanmakenViewModel();
         }
 
+        //meth
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedFrom(e);
-            GeselecteerdeOnderneming = (Onderneming)e.Parameter;
+            ParamDTO param = (ParamDTO)e.Parameter;
+            this.GeselecteerdeOnderneming = param.gekozenOnderneming;
+            this.OndernemingRepo = param.ondernemingRepo;
+            vestigingvm = new VestigingAanmakenViewModel(param.ondernemingRepo);
             this.DataContext = vestigingvm;
         }
 
@@ -46,14 +54,12 @@ namespace StadsApp_Windows.View
         {
             Vestiging vestiging = new Vestiging(GeselecteerdeOnderneming.OndernemingID, txtNaam.Text, txtAdres.Text);
             await vestigingvm.AanmakenVestigingAsync(vestiging);
-            ContentDialog dialog = new ContentDialog() {
-                Title = "Vestiging toegevoegd",
-                Content = $"U hebt een vestiging toegevoegd aan {GeselecteerdeOnderneming.Naam}. Met de naam {txtNaam.Text} en adres {txtAdres.Text}",
-                CloseButtonText = "OK"
-            };
-            await dialog.ShowAsync();
             GeselecteerdeOnderneming.Vestigingen.Add(vestiging);
-            this.Frame.Navigate(typeof(OndernemingDetail), GeselecteerdeOnderneming);
+            this.Frame.Navigate(typeof(OndernemingDetail), new ParamDTO()
+            {
+                gekozenOnderneming = this.GeselecteerdeOnderneming,
+                ondernemingRepo = this.OndernemingRepo
+            });
 		}
 
 	}

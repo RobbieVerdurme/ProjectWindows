@@ -1,5 +1,6 @@
 ﻿using StadsApp_Windows.Model;
 using StadsApp_Windows.ViewModel;
+using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,26 +25,28 @@ namespace StadsApp_Windows.View
     /// </summary>
     public sealed partial class OverzichtPromoties : Page
     {
+        //var
         public OverzichtPromotiesViewModel overzichtPromotiesvm;
         public OverzichtOndernemingenViewModel overzichtOndvm;
-
+        private OndernemingRepository OndernemingRepo;
+        //constr
         public OverzichtPromoties()
         {
             this.InitializeComponent();
         }
-
+        //meth
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedFrom(e);
-            this.overzichtPromotiesvm = new OverzichtPromotiesViewModel();
-            this.overzichtOndvm = new OverzichtOndernemingenViewModel();
-            await overzichtPromotiesvm.GetData();
+            this.OndernemingRepo = (OndernemingRepository)e.Parameter;
+            this.overzichtPromotiesvm = new OverzichtPromotiesViewModel(OndernemingRepo);
+            this.overzichtOndvm = new OverzichtOndernemingenViewModel(OndernemingRepo);
             this.DataContext = overzichtPromotiesvm;
-            await overzichtOndvm.GetData();
         }
 
         private void StackPanel_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
+            //repo?
             Promotie p = (Promotie)lvPromoties.SelectedItem;
             Onderneming o = overzichtPromotiesvm.Ondernemingen.Where(ond => ond.OndernemingID.Equals(p.OndernemingID)).FirstOrDefault();
             o.Vestigingen.AddRange(overzichtOndvm.Vestigingen.Where(x => x.Ondernemingid.Equals(o.OndernemingID)));
