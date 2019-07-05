@@ -80,14 +80,14 @@ namespace StadsApp_Windows
                         case "OverzichtPromoties_Page":
                             mainFrame.Navigate(typeof(OverzichtPromoties));
                             break;
-
-						case "Login_Page":
-							mainFrame.Navigate(typeof(Login));
-							break;
-
 					}
 				}
 			}
 		}
-	}
+
+        private void UserButton_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            mainFrame.Navigate(typeof(Login));
+        }
+    }
 }

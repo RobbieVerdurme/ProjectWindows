@@ -328,6 +328,11 @@ namespace StadsApp_Backend.Controllers
                 return BadRequest(ModelState);
             }
 
+            if(model.Email is null || model.Password is null)
+            {
+                return BadRequest("invalid email or password");
+            }
+
             var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
