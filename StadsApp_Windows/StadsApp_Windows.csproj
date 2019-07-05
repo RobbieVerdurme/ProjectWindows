@@ -99,6 +99,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\AccountBindingModels.cs" />
+    <Compile Include="Model\ApiError.cs" />
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\Gebruiker.cs" />
     <Compile Include="Model\Globals.cs" />

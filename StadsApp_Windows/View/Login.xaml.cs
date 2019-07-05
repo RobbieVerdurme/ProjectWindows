@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using StadsApp_Backend.Models;
 using StadsApp_Windows.Model;
 using StadsApp_Windows.ViewModel;
 using System;
@@ -60,12 +61,22 @@ namespace StadsApp_Windows.View
 
 			request.Content = new FormUrlEncodedContent(keyValues);
 			var response = await client.SendAsync(request);
-			
-			//Log error message
+
+            //Log error message
+            String content = await response.Content.ReadAsStringAsync();
 			if (!response.IsSuccessStatusCode)
 			{
-				ErrorMessage.Text = response.StatusCode + " " + response.ReasonPhrase;
-				return;
+                ApiError error = JsonConvert.DeserializeObject<ApiError>(content);
+
+                if(error.Error == "invalid_grant")
+                {
+                    ErrorMessage.Text = "Invalid credentials";
+                }
+                else
+                {
+                    ErrorMessage.Text = error.Error + " " + error.ErrorDescription;
+                }
+                return;
 			}
 
 			//Save user in global variables
