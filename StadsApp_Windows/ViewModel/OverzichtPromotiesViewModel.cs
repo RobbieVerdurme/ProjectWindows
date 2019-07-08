@@ -1,30 +1,30 @@
-﻿using Newtonsoft.Json;
-using StadsApp_Windows.Model;
-using System;
-using System.Collections.Generic;
+﻿using StadsApp_Windows.Model;
+using StadsApp_Windows.ViewModel.Repository;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StadsApp_Windows.ViewModel
 {
     public class OverzichtPromotiesViewModel
     {
+        //var
         public ObservableCollection<Onderneming> Ondernemingen { get; set; }
         public ObservableCollection<Promotie> Promoties { get; set; }
+        private OndernemingRepository OndernemingRepo;
 
-        public async Task<OverzichtPromotiesViewModel> GetData()
+        //const
+        public OverzichtPromotiesViewModel(OndernemingRepository ondRepo)
         {
-            HttpClient client = new HttpClient();
-            var json = await client.GetStringAsync(new Uri("http://localhost:53331/api/ondernemings"));
-            Ondernemingen = JsonConvert.DeserializeObject<ObservableCollection<Onderneming>>(json);
+            this.OndernemingRepo = ondRepo;
+            vulData();
+        }
 
-            var jsonPromoties = await client.GetStringAsync(new Uri("http://localhost:53331/api/promoties"));
-            Promoties = JsonConvert.DeserializeObject<ObservableCollection<Promotie>>(jsonPromoties);
-            Promoties.OrderBy(x => x.Van);
-            return this;
+        //meth
+        public void vulData()
+        {
+            this.Ondernemingen = OndernemingRepo.Ondernemingen;
+            this.Promoties = OndernemingRepo.Promoties;
+            this.Promoties.OrderBy(x => x.Van);
         }
     }
 }

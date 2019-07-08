@@ -1,5 +1,7 @@
 ﻿using StadsApp_Windows.Model;
 using StadsApp_Windows.ViewModel;
+using StadsApp_Windows.ViewModel.ParamDTO;
+using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -25,27 +27,42 @@ namespace StadsApp_Windows.View
     /// </summary>
     public sealed partial class DetailVestiging : Page
     {
+        //var
         private Vestiging Vestiging;
         private VestigingDetailViewModel vmDetail;
+        private OndernemingRepository OndernemingRepo;
 
+        //constr
         public DetailVestiging()
         {
             this.InitializeComponent();
-            vmDetail = new VestigingDetailViewModel();
-            
         }
 
+        //meth
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            Vestiging = (Vestiging)e.Parameter;
+            ParamDTO param = (ParamDTO)e.Parameter;
+            this.OndernemingRepo = param.ondernemingRepo;
+            this.Vestiging = param.gekozenVestiging;
+            vmDetail = new VestigingDetailViewModel(param.ondernemingRepo);
             this.DataContext = Vestiging;
         }
 
         private void EventToevoegen(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(EventAanmaken), Vestiging);
+            this.Frame.Navigate(typeof(EventAanmaken), new ParamDTO() {
+            gekozenVestiging = this.Vestiging,
+            ondernemingRepo = this.OndernemingRepo
+            });
         }
+
+        protected async void Verwijderen(object sender, RoutedEventArgs e)
+        {
+            await vmDetail.VerwijderVestigingAsync(Vestiging);
+            this.Frame.Navigate(typeof(OverzichtOndernemingen), this.OndernemingRepo);
+        }
+
         /************************************************************Event In Kalender Zetten****************************************************************************/
         private async void Event_Tapped(object sender, TappedRoutedEventArgs e)
         {
@@ -62,23 +79,17 @@ namespace StadsApp_Windows.View
             var rect = GetElementRect(this as FrameworkElement);
             string appointmentId = await AppointmentManager.ShowAddAppointmentAsync(appointment, rect, Windows.UI.Popups.Placement.Default);
         }
-
+        
         private Event GetEvent(Event selectedItem)
         {
             return Vestiging.Events.Where(x => x.EventId == selectedItem.EventId).FirstOrDefault();
         }
 
-        public static Rect GetElementRect(FrameworkElement element)
+        private static Rect GetElementRect(FrameworkElement element)
         {
             GeneralTransform buttonTransform = element.TransformToVisual(null);
             Point point = buttonTransform.TransformPoint(new Point());
             return new Rect(point, new Size(element.ActualWidth, element.ActualHeight));
-        }
-
-        protected async void Verwijderen(object sender, RoutedEventArgs e)
-        {
-            await vmDetail.Verwijder(Vestiging);
-            this.Frame.Navigate(typeof(OverzichtOndernemingen));
         }
     }
 }

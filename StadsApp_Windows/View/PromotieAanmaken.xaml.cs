@@ -1,5 +1,7 @@
 ﻿using StadsApp_Windows.Model;
 using StadsApp_Windows.ViewModel;
+using StadsApp_Windows.ViewModel.ParamDTO;
+using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,19 +26,25 @@ namespace StadsApp_Windows.View
     /// </summary>
     public sealed partial class PromotieAanmaken : Page
     {
+        //var
         public PromotieAanmakenViewModel promotievm;
         public Onderneming GeselecteerdeOnderneming;
+        private OndernemingRepository OndernemingRepo;
 
+        //constr
         public PromotieAanmaken()
         {
-            this.InitializeComponent();
-            promotievm = new PromotieAanmakenViewModel(); 
+            this.InitializeComponent();   
         }
 
+        //meth
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            GeselecteerdeOnderneming = (Onderneming)e.Parameter;
+            ParamDTO param = (ParamDTO)e.Parameter;
+            this.GeselecteerdeOnderneming = param.gekozenOnderneming;
+            this.OndernemingRepo = param.ondernemingRepo;
+            promotievm = new PromotieAanmakenViewModel(OndernemingRepo);
             this.DataContext = promotievm;
         }
 
@@ -45,15 +53,12 @@ namespace StadsApp_Windows.View
             double percentage;
             Promotie promotie = new Promotie(GeselecteerdeOnderneming.OndernemingID, Double.TryParse(txtPercentagePromotie.Text, out percentage) ? percentage : 0.0, txtBeschrijvingPromotie.Text, calVan.Date.Value.Date, calTot.Date.Value.Date);
             await promotievm.AanmakenPromotieAsync(promotie);
-            ContentDialog dialog = new ContentDialog()
-            {
-                Title = "Promotie toegevoegd",
-                Content = $"U hebt een Promotie toegevoegd aan {GeselecteerdeOnderneming.Naam}. Met de beschrijving {txtBeschrijvingPromotie.Text} en een percentage van {percentage}",
-                CloseButtonText = "OK"
-            };
-            await dialog.ShowAsync();
             GeselecteerdeOnderneming.Promoties.Add(promotie);
-            this.Frame.Navigate(typeof(OndernemingDetail), GeselecteerdeOnderneming);
+            this.Frame.Navigate(typeof(OndernemingDetail), new ParamDTO()
+            {
+                gekozenOnderneming = this.GeselecteerdeOnderneming,
+                ondernemingRepo = this.OndernemingRepo
+            });
         }
     }
 }

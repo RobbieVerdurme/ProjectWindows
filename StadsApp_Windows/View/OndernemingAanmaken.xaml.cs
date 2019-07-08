@@ -1,5 +1,6 @@
 ﻿using StadsApp_Windows.Model;
 using StadsApp_Windows.ViewModel;
+using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -26,14 +27,22 @@ namespace StadsApp_Windows.View
     /// </summary>
     public sealed partial class OndernemingAanmaken : Page
     {
+        //var
         private OndernemingAanmakenViewModel ondernemingvm;
+        private OndernemingRepository OndernemingRepo;
         
-
+        //constr
         public OndernemingAanmaken()
         {
             this.InitializeComponent();
-            ondernemingvm = new OndernemingAanmakenViewModel();
-            
+        }
+
+        //meth
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            this.OndernemingRepo = (OndernemingRepository)e.Parameter;
+            ondernemingvm = new OndernemingAanmakenViewModel(OndernemingRepo);
             this.DataContext = ondernemingvm;
         }
 
@@ -46,14 +55,7 @@ namespace StadsApp_Windows.View
                 Soort = ondernemingvm.Soorten[cboSoort.SelectedIndex]
             };
             await ondernemingvm.AanmakenOndernemingAsync(onderneming);
-            ContentDialog dialog = new ContentDialog()
-            {
-                Title = "Onderneming toegevoegd",
-                Content = $"U hebt een onderneming toegevoegd. Met de Naam {txtNaam.Text} en adres voor het hoofdkantoor {txtAdres.Text}",
-                CloseButtonText = "OK"
-            };
-            await dialog.ShowAsync();
-            this.Frame.Navigate(typeof( OverzichtOndernemingen));
+            this.Frame.Navigate(typeof(OverzichtOndernemingen), OndernemingRepo);
         }
     }
 }

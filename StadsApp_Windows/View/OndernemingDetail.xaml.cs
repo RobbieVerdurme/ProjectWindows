@@ -2,6 +2,8 @@
 using iTextSharp.text.pdf;
 using StadsApp_Windows.Model;
 using StadsApp_Windows.ViewModel;
+using StadsApp_Windows.ViewModel.ParamDTO;
+using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -28,33 +30,43 @@ namespace StadsApp_Windows.View
     /// </summary>
     public sealed partial class OndernemingDetail : Page
     {
+        //var
         private OndernemingDetailViewModel detailondernemingvm;
+        private OndernemingRepository OndernemingRepo;
         public Onderneming GeselecteerdeOnderneming { get; set; }
 
-
+        //constr
         public OndernemingDetail()
         {
             this.InitializeComponent();
         }
 
+        //meth
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            GeselecteerdeOnderneming = (Onderneming)e.Parameter;
-            detailondernemingvm = new OndernemingDetailViewModel();
-            await detailondernemingvm.GetData();
+            ParamDTO param = (ParamDTO)e.Parameter;
+            this.OndernemingRepo = param.ondernemingRepo;
+            this.GeselecteerdeOnderneming = param.gekozenOnderneming;
+            this.detailondernemingvm = new OndernemingDetailViewModel(param.ondernemingRepo, param.gekozenOnderneming);
             this.DataContext = GeselecteerdeOnderneming;
         }
 
         /************************************************************Toevoegen****************************************************************************/
         private void VestigingToevoegen(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(VestigingAanmaken), GeselecteerdeOnderneming);
+            this.Frame.Navigate(typeof(VestigingAanmaken), new ParamDTO() {
+            gekozenOnderneming = this.GeselecteerdeOnderneming,
+            ondernemingRepo = this.OndernemingRepo
+            });
         }
 
         private void PromotieToevoegen(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(PromotieAanmaken), GeselecteerdeOnderneming);
+            this.Frame.Navigate(typeof(PromotieAanmaken), new ParamDTO() {
+                gekozenOnderneming = this.GeselecteerdeOnderneming,
+                ondernemingRepo = this.OndernemingRepo
+            });
         }
         
         /************************************************************Promotie pdf Genereren****************************************************************************/
@@ -94,7 +106,7 @@ namespace StadsApp_Windows.View
             doc.Add(p4);
             doc.Add(p5);
             doc.Close();
-            PdfWriter.GetInstance(doc, new FileStream("C:\\Users\\Simon Anckaert\\Desktop", FileMode.Create));
+            PdfWriter.GetInstance(doc, new FileStream("C:\\Users\\Boeferrob\\Downloads\\file.pdf", FileMode.Create));
             ContentDialog dialog = new ContentDialog()
             {
                 Title = "PDF gedownload",
@@ -109,7 +121,11 @@ namespace StadsApp_Windows.View
         {
             Vestiging v = GetVestiging((Vestiging)lvVestigingen.SelectedItem);
             v.Events.AddRange(detailondernemingvm.Events.Where(x => x.VestigingID.Equals(v.VestigingID)));
-            this.Frame.Navigate(typeof(DetailVestiging), v);
+            this.Frame.Navigate(typeof(DetailVestiging), new ParamDTO()
+            {
+                gekozenVestiging = v,
+                ondernemingRepo = this.OndernemingRepo
+            });
         }
 
         private Vestiging GetVestiging(Vestiging selectedItem)
@@ -117,10 +133,10 @@ namespace StadsApp_Windows.View
             return GeselecteerdeOnderneming.Vestigingen.Where(x => x.VestigingID.Equals(selectedItem.VestigingID)).FirstOrDefault();
         }
 
-        protected async void Verwijderen(object sender, RoutedEventArgs e)
+        public void Verwijderen(object sender, RoutedEventArgs e)
         {
-            await detailondernemingvm.VerwijderOnderneming(GeselecteerdeOnderneming);
-            this.Frame.Navigate(typeof(OverzichtOndernemingen));
+            detailondernemingvm.VerwijderOnderneming(GeselecteerdeOnderneming);
+            this.Frame.Navigate(typeof(OverzichtOndernemingen), this.OndernemingRepo);
         }
     }
     //public sealed class SaveFileDialog : FileDialog { }

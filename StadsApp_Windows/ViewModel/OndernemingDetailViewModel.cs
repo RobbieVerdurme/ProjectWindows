@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using StadsApp_Windows.Model;
+using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,25 +13,29 @@ namespace StadsApp_Windows.ViewModel
 {
     class OndernemingDetailViewModel
     {
+        //var
         public Onderneming GeselecteerdeOnderneming { get; set; }
         public ObservableCollection<Event> Events { get; set; }
+        private OndernemingRepository OndernemingRepo;
 
-        //methods
-        /************************************************************DATA OPHALEN DATABASE****************************************************************************/
-        public async Task<OndernemingDetailViewModel> GetData()
+        //constr
+        public OndernemingDetailViewModel(OndernemingRepository ondRepo, Onderneming geselecteerdeOnderneming)
         {
-            HttpClient client = new HttpClient();
-
-            var jsonEvents = await client.GetStringAsync(new Uri("http://localhost:53331/api/events"));
-            Events = JsonConvert.DeserializeObject<ObservableCollection<Event>>(jsonEvents);
-            return this;
+            this.OndernemingRepo = ondRepo;
+            this.GeselecteerdeOnderneming = geselecteerdeOnderneming;
+            vulData();
         }
 
-        public async Task<OndernemingDetailViewModel> VerwijderOnderneming(Onderneming o)
+
+        //methods
+        public void vulData()
         {
-            HttpClient client = new HttpClient();
-            var json = await client.DeleteAsync(new Uri("http://localhost:53331/api/ondernemings/" + o.OndernemingID));
-            return this;
+            Events = OndernemingRepo.Events;
+        }
+
+        public void VerwijderOnderneming(Onderneming o)
+        {
+            OndernemingRepo.VerwijderOnderneming(GeselecteerdeOnderneming);
         }
     }
 }
