@@ -27,11 +27,11 @@ namespace StadsApp_Windows.ViewModel.Repository
         public OndernemingRepository()
         {
             //vul variablen ^^
-            VulData();
+            //VulData();
         }
 
         //meth
-        public async void VulData()
+        public async Task VulData()
         {
             //onderneming
             var json = await client.GetStringAsync(new Uri($"{BaseUrl}/ondernemings"));
@@ -50,6 +50,7 @@ namespace StadsApp_Windows.ViewModel.Repository
             Promoties = JsonConvert.DeserializeObject<ObservableCollection<Promotie>>(jsonPromoties);
 
             //soorten onderneming
+            //online data afhalen extra class soort
             //var jsonSoorten = await client.GetStringAsync(new Uri($"{BaseUrl}/soortondernemings"));
             //Soorten = JsonConvert.DeserializeObject<ObservableCollection<String>>(jsonSoorten);
             Soorten = new ObservableCollection<string>(new List<string>(new string[] { "Alle", "Schoenenwinkel", "Restaurant", "Café", "Brasserie", "Hotel", "Kledingwinkel", "Supermarkt", "B&B", "Drankcentrale", "Nachtwinkel", "School", "Frituur", "Broodjeszaak", "Overige" }));

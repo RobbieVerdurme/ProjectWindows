@@ -16,7 +16,7 @@ namespace StadsApp_Backend.Models
 		// For more information refer to the documentation:
 		// http://msdn.microsoft.com/en-us/data/jj591621.aspx
 
-		public StadsApp_BackendContext() : base("StadsApp_BackendContext")
+		public StadsApp_BackendContext() : base("name=StadsApp_BackendContext")
 		{
 		}
 

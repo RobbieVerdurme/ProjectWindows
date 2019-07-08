@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -23,12 +22,12 @@ namespace StadsApp_Backend.Model
 
         }
 
-		public Onderneming(int ondernemingId, string naam, string adres)//, string soort)
+		public Onderneming(int ondernemingId, string naam, string adres, string soort)
 		{
 			OndernemingID = ondernemingId;
 			Naam = naam;
 			Adres = adres;
-			//Soort = soort;
+			Soort = soort;
 		}
 
 		public void VestigingToevoegen(Vestiging vestiging)
