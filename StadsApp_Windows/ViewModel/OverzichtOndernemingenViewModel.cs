@@ -36,7 +36,7 @@ namespace StadsApp_Windows.ViewModel
         public void vulData()
         {
             this.Ondernemingen = OndernemingRepo.Ondernemingen;
-            this.GefilterdeLijst = Ondernemingen;
+            this.GefilterdeLijst = OndernemingRepo.Ondernemingen;
             this.Vestigingen = OndernemingRepo.Vestigingen;
             this.Events = OndernemingRepo.Events;
             this.Promoties = OndernemingRepo.Promoties;
@@ -48,7 +48,9 @@ namespace StadsApp_Windows.ViewModel
         {
             GefilterdeLijst.Clear();
             var o = new List<Onderneming>();
-            o = Ondernemingen.ToList().Where(onderneming => onderneming.Naam.Contains(tekst) && onderneming.Soort.Contains(soort)).ToList();
+            tekst = tekst.ToLower();
+
+            o = OndernemingRepo.Ondernemingen.ToList().Where(onderneming => onderneming.Naam.ToLower().Contains(tekst) && onderneming.Soort.Contains(soort)).ToList();
             
             if (o.Count > 0)
             {

@@ -50,21 +50,21 @@ namespace StadsApp_Windows.View
             {
                 filter(txtZoekOnderneming.Text, overzichtvm.Soorten[cboSoorten.SelectedIndex]);
             }
-            catch (ArgumentOutOfRangeException ex)
+            catch (Exception ex)
             {
                 filter(txtZoekOnderneming.Text, "");
             }
             //overzichtvm.ZoekOnderneming(txtZoekOnderneming.Text, overzichtvm.Soorten[cboSoorten.SelectedIndex]);
         }
 
-        private void btnZoekOnderneming_Click(object sender, TextChangedEventArgs e)
+        /*private void btnZoekOnderneming_Click(object sender, TextChangedEventArgs e)
         {
             //filter(txtZoekOnderneming.Text, overzichtvm.Soorten[cboSoorten.SelectedIndex]);
             //overzichtvm.ZoekOnderneming(txtZoekOnderneming.Text, overzichtvm.Soorten[cboSoorten.SelectedIndex]);
-        }
+        }*/
 
 
-        private void btnZoekOnderneming_Click(FrameworkElement sender, DataContextChangedEventArgs args)
+        /*private void btnZoekOnderneming_Click(FrameworkElement sender, DataContextChangedEventArgs args)
         {
           try {
                 filter(txtZoekOnderneming.Text, overzichtvm.Soorten[cboSoorten.SelectedIndex]);
@@ -72,7 +72,7 @@ namespace StadsApp_Windows.View
             {
                 filter(txtZoekOnderneming.Text, "");
             }
-        }
+        }*/
 
         private void filter(string naam, string soort)
         {
@@ -144,7 +144,7 @@ namespace StadsApp_Windows.View
         private Onderneming GetOnderneming(Onderneming selectedItem)
         {
             //repo?
-            return overzichtvm.Ondernemingen.Where(x => x.OndernemingID == selectedItem.OndernemingID).FirstOrDefault();
+            return ondernemingRepo.Ondernemingen.Where(x => x.OndernemingID == selectedItem.OndernemingID).FirstOrDefault();
         }
 
         private void StackPanel_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
