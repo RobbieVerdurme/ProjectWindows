@@ -13,7 +13,7 @@ namespace StadsApp_Backend.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201812172246050_initial"; }
+            get { return "201907032027512_initial"; }
         }
         
         string IMigrationMetadata.Source

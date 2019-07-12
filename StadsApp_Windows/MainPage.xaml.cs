@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using StadsApp_Windows.Model;
 using StadsApp_Windows.View;
+using StadsApp_Windows.ViewModel;
 using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
@@ -30,16 +31,15 @@ namespace StadsApp_Windows
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        //var
+        private MainPageViewModel vm;
         private OndernemingRepository OndernemingRepo;
-        private IObservable<Gebruiker> gebruiker;
-
-        //constr
+        
         public MainPage()
         {
             this.InitializeComponent();
+            this.vm = new MainPageViewModel();
             OndernemingRepo = new OndernemingRepository();
-            //gebruiker = Globals.loggedInGebruiker;
+            DataContext = vm;
         }
 
         //meth
@@ -83,14 +83,14 @@ namespace StadsApp_Windows
                         case "OverzichtPromoties_Page":
                             mainFrame.Navigate(typeof(OverzichtPromoties), OndernemingRepo);
                             break;
-
-						case "Login_Page":
-							mainFrame.Navigate(typeof(Login));
-							break;
-
 					}
 				}
 			}
 		}
-	}
+
+        private void UserButton_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            mainFrame.Navigate(typeof(Login));
+        }
+    }
 }
