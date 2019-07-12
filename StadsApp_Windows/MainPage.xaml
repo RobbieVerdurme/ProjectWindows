@@ -27,7 +27,7 @@
         </NavigationView.MenuItems>
         <NavigationView.PaneFooter>
             <NavigationViewItem Icon="Contact" Tag="Login_Page" Tapped="UserButton_Tapped">
-                <TextBlock Tag="Login_Page">Login</TextBlock>
+                <TextBlock Tag="Login_Page" Text="{Binding Username}"></TextBlock>
             </NavigationViewItem>
         </NavigationView.PaneFooter>
         <Frame x:Name="mainFrame"></Frame>

@@ -1,7 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using GalaSoft.MvvmLight.Messaging;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using StadsApp_Backend.Models;
 using StadsApp_Windows.Model;
+using StadsApp_Windows.Model.message;
 using StadsApp_Windows.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -88,11 +90,11 @@ namespace StadsApp_Windows.View
 			   JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
 			string token = tokenDictionary["access_token"];
 			o.Access_token = token;
+            
+            Messenger.Default.Send<GebruikerLoggedInMessage>(new GebruikerLoggedInMessage(o));
 
-			Globals.loggedInGebruiker = o;
-
-			//Save user credentials
-			var vault = new Windows.Security.Credentials.PasswordVault();
+            //Save user credentials
+            var vault = new Windows.Security.Credentials.PasswordVault();
 			vault.Add(new Windows.Security.Credentials.PasswordCredential("StadsApp", UsernameTextBox.Text, PasswordTextBox.Password));
 
 			Frame.Navigate(typeof(OverzichtOndernemingen));

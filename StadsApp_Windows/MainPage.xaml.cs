@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using StadsApp_Windows.Model;
 using StadsApp_Windows.View;
+using StadsApp_Windows.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -29,11 +30,13 @@ namespace StadsApp_Windows
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private IObservable<Gebruiker> gebruiker;
+        private MainPageViewModel vm;
+        
         public MainPage()
         {
             this.InitializeComponent();
-            //gebruiker = Globals.loggedInGebruiker;
+            this.vm = new MainPageViewModel();
+            DataContext = vm;
         }
 
 		private void nvTopLevelNav_Loaded(object sender, RoutedEventArgs e)
