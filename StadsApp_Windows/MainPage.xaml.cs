@@ -90,7 +90,7 @@ namespace StadsApp_Windows
 
         private void UserButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            mainFrame.Navigate(typeof(Login));
+            mainFrame.Navigate(typeof(Login), OndernemingRepo);
         }
     }
 }

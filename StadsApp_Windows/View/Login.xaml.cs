@@ -5,6 +5,7 @@ using StadsApp_Backend.Models;
 using StadsApp_Windows.Model;
 using StadsApp_Windows.Model.message;
 using StadsApp_Windows.ViewModel;
+using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -33,9 +34,17 @@ namespace StadsApp_Windows.View
     /// </summary>
     public sealed partial class Login : Page
     {
+        private OndernemingRepository ondernemingsRepo;
+
         public Login()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            this.ondernemingsRepo = (OndernemingRepository)e.Parameter;
         }
 
         private async void PassportSignInButton_Click(object sender, RoutedEventArgs e)
@@ -97,18 +106,18 @@ namespace StadsApp_Windows.View
             var vault = new Windows.Security.Credentials.PasswordVault();
 			vault.Add(new Windows.Security.Credentials.PasswordCredential("StadsApp", UsernameTextBox.Text, PasswordTextBox.Password));
 
-			Frame.Navigate(typeof(OverzichtOndernemingen));
+			Frame.Navigate(typeof(OverzichtOndernemingen), ondernemingsRepo);
 		}
 
         private void RegistreerClicked(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Registreren));
+            this.Frame.Navigate(typeof(Registreren), ondernemingsRepo);
         }
 		
 		private void RegisterButtonTextBlock_OnPointerPressed(object sender, PointerRoutedEventArgs e)
 		{
 			ErrorMessage.Text = "";
-			Frame.Navigate(typeof(Registreren));
+			Frame.Navigate(typeof(Registreren), ondernemingsRepo);
 		}
 
 	}
