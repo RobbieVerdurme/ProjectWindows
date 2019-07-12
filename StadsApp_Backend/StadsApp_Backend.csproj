@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -193,9 +196,6 @@
     <Reference Include="Microsoft.AI.Web">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -237,13 +237,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OndernemingsController.cs" />
     <Compile Include="Controllers\PromotiesController.cs" />
+    <Compile Include="Controllers\SoortOndernemingsController.cs" />
     <Compile Include="Controllers\VestigingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907032027512_initial.cs" />
-    <Compile Include="Migrations\201907032027512_initial.Designer.cs">
-      <DependentUpon>201907032027512_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201907081130552_initial.cs" />
+    <Compile Include="Migrations\201907081130552_initial.Designer.cs">
+      <DependentUpon>201907081130552_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -252,6 +253,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Onderneming.cs" />
     <Compile Include="Models\Promotie.cs" />
+    <Compile Include="Models\SoortOnderneming.cs" />
     <Compile Include="Models\StadsApp_BackendContext.cs" />
     <Compile Include="Models\Vestiging.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -351,8 +353,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907032027512_initial.resx">
-      <DependentUpon>201907032027512_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907081130552_initial.resx">
+      <DependentUpon>201907081130552_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

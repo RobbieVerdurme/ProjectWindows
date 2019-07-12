@@ -10,7 +10,6 @@
     <NavigationView x:Name="nvTopLevelNav"
                 Loaded="nvTopLevelNav_Loaded"
                 Margin="0,15,0,-3"
-                SelectionChanged="nvTopLevelNav_SelectionChanged"
                 ItemInvoked="nvTopLevelNav_ItemInvoked"
                 IsTabStop="False"
                 Header="Stadsapp" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">

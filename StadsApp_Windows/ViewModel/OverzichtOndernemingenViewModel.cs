@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using StadsApp_Windows.Model;
+using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,6 +15,8 @@ namespace StadsApp_Windows.ViewModel
     public class OverzichtOndernemingenViewModel
     {
         //prop
+        private OndernemingRepository OndernemingRepo;
+
         public ObservableCollection<Onderneming> Ondernemingen { get; set; }
         public ObservableCollection<Onderneming> GefilterdeLijst { get; set; }
         public ObservableCollection<Vestiging> Vestigingen { get; set; }
@@ -22,30 +25,22 @@ namespace StadsApp_Windows.ViewModel
         public ObservableCollection<string> Soorten { get; set; }
 
         //constructor
-        public OverzichtOndernemingenViewModel(){
-            Soorten = new ObservableCollection<string>(new List<string>(new string[] { "Alle","Schoenenwinkel", "Restaurant", "Café", "Brasserie", "Hotel", "Kledingwinkel", "Supermarkt", "B&B", "Drankcentrale", "Nachtwinkel", "School", "Frituur", "Broodjeszaak", "Overige" }));
-            Soorten.OrderBy(s => s.ToString());
+        public OverzichtOndernemingenViewModel(OndernemingRepository ondRepo){
+            this.OndernemingRepo = ondRepo;
+            vulData();
         }
 
 
         //methods
-        /************************************************************DATA OPHALEN DATABASE****************************************************************************/
-        public async Task<OverzichtOndernemingenViewModel> GetData()
+        /************************************************************Properties opvullen****************************************************************************/
+        public void vulData()
         {
-            HttpClient client = new HttpClient();
-            var json = await client.GetStringAsync(new Uri("http://localhost:53331/api/ondernemings"));
-            Ondernemingen = JsonConvert.DeserializeObject<ObservableCollection<Onderneming>>(json);
-            GefilterdeLijst = new ObservableCollection<Onderneming>(Ondernemingen.ToList());
-
-            var jsonVestigingen = await client.GetStringAsync(new Uri("http://localhost:53331/api/vestigings"));
-            Vestigingen = JsonConvert.DeserializeObject<ObservableCollection<Vestiging>>(jsonVestigingen);
-
-            var jsonEvents = await client.GetStringAsync(new Uri("http://localhost:53331/api/events"));
-            Events = JsonConvert.DeserializeObject<ObservableCollection<Event>>(jsonEvents);
-
-            var jsonPromoties = await client.GetStringAsync(new Uri("http://localhost:53331/api/promoties"));
-            Promoties = JsonConvert.DeserializeObject<ObservableCollection<Promotie>>(jsonPromoties);
-            return this;
+            this.Ondernemingen = OndernemingRepo.Ondernemingen;
+            this.GefilterdeLijst = OndernemingRepo.Ondernemingen;
+            this.Vestigingen = OndernemingRepo.Vestigingen;
+            this.Events = OndernemingRepo.Events;
+            this.Promoties = OndernemingRepo.Promoties;
+            this.Soorten = OndernemingRepo.Soorten;
         }
 
         /************************************************************FILTER****************************************************************************/
@@ -53,7 +48,9 @@ namespace StadsApp_Windows.ViewModel
         {
             GefilterdeLijst.Clear();
             var o = new List<Onderneming>();
-            o = Ondernemingen.ToList().Where(onderneming => onderneming.Naam.Contains(tekst) && onderneming.Soort.Contains(soort)).ToList();
+            tekst = tekst.ToLower();
+
+            o = OndernemingRepo.Ondernemingen.ToList().Where(onderneming => onderneming.Naam.ToLower().Contains(tekst) && onderneming.Soort.Contains(soort)).ToList();
             
             if (o.Count > 0)
             {

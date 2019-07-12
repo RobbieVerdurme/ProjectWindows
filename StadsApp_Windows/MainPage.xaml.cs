@@ -2,6 +2,7 @@
 using StadsApp_Windows.Model;
 using StadsApp_Windows.View;
 using StadsApp_Windows.ViewModel;
+using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -31,14 +32,17 @@ namespace StadsApp_Windows
     public sealed partial class MainPage : Page
     {
         private MainPageViewModel vm;
+        private OndernemingRepository OndernemingRepo;
         
         public MainPage()
         {
             this.InitializeComponent();
             this.vm = new MainPageViewModel();
+            OndernemingRepo = new OndernemingRepository();
             DataContext = vm;
         }
 
+        //meth
 		private void nvTopLevelNav_Loaded(object sender, RoutedEventArgs e)
 		{
 			// set the initial SelectedItem
@@ -51,11 +55,7 @@ namespace StadsApp_Windows
 				}
 			}
 
-			mainFrame.Navigate(typeof(OverzichtOndernemingen));
-		}
-
-		private void nvTopLevelNav_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
-		{
+			mainFrame.Navigate(typeof(OverzichtOndernemingen), OndernemingRepo);
 		}
 
 		private void nvTopLevelNav_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
@@ -73,15 +73,15 @@ namespace StadsApp_Windows
 					switch (ItemContent.Tag)
 					{
 						case "Overzicht_Page":
-							mainFrame.Navigate(typeof(OverzichtOndernemingen));
+							mainFrame.Navigate(typeof(OverzichtOndernemingen), OndernemingRepo);
 							break;
 
 						case "Toevoegen_Page":
-							mainFrame.Navigate(typeof(OndernemingAanmaken));
+							mainFrame.Navigate(typeof(OndernemingAanmaken), OndernemingRepo);
 							break;
 
                         case "OverzichtPromoties_Page":
-                            mainFrame.Navigate(typeof(OverzichtPromoties));
+                            mainFrame.Navigate(typeof(OverzichtPromoties), OndernemingRepo);
                             break;
 					}
 				}
