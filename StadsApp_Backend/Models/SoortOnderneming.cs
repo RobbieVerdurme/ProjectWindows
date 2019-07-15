@@ -9,7 +9,6 @@ namespace StadsApp_Backend.Models
     public class SoortOnderneming
     {
         [Key]
-        public int SoortID { get; set; }
         public String SoortNaam { get; set; }
     }
 }

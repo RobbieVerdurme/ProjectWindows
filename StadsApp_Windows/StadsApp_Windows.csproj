@@ -114,12 +114,15 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\DateConverter.cs" />
     <Compile Include="ViewModel\EventAanmakenViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\OndernemingAanmakenViewModel.cs" />
     <Compile Include="ViewModel\OndernemingDetailViewModel.cs" />
     <Compile Include="ViewModel\OverzichtPromotiesViewModel.cs" />
+    <Compile Include="ViewModel\ParamDTO\AccountDTO.cs" />
     <Compile Include="ViewModel\ParamDTO\ParamDTO.cs" />
     <Compile Include="ViewModel\PromotieAanmakenViewModel.cs" />
+    <Compile Include="ViewModel\Repository\AccountRepository.cs" />
     <Compile Include="ViewModel\Repository\OndernemingRepository.cs" />
     <Compile Include="ViewModel\VestigingAanmakenViewModel.cs" />
     <Compile Include="ViewModel\OverzichtOndernemingenViewModel.cs" />

@@ -24,7 +24,7 @@ namespace StadsApp_Backend.Controllers
 
         // GET: api/SoortOndernemings/5
         [ResponseType(typeof(SoortOnderneming))]
-        public IHttpActionResult GetSoortOnderneming(int id)
+        public IHttpActionResult GetSoortOnderneming(string id)
         {
             SoortOnderneming soortOnderneming = db.SoortOndernemings.Find(id);
             if (soortOnderneming == null)
@@ -37,14 +37,14 @@ namespace StadsApp_Backend.Controllers
 
         // PUT: api/SoortOndernemings/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutSoortOnderneming(int id, SoortOnderneming soortOnderneming)
+        public IHttpActionResult PutSoortOnderneming(string id, SoortOnderneming soortOnderneming)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != soortOnderneming.SoortID)
+            if (id != soortOnderneming.SoortNaam)
             {
                 return BadRequest();
             }
@@ -80,14 +80,29 @@ namespace StadsApp_Backend.Controllers
             }
 
             db.SoortOndernemings.Add(soortOnderneming);
-            db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = soortOnderneming.SoortID }, soortOnderneming);
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                if (SoortOndernemingExists(soortOnderneming.SoortNaam))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return CreatedAtRoute("DefaultApi", new { id = soortOnderneming.SoortNaam }, soortOnderneming);
         }
 
         // DELETE: api/SoortOndernemings/5
         [ResponseType(typeof(SoortOnderneming))]
-        public IHttpActionResult DeleteSoortOnderneming(int id)
+        public IHttpActionResult DeleteSoortOnderneming(string id)
         {
             SoortOnderneming soortOnderneming = db.SoortOndernemings.Find(id);
             if (soortOnderneming == null)
@@ -110,9 +125,9 @@ namespace StadsApp_Backend.Controllers
             base.Dispose(disposing);
         }
 
-        private bool SoortOndernemingExists(int id)
+        private bool SoortOndernemingExists(string id)
         {
-            return db.SoortOndernemings.Count(e => e.SoortID == id) > 0;
+            return db.SoortOndernemings.Count(e => e.SoortNaam == id) > 0;
         }
     }
 }

@@ -2,6 +2,7 @@
 using StadsApp_Windows.Model;
 using StadsApp_Windows.View;
 using StadsApp_Windows.ViewModel;
+using StadsApp_Windows.ViewModel.ParamDTO;
 using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
@@ -33,12 +34,14 @@ namespace StadsApp_Windows
     {
         private MainPageViewModel vm;
         private OndernemingRepository OndernemingRepo;
+        private AccountRepository AccountRepo;
         
         public MainPage()
         {
             this.InitializeComponent();
             this.vm = new MainPageViewModel();
             OndernemingRepo = new OndernemingRepository();
+            AccountRepo = new AccountRepository();
             DataContext = vm;
         }
 
@@ -90,7 +93,11 @@ namespace StadsApp_Windows
 
         private void UserButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            mainFrame.Navigate(typeof(Login), OndernemingRepo);
+            mainFrame.Navigate(typeof(Login), new AccountDTO()
+            {
+                OndernemingRepository = this.OndernemingRepo,
+                AccountRepository = this.AccountRepo
+            });
         }
     }
 }

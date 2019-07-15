@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json;
 using StadsApp_Backend.Models;
 using StadsApp_Windows.ViewModel;
+using StadsApp_Windows.ViewModel.ParamDTO;
+using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,98 +30,47 @@ namespace StadsApp_Windows.View
     public sealed partial class Registreren : Page
     {
         private RegistrerenViewModel registrerenvm;
+        private AccountRepository AccountRepo;
+        private OndernemingRepository OndernemingRepo;
 
         public Registreren()
         {
             this.InitializeComponent();
-            registrerenvm = new RegistrerenViewModel();
-            this.DataContext = registrerenvm;
         }
 
         private void BackClicked(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Login));
+            Frame.Navigate(typeof(Login), new AccountDTO()
+            {
+                AccountRepository = this.AccountRepo,
+                OndernemingRepository = this.OndernemingRepo
+            });
         }
 
-		private async void RegisterButton_Click_Async(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            AccountDTO param = (AccountDTO)e.Parameter;
+            this.AccountRepo = param.AccountRepository;
+            this.OndernemingRepo = param.OndernemingRepository;
+            registrerenvm = new RegistrerenViewModel(AccountRepo);
+            this.DataContext = registrerenvm;
+        }
+
+        private async void RegisterButton_Click_Async(object sender, RoutedEventArgs e)
 		{
 			ErrorMessage.Text = "";
-			
 
-			//In the real world you would normally validate the entered credentials and information before 
-			//allowing a user to register a new account. 
-			//For this sample though we will skip that step and just register an account if username is not null.
+            //In the real world you would normally validate the entered credentials and information before 
+            //allowing a user to register a new account. 
+            //For this sample though we will skip that step and just register an account if username is not null.
+            ErrorMessage.Text = await registrerenvm.Registreer(UsernameTextBox.Text, PasswordBox.Password, PasswordRepeatBox.Password);
 
-			if (string.IsNullOrEmpty(UsernameTextBox.Text))
-			{
-				ErrorMessage.Text = "Please enter a username";
-				return;
-			}
-			if(!IsValidEmail(UsernameTextBox.Text))
-			{
-				ErrorMessage.Text = "Not a valid email";
-				return;
-			}
-			if (string.IsNullOrEmpty(PasswordBox.Password))
-			{
-				ErrorMessage.Text = "Please enter a password";
-				return;
-			}
-			if (string.IsNullOrEmpty(PasswordRepeatBox.Password))
-			{
-				ErrorMessage.Text = "Please enter the password";
-				return;
-			}
-			if (PasswordBox.Password != PasswordRepeatBox.Password)
-			{
-				ErrorMessage.Text = "Passwords do not match";
-				return;
-			}
-			if (!CheckStrength(PasswordBox.Password))
-			{
-				ErrorMessage.Text = "Passwords is not strong enough";
-				return;
-			}
-			
-			//Register user
-			var registerdata = new RegisterBindingModel() { Email = UsernameTextBox.Text, Password = PasswordBox.Password, ConfirmPassword = PasswordRepeatBox.Password };
-			var registerJson = JsonConvert.SerializeObject(registerdata);
-			HttpClient client = new HttpClient();
-			var res = await client.PostAsync("http://localhost:53331/api/account/register", new
-			StringContent(registerJson, System.Text.Encoding.UTF8, "application/json"));
-
-			//Log error message
-			if(!res.IsSuccessStatusCode)
-			{
-				ErrorMessage.Text = res.StatusCode + " " + res.ReasonPhrase;
-				return;
-			}
-
-			//Go to main page
-			Frame.Navigate(typeof(OverzichtOndernemingen));
-
-		}
-
-		bool IsValidEmail(string email)
-		{
-			try
-			{
-				var addr = new System.Net.Mail.MailAddress(email);
-				return addr.Address == email;
-			}
-			catch
-			{
-				return false;
-			}
-		}
-
-		private bool CheckStrength(string password)
-		{
-
-			string MatchEmailPattern = "(?!^[0-9]*$)(?!^[a-zA-Z]*$)^(.{8,15})$";
-
-			if (password != null) return Regex.IsMatch(password, MatchEmailPattern);
-			else return false;
+            if (ErrorMessage.Text.Equals(""))
+            {
+                //Go to main page
+                Frame.Navigate(typeof(OverzichtOndernemingen), this.OndernemingRepo);
+            }
 		}
 	}
 }

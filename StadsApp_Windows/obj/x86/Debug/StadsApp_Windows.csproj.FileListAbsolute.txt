@@ -1292,3 +1292,11 @@ D:\School\ProjectWindows\StadsApp_Windows\obj\x86\Debug\qualifiers.txt.intermedi
 D:\School\ProjectWindows\StadsApp_Windows\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 D:\School\ProjectWindows\StadsApp_Windows\obj\x86\Debug\GalaSoft.MvvmLight.Platform.pri.xml
 D:\School\ProjectWindows\StadsApp_Windows\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\CommonServiceLocator.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\GalaSoft.MvvmLight.dll
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\GalaSoft.MvvmLight.pdb
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\obj\x86\Debug\GalaSoft.MvvmLight.Platform.pri.xml

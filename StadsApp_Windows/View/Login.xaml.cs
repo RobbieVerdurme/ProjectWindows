@@ -5,6 +5,7 @@ using StadsApp_Backend.Models;
 using StadsApp_Windows.Model;
 using StadsApp_Windows.Model.message;
 using StadsApp_Windows.ViewModel;
+using StadsApp_Windows.ViewModel.ParamDTO;
 using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,8 @@ namespace StadsApp_Windows.View
     public sealed partial class Login : Page
     {
         private OndernemingRepository ondernemingsRepo;
+        private AccountRepository AccountRepo;
+        private LoginViewModel loginvm;
 
         public Login()
         {
@@ -44,80 +47,41 @@ namespace StadsApp_Windows.View
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            this.ondernemingsRepo = (OndernemingRepository)e.Parameter;
+            AccountDTO param = (AccountDTO)e.Parameter;
+            this.loginvm = new LoginViewModel(param.AccountRepository);
+            this.ondernemingsRepo = param.OndernemingRepository;
+            this.AccountRepo = param.AccountRepository;
         }
 
         private async void PassportSignInButton_Click(object sender, RoutedEventArgs e)
         {
-			if (string.IsNullOrEmpty(UsernameTextBox.Text))
-			{
-				ErrorMessage.Text = "Please enter a username";
-				return;
-			}
-			if (string.IsNullOrEmpty(PasswordTextBox.Password))
-			{
-				ErrorMessage.Text = "Please enter a password";
-				return;
-			}
+            ErrorMessage.Text = "";
+            //login
+            ErrorMessage.Text = await loginvm.Login(UsernameTextBox.Text, PasswordTextBox.Password);
 
-			//Login user
-			var client = new HttpClient();
-			client.BaseAddress = new Uri("http://localhost:53331");
-			var request = new HttpRequestMessage(HttpMethod.Post, "/token");
-
-			var keyValues = new List<KeyValuePair<string, string>>();
-			keyValues.Add(new KeyValuePair<string, string>("grant_type", "password"));
-			keyValues.Add(new KeyValuePair<string, string>("username", UsernameTextBox.Text));
-			keyValues.Add(new KeyValuePair<string, string>("password", PasswordTextBox.Password));
-
-			request.Content = new FormUrlEncodedContent(keyValues);
-			var response = await client.SendAsync(request);
-
-            //Log error message
-            String content = await response.Content.ReadAsStringAsync();
-			if (!response.IsSuccessStatusCode)
-			{
-                ApiError error = JsonConvert.DeserializeObject<ApiError>(content);
-
-                if(error.Error == "invalid_grant")
-                {
-                    ErrorMessage.Text = "Invalid credentials";
-                }
-                else
-                {
-                    ErrorMessage.Text = error.Error + " " + error.ErrorDescription;
-                }
-                return;
-			}
-
-			//Save user in global variables
-			Ondernemer o = new Ondernemer();
-			o.Username = UsernameTextBox.Text;
-
-			var result = response.Content.ReadAsStringAsync().Result;
-			Dictionary<string, string> tokenDictionary =
-			   JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
-			string token = tokenDictionary["access_token"];
-			o.Access_token = token;
-            
-            Messenger.Default.Send<GebruikerLoggedInMessage>(new GebruikerLoggedInMessage(o));
-
-            //Save user credentials
-            var vault = new Windows.Security.Credentials.PasswordVault();
-			vault.Add(new Windows.Security.Credentials.PasswordCredential("StadsApp", UsernameTextBox.Text, PasswordTextBox.Password));
-
-			Frame.Navigate(typeof(OverzichtOndernemingen), ondernemingsRepo);
+            if (ErrorMessage.Text.Equals(""))
+            {
+                Frame.Navigate(typeof(OverzichtOndernemingen), ondernemingsRepo);
+            }
 		}
 
         private void RegistreerClicked(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Registreren), ondernemingsRepo);
+            this.Frame.Navigate(typeof(Registreren), new AccountDTO()
+            {
+                AccountRepository = this.AccountRepo,
+                OndernemingRepository = this.ondernemingsRepo
+            }) ;
         }
 		
 		private void RegisterButtonTextBlock_OnPointerPressed(object sender, PointerRoutedEventArgs e)
 		{
 			ErrorMessage.Text = "";
-			Frame.Navigate(typeof(Registreren), ondernemingsRepo);
+			Frame.Navigate(typeof(Registreren), new AccountDTO()
+            {
+                AccountRepository = this.AccountRepo,
+                OndernemingRepository = this.ondernemingsRepo
+            });
 		}
 
 	}
