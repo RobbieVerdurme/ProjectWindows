@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-07-13T14:07:00.907</Modified>
+      <Modified>2019-07-18T13:04:05.742</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\StadsApp_Windows.exe">
       <PackagePath>entrypoint\StadsApp_Windows.exe</PackagePath>
-      <Modified>2019-07-13T14:07:00.418</Modified>
+      <Modified>2019-07-18T13:04:04.734</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Boeferrob\.nuget\packages\commonservicelocator\2.0.2\lib\netstandard2.0\CommonServiceLocator.dll">
       <PackagePath>CommonServiceLocator.dll</PackagePath>
@@ -806,55 +806,55 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\StadsApp_Windows.xr.xml">
       <PackagePath>StadsApp_Windows.xr.xml</PackagePath>
-      <Modified>2019-07-13T12:08:41.561</Modified>
+      <Modified>2019-07-18T13:04:04.328</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-07-13T14:07:00.143</Modified>
+      <Modified>2019-07-18T13:04:04.410</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-07-13T14:07:00.144</Modified>
+      <Modified>2019-07-18T13:04:04.410</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\View\DetailVestiging.xbf">
       <PackagePath>View\DetailVestiging.xbf</PackagePath>
-      <Modified>2019-07-13T14:07:00.144</Modified>
+      <Modified>2019-07-18T13:04:04.410</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\View\EventAanmaken.xbf">
       <PackagePath>View\EventAanmaken.xbf</PackagePath>
-      <Modified>2019-07-13T14:07:00.144</Modified>
+      <Modified>2019-07-18T13:04:04.410</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\View\Login.xbf">
       <PackagePath>View\Login.xbf</PackagePath>
-      <Modified>2019-07-13T14:07:00.144</Modified>
+      <Modified>2019-07-18T13:04:04.410</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\View\OndernemingAanmaken.xbf">
       <PackagePath>View\OndernemingAanmaken.xbf</PackagePath>
-      <Modified>2019-07-13T14:07:00.145</Modified>
+      <Modified>2019-07-18T13:04:04.410</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\View\OverzichtPromoties.xbf">
       <PackagePath>View\OverzichtPromoties.xbf</PackagePath>
-      <Modified>2019-07-13T14:07:00.145</Modified>
+      <Modified>2019-07-18T13:04:04.410</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\View\PromotieAanmaken.xbf">
       <PackagePath>View\PromotieAanmaken.xbf</PackagePath>
-      <Modified>2019-07-13T14:07:00.145</Modified>
+      <Modified>2019-07-18T13:04:04.410</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\View\VestigingAanmaken.xbf">
       <PackagePath>View\VestigingAanmaken.xbf</PackagePath>
-      <Modified>2019-07-13T14:07:00.145</Modified>
+      <Modified>2019-07-18T13:04:04.410</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\View\OndernemingDetail.xbf">
       <PackagePath>View\OndernemingDetail.xbf</PackagePath>
-      <Modified>2019-07-13T14:07:00.145</Modified>
+      <Modified>2019-07-18T13:04:04.410</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\View\OverzichtOndernemingen.xbf">
       <PackagePath>View\OverzichtOndernemingen.xbf</PackagePath>
-      <Modified>2019-07-13T14:07:00.146</Modified>
+      <Modified>2019-07-18T13:04:04.410</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\View\Registreren.xbf">
       <PackagePath>View\Registreren.xbf</PackagePath>
-      <Modified>2019-07-13T14:07:00.146</Modified>
+      <Modified>2019-07-18T13:04:04.410</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -866,7 +866,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\bin\x86\Debug\Core\StadsApp_Windows.exe">
       <PackagePath>StadsApp_Windows.exe</PackagePath>
-      <Modified>2019-07-13T14:07:00.900</Modified>
+      <Modified>2019-07-18T13:04:05.730</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

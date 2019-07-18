@@ -383,3 +383,4 @@ C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\ob
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.CopyComplete
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.dll
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.pdb
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csprojAssemblyReference.cache

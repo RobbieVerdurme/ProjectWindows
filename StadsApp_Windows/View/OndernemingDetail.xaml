@@ -8,10 +8,29 @@
     xmlns:viewmodel="using:StadsApp_Windows.ViewModel"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <!-- PAGE -->
     <Page.Resources>
         <viewmodel:DateConverter x:Key="dateConverter"/>
     </Page.Resources>
-
+    
+    <!-- VISUALSTATES -->
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState>
+                <VisualState.StateTriggers>
+                    <!-- VisualState to be triggered when window width is >=720 effective pixels -->
+                    <AdaptiveTrigger MinWindowWidth="720"/>
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <!--setter voor min pixel 720 -->
+                    <Setter Target="Vestigingen.Orientation" Value="Vertical"/>
+                    <Setter Target="Promoties.Orientation" Value="Vertical"/>
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+    
+    <!-- -->
     <StackPanel Padding="30 0 0 0">
         <StackPanel Orientation="Horizontal" Padding="20">
             <TextBlock Text="{Binding Naam}" FontWeight="Bold" FontSize="30"/>
@@ -22,7 +41,7 @@
             <TextBlock Text="{Binding Soort}" FontWeight="Bold"/>
         </StackPanel>
         <StackPanel Orientation="Vertical">
-            <StackPanel Orientation="Horizontal" Padding="20">
+            <StackPanel x:Name="Vestigingen" Orientation="Horizontal" Padding="20">
                 <TextBlock Text="Vestiging(en):" Width="200"/>
                 <ListView x:Name="lvVestigingen" ItemsSource="{Binding Vestigingen}">
                     <ListView.ItemTemplate>
@@ -37,7 +56,7 @@
             </StackPanel>
             <Button Content="Vestiging toevoegen" Click="VestigingToevoegen"/>
             
-            <StackPanel Orientation="Horizontal" Padding="20 30 20 20">
+            <StackPanel x:Name="Promoties" Orientation="Horizontal" Padding="20 30 20 20">
                 <TextBlock Text="Promoties:" Width="200"/>
                 <ListView x:Name="lvPromoties" ItemsSource="{Binding Promoties}">
                     <ListView.ItemTemplate>

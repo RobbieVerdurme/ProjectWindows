@@ -8,15 +8,32 @@
     xmlns:viewmodel="using:StadsApp_Windows.ViewModel"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <!-- PAGE -->
     <Page.Resources>
         <viewmodel:DateConverter x:Key="dateConverter"/>
     </Page.Resources>
     
+    <!-- VISUALSTATES -->
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState>
+                <VisualState.StateTriggers>
+                    <!-- VisualState to be triggered when window width is >=720 effective pixels -->
+                    <AdaptiveTrigger MinWindowWidth="720"/>
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Target="Promotieslijst.Orientation" Value="Vertical"/>
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+    
+    <!-- -->
     <StackPanel Orientation="Vertical">
         <StackPanel>
             <TextBlock Text="Vindt hier de onderneming die u zoekt" TextAlignment="Center" FontSize="25px" TextDecorations="Underline"/>
         </StackPanel>
-        <StackPanel Orientation="Vertical">
+        <StackPanel x:Name="Promotieslijst" Orientation="Vertical">
             <ListView x:Name="lvPromoties" ItemsSource="{Binding Promoties}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
