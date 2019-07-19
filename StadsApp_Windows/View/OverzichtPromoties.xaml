@@ -22,7 +22,7 @@
                     <AdaptiveTrigger MinWindowWidth="720"/>
                 </VisualState.StateTriggers>
                 <VisualState.Setters>
-                    <Setter Target="Promotieslijst.Orientation" Value="Vertical"/>
+                    <Setter Target="Promotieslijst.Orientation" Value="Horizontal"/>
                 </VisualState.Setters>
             </VisualState>
         </VisualStateGroup>

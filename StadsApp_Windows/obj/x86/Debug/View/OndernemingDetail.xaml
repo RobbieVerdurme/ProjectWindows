@@ -8,10 +8,29 @@
     xmlns:viewmodel="using:StadsApp_Windows.ViewModel"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <!-- PAGE -->
     <Page.Resources>
         <viewmodel:DateConverter x:Key="dateConverter"/>
     </Page.Resources>
-
+    
+    <!-- VISUALSTATES -->
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState>
+                <VisualState.StateTriggers>
+                    <!-- VisualState to be triggered when window width is >=720 effective pixels -->
+                    <AdaptiveTrigger MinWindowWidth="720"/>
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <!--setter voor min pixel 720 -->
+                    <Setter Target="Vestigingen.Orientation" Value="Vertical"/>
+                    <Setter Target="Promoties.Orientation" Value="Vertical"/>
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+    
+    <!-- -->
     <StackPanel Padding="30 0 0 0">
         <StackPanel Orientation="Horizontal" Padding="20">
             <TextBlock Text="{Binding Naam}" FontWeight="Bold" FontSize="30"/>
@@ -22,12 +41,12 @@
             <TextBlock Text="{Binding Soort}" FontWeight="Bold"/>
         </StackPanel>
         <StackPanel Orientation="Vertical">
-            <StackPanel Orientation="Horizontal" Padding="20">
+            <StackPanel x:ConnectionId='3' x:Name="Vestigingen" Orientation="Horizontal" Padding="20">
                 <TextBlock Text="Vestiging(en):" Width="200"/>
-                <ListView x:ConnectionId='7' x:Name="lvVestigingen" ItemsSource="{Binding Vestigingen}">
+                <ListView x:ConnectionId='9' x:Name="lvVestigingen" ItemsSource="{Binding Vestigingen}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel x:ConnectionId='8'                                       >
+                            <StackPanel x:ConnectionId='10'                                       >
                                 <TextBlock Text="{Binding Naam}"/>
                                 <TextBlock Text="{Binding Adres}"/>
                             </StackPanel>
@@ -35,14 +54,14 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackPanel>
-            <Button x:ConnectionId='3' Content="Vestiging toevoegen"                           />
+            <Button x:ConnectionId='4' Content="Vestiging toevoegen"                           />
             
-            <StackPanel Orientation="Horizontal" Padding="20 30 20 20">
+            <StackPanel x:ConnectionId='5' x:Name="Promoties" Orientation="Horizontal" Padding="20 30 20 20">
                 <TextBlock Text="Promoties:" Width="200"/>
-                <ListView x:ConnectionId='5' x:Name="lvPromoties" ItemsSource="{Binding Promoties}">
+                <ListView x:ConnectionId='7' x:Name="lvPromoties" ItemsSource="{Binding Promoties}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel x:ConnectionId='6'                         >
+                            <StackPanel x:ConnectionId='8'                         >
                                 <TextBlock Text="{Binding Beschrijving}"/>
                                 <TextBlock Text="{Binding Percentage}"/>
                                 <TextBlock Text="{Binding Van, Converter={StaticResource dateConverter}}"/>
@@ -52,7 +71,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackPanel>
-            <Button x:ConnectionId='4' Content="Promotie toevoegen"                          />
+            <Button x:ConnectionId='6' Content="Promotie toevoegen"                          />
         </StackPanel>
         <Button x:ConnectionId='2' Content="Onderneming verwijderen"                     Margin="0 30 0 0"/>
     </StackPanel>

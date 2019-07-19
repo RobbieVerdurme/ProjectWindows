@@ -7,20 +7,41 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    
+    <!-- VISUALSTATES -->
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState>
+                <VisualState.StateTriggers>
+                    <!-- VisualState to be triggered when window width is >=720 effective pixels -->
+                    <AdaptiveTrigger MinWindowWidth="720"/>
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <!-- setter for less then 720 pixels-->
+                    <Setter Target="NaamOnderneming.Orientation" Value="Horizontal"/>
+                    <Setter Target="AdresOnderneming.Orientation" Value="Horizontal"/>
+                    <Setter Target="TypeOnderneming.Orientation" Value="Horizontal"/>
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+
+    <!-- -->
     <StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Naam" Width="200"/>
-            <TextBox x:Name="txtNaam" Width="200"/> 
+        <StackPanel>
+            <TextBlock Text="Maak hier u onderneming aan" FontSize="25" HorizontalAlignment="Center"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Adres" Width="200"/>
-            <TextBox x:Name="txtAdres" Width="200"/>
+        <StackPanel x:Name="NaamOnderneming" Orientation="Vertical" HorizontalAlignment="Center">
+            <TextBlock Text="Naam" HorizontalAlignment="Center"/>
+            <TextBox x:Name="txtNaam" Width="400"/> 
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Categorie/Type onderneming" Width="200"/>
-            <ComboBox Width="200" x:Name="cboSoort" ItemsSource="{Binding Soorten}"/>
+        <StackPanel x:Name="AdresOnderneming" Orientation="Vertical" HorizontalAlignment="Center">
+            <TextBlock Text="Adres" HorizontalAlignment="Center"/>
+            <TextBox x:Name="txtAdres" Width="400"/>
         </StackPanel>
-        <Button Content="Toevoegen" Click="btnToevoegenClicked"/>
+        <StackPanel x:Name="TypeOnderneming" Orientation="Vertical" HorizontalAlignment="Center">
+            <TextBlock Text="Categorie/Type onderneming" HorizontalAlignment="Center"/>
+            <ComboBox Width="400" x:Name="cboSoort" ItemsSource="{Binding Soorten}"/>
+        </StackPanel>
+        <Button Content="Toevoegen" Click="btnToevoegenClicked" HorizontalAlignment="Center"/>
     </StackPanel>
 </Page>

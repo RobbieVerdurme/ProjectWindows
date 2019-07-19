@@ -7,18 +7,37 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <!-- VISUALSTATES -->
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState>
+                <VisualState.StateTriggers>
+                    <!-- VisualState to be triggered when window width is >=720 effective pixels -->
+                    <AdaptiveTrigger MinWindowWidth="720"/>
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <!-- setter for less then 720 pixels-->
+                    <Setter Target="NaamVestinging.Orientation" Value="Horizontal"/>
+                    <Setter Target="test.TextDecorations" Value=""/>
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+    
+    <!-- -->
     <StackPanel>
-        <TextBlock Text="Aanmaken vestiging"/>
-        <StackPanel Orientation="Horizontal" Padding="10">
-            <TextBlock Text="Naam vestiging:" Padding="10"/>
-            <TextBox x:ConnectionId='4' x:Name="txtNaam" Width="400"/>
+        <StackPanel>
+            <TextBlock x:ConnectionId='6' x:Name="test" Text="Maak hier een vestiging aan" FontSize="25" HorizontalAlignment="Center" TextDecorations="Underline"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Padding="10">
-            <TextBlock Text="Adres van vestiging:" Padding="10"/>
-            <TextBox x:ConnectionId='3' x:Name="txtAdres" Width="400"/>
+        <StackPanel x:ConnectionId='2' x:Name="NaamVestinging" Orientation="Vertical" Padding="10" HorizontalAlignment="Center">
+            <TextBlock Text="Naam vestiging:" Padding="10" HorizontalAlignment="Center"/>
+            <TextBox x:ConnectionId='5' x:Name="txtNaam" Width="400"/>
         </StackPanel>
-        <Button x:ConnectionId='2' Content="Vestiging opslaan"                         />
+        <StackPanel Orientation="Vertical" Padding="10" HorizontalAlignment="Center">
+            <TextBlock Text="Adres van vestiging:" Padding="10" HorizontalAlignment="Center"/>
+            <TextBox x:ConnectionId='4' x:Name="txtAdres" Width="400"/>
+        </StackPanel>
+        <Button x:ConnectionId='3' Content="Vestiging opslaan"                          HorizontalAlignment="Center"/>
     </StackPanel>
 </Page>
 

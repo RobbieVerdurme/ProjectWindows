@@ -8,24 +8,46 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <!-- VISUALSTATES -->
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState>
+                <VisualState.StateTriggers>
+                    <!-- VisualState to be triggered when window width is >=720 effective pixels -->
+                    <AdaptiveTrigger MinWindowWidth="720"/>
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Target="Percentage.Orientation" Value="Horizontal"/>
+                    <Setter Target="Beschrijving.Orientation" Value="Horizontal"/>
+                    <Setter Target="Van.Orientation" Value="Horizontal"/>
+                    <Setter Target="Tot.Orientation" Value="Horizontal"/>
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+    
+    <!-- -->
     <StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Percentage"/>
-            <TextBox x:ConnectionId='6' x:Name="txtPercentagePromotie" PlaceholderText="Percentage promotie"/>
+        <StackPanel HorizontalAlignment="Center">
+            <TextBlock Text="Voeg hier een promotie toe" FontSize="25px" HorizontalAlignment="Center"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Beschrijving"/>
-            <TextBox x:ConnectionId='5' x:Name="txtBeschrijvingPromotie" PlaceholderText="Beschrijving promotie"/>
+        <StackPanel x:ConnectionId='2' x:Name="Percentage" Orientation="Vertical" HorizontalAlignment="Center">
+            <TextBlock Text="Percentage" HorizontalAlignment="Center"/>
+            <TextBox x:ConnectionId='10' x:Name="txtPercentagePromotie" PlaceholderText="Percentage promotie"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Van"/>
-            <CalendarDatePicker x:ConnectionId='4' x:Name="calVan"/>
+        <StackPanel x:ConnectionId='3' x:Name="Beschrijving" Orientation="Vertical" HorizontalAlignment="Center">
+            <TextBlock Text="Beschrijving" HorizontalAlignment="Center"/>
+            <TextBox x:ConnectionId='9' x:Name="txtBeschrijvingPromotie" PlaceholderText="Beschrijving promotie"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Tot"/>
-            <CalendarDatePicker x:ConnectionId='3' x:Name="calTot"/>
+        <StackPanel x:ConnectionId='4' x:Name="Van" Orientation="Vertical" HorizontalAlignment="Center">
+            <TextBlock Text="Van" HorizontalAlignment="Center"/>
+            <CalendarDatePicker x:ConnectionId='8' x:Name="calVan" HorizontalAlignment="Center"/>
         </StackPanel>
-        <Button x:ConnectionId='2' Content="Promotie Opslaan"                        />
+        <StackPanel x:ConnectionId='5' x:Name="Tot" Orientation="Vertical" HorizontalAlignment="Center">
+            <TextBlock Text="Tot" HorizontalAlignment="Center"/>
+            <CalendarDatePicker x:ConnectionId='7' x:Name="calTot" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <Button x:ConnectionId='6' Content="Promotie Opslaan"                         HorizontalAlignment="Center"/>
     </StackPanel>
 </Page>
 

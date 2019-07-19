@@ -18,9 +18,9 @@
                         <AdaptiveTrigger MinWindowWidth="720"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="ZoekNaam.Orientation" Value="Vertical"/>
-                        <Setter Target="ZoekType.Orientation" Value="Vertical"/>
-                        <Setter Target="Ondernemingenlijst.Orientation" Value="Vertical"/>
+                        <Setter Target="ZoekNaam.Orientation" Value="Horizontal"/>
+                        <Setter Target="ZoekType.Orientation" Value="Horizontal"/>
+                        <Setter Target="Ondernemingenlijst.Orientation" Value="Horizontal"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -31,18 +31,18 @@
             <Maps:MapControl x:Name="MyMap"
                     Height="275"/>
             <StackPanel>
-                <TextBlock Text="Vindt hier de onderneming die u zoekt" TextAlignment="Center" FontSize="25px" TextDecorations="Underline"/>
+                <TextBlock Text="Vindt hier de onderneming die u zoekt" TextAlignment="Center" FontSize="25px"/>
             </StackPanel>
-            <StackPanel x:Name="ZoekNaam" Orientation="Horizontal" HorizontalAlignment="Center" Padding="10" Margin="0 10 0 0">
+            <StackPanel x:Name="ZoekNaam" Orientation="Vertical" HorizontalAlignment="Center" Padding="10" Margin="0 10 0 0">
                 <TextBlock Text="Zoek een onderneming op naam:" Padding="0 0 10 0"/>
                 <TextBox x:Name="txtZoekOnderneming" Width="400px" TextChanged="btnZoekOnderneming_Click"/>
             </StackPanel>
-            <StackPanel x:Name="ZoekType" Orientation="Horizontal" HorizontalAlignment="Center" Padding="10">
+            <StackPanel x:Name="ZoekType" Orientation="Vertical" HorizontalAlignment="Center" Padding="10">
                 <TextBlock Text="Categorie/Type onderneming" Width="200"/>
                 <ComboBox Width="200" x:Name="cboSoorten" ItemsSource="{Binding Soorten}" SelectionChanged="btnZoekOnderneming_Click"/>
             </StackPanel>
             <Button x:Name="btnZoekOnderneming" Content="Zoek" Click="btnZoekOnderneming_Click" HorizontalAlignment="Center" Margin="0 10 0 0"/>
-            <StackPanel x:Name="Ondernemingenlijst" Orientation="Horizontal">
+            <StackPanel x:Name="Ondernemingenlijst" Orientation="Vertical">
                 <ListView x:Name="lvOndernemingen" ItemsSource="{Binding GefilterdeLijst}">
                      <!--<StackPanel Orientation="Horizontal">
                         <TextBlock Text="Categorie/Type onderneming" Width="200"/>

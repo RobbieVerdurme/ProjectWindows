@@ -8,10 +8,28 @@
     xmlns:viewmodel="using:StadsApp_Windows.ViewModel"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <!-- PAGES -->
     <Page.Resources>
         <viewmodel:DateConverter x:Key="dateConverter"/>
     </Page.Resources>
     
+    <!-- VISUALSTATES -->
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState>
+                <VisualState.StateTriggers>
+                    <!-- VisualState to be triggered when window width is >=720 effective pixels -->
+                    <AdaptiveTrigger MinWindowWidth="720"/>
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <!--setter voor min pixel 720 -->
+                    <Setter Target="Events.Orientation" Value="Vertical"/>
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+    
+    <!-- -->
     <StackPanel Orientation="Vertical" Padding="20">
         <StackPanel Orientation="Horizontal" Padding="20">
             <TextBlock Text="{Binding Naam}" FontWeight="Bold" FontSize="30" />
@@ -20,12 +38,12 @@
             <TextBlock Text="Adres: "/>
             <TextBlock Text="{Binding Adres}" Padding="20 0 0 0"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel x:ConnectionId='2' x:Name="Events" Orientation="Horizontal">
             <TextBlock Text="Events:" Width="70"/>
-            <ListView x:ConnectionId='4' x:Name="lvEvents" ItemsSource="{Binding Events}">
+            <ListView x:ConnectionId='5' x:Name="lvEvents" ItemsSource="{Binding Events}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel x:ConnectionId='5'                       Padding="10">
+                        <StackPanel x:ConnectionId='6'                       Padding="10">
                             <TextBlock Text="{Binding Naam}"/>
                             <TextBlock Text="{Binding Beschrijving}"/>
                             <TextBlock Text="{Binding Date, Converter={StaticResource dateConverter}}"/>
@@ -34,8 +52,8 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackPanel>
-        <Button x:ConnectionId='2' Content="Event toevoegen"                        Margin="0 20 0 0"/>
-        <Button x:ConnectionId='3' Content="Vestiging verwijderen"                     Margin="0 30 0 0 "/>
+        <Button x:ConnectionId='3' Content="Event toevoegen"                        Margin="0 20 0 0"/>
+        <Button x:ConnectionId='4' Content="Vestiging verwijderen"                     Margin="0 30 0 0 "/>
     </StackPanel>
 </Page>
 

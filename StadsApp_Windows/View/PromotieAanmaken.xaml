@@ -17,7 +17,10 @@
                     <AdaptiveTrigger MinWindowWidth="720"/>
                 </VisualState.StateTriggers>
                 <VisualState.Setters>
-                    <!-- setter for less then 720 pixels-->
+                    <Setter Target="Percentage.Orientation" Value="Horizontal"/>
+                    <Setter Target="Beschrijving.Orientation" Value="Horizontal"/>
+                    <Setter Target="Van.Orientation" Value="Horizontal"/>
+                    <Setter Target="Tot.Orientation" Value="Horizontal"/>
                 </VisualState.Setters>
             </VisualState>
         </VisualStateGroup>
@@ -25,22 +28,25 @@
     
     <!-- -->
     <StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Percentage"/>
-            <TextBox x:Name="txtPercentagePromotie" PlaceholderText="Percentage promotie"/>
+        <StackPanel HorizontalAlignment="Center">
+            <TextBlock Text="Voeg hier een promotie toe" FontSize="25px" HorizontalAlignment="Center"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Beschrijving"/>
-            <TextBox x:Name="txtBeschrijvingPromotie" PlaceholderText="Beschrijving promotie"/>
+        <StackPanel x:Name="Percentage" Orientation="Vertical" HorizontalAlignment="Center">
+            <TextBlock Text="Percentage" HorizontalAlignment="Center"/>
+            <TextBox x:Name="txtPercentagePromotie" Width="400" PlaceholderText="Percentage promotie"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Van"/>
-            <CalendarDatePicker x:Name="calVan"/>
+        <StackPanel x:Name="Beschrijving" Orientation="Vertical" HorizontalAlignment="Center">
+            <TextBlock Text="Beschrijving" HorizontalAlignment="Center"/>
+            <TextBox x:Name="txtBeschrijvingPromotie" Width="400" PlaceholderText="Beschrijving promotie"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Tot"/>
-            <CalendarDatePicker x:Name="calTot"/>
+        <StackPanel x:Name="Van" Orientation="Vertical" HorizontalAlignment="Center">
+            <TextBlock Text="Van" HorizontalAlignment="Center"/>
+            <CalendarDatePicker x:Name="calVan" Width="400" HorizontalAlignment="Center"/>
         </StackPanel>
-        <Button Content="Promotie Opslaan" Click="PromotieOpslaan"/>
+        <StackPanel x:Name="Tot" Orientation="Vertical" HorizontalAlignment="Center">
+            <TextBlock Text="Tot" HorizontalAlignment="Center"/>
+            <CalendarDatePicker x:Name="calTot" Width="400" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <Button Content="Promotie Opslaan" Click="PromotieOpslaan" HorizontalAlignment="Center"/>
     </StackPanel>
 </Page>
