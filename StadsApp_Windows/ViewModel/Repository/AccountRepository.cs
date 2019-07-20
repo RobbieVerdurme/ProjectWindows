@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using StadsApp_Backend.Models;
 using StadsApp_Windows.Model;
+using StadsApp_Windows.Model.Exceptions;
 using StadsApp_Windows.Model.message;
 using System;
 using System.Collections.Generic;
@@ -23,14 +24,13 @@ namespace StadsApp_Windows.ViewModel.Repository
         public AccountRepository()
         {
             this.client = new HttpClient();
-            this.BaseUrl = "http://localhost:53331";
+            this.client.BaseAddress = new Uri("http://localhost:53331");
         }
 
         //metho
-        public async Task<string> Login(string username, string password)
+        public async Task Login(string username, string password)
         {
             //Login user
-            client.BaseAddress = new Uri($"{BaseUrl}");
             var request = new HttpRequestMessage(HttpMethod.Post, "/token");
 
             var keyValues = new List<KeyValuePair<string, string>>();
@@ -39,7 +39,6 @@ namespace StadsApp_Windows.ViewModel.Repository
             keyValues.Add(new KeyValuePair<string, string>("password", password));
 
             request.Headers.Add("Accept", "Application/json");
-            //request.Headers.Accept("application/json");
             request.Content = new FormUrlEncodedContent(keyValues);
             var response = await client.SendAsync(request);
 
@@ -47,23 +46,18 @@ namespace StadsApp_Windows.ViewModel.Repository
             if (!response.IsSuccessStatusCode)
             {
                 String content = await response.Content.ReadAsStringAsync();
-                /*ApiError error = JsonConvert.DeserializeObject<ApiError>(content);
+                ApiError error = JsonConvert.DeserializeObject<ApiError>(content);
                 
                 if (error.Error == "invalid_grant")
                 {
-                    return "Invalid credentials";
+                    throw new InvalidCredentialsException();
                 }
-                else
-                {
-                    return error.Error + " " + error.ErrorDescription;
-                }
-                */
-                return content;
+                throw new Exception(error.Error);
             }
 
             //Save user in global variables
             Ondernemer o = new Ondernemer();
-            o.Username = username;
+            o.Username = username;  
 
             var result = response.Content.ReadAsStringAsync().Result;
             Dictionary<string, string> tokenDictionary =
@@ -71,12 +65,12 @@ namespace StadsApp_Windows.ViewModel.Repository
             string token = tokenDictionary["access_token"];
             o.Access_token = token;
 
+            //Send new loggedinuserevent
             Messenger.Default.Send<GebruikerLoggedInMessage>(new GebruikerLoggedInMessage(o));
 
             //Save user credentials
             var vault = new Windows.Security.Credentials.PasswordVault();
             vault.Add(new Windows.Security.Credentials.PasswordCredential("StadsApp", username, password));
-            return "Error";
         }
 
         public async Task<string> Register(string username, string password, string passwordconfirm)

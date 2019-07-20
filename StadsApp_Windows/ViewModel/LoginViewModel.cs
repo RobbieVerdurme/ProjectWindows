@@ -1,4 +1,5 @@
-﻿using StadsApp_Windows.ViewModel.Repository;
+﻿using StadsApp_Windows.Model.Exceptions;
+using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,19 +19,19 @@ namespace StadsApp_Windows.ViewModel
             this.AccountRepo = accountrepo;
         }
 
-        public async Task<string> Login(string username, string password)
+        public async Task Login(string username, string password) 
         {
             if (string.IsNullOrEmpty(username))
             {
-                return "Please enter a username";
+                throw new InvalidUsernameException("Please enter a username");
                 
             }
             if (string.IsNullOrEmpty(password))
             {
-                return "Please enter a password";
+                throw new InvalidPasswordException("Please enter a password");
             }
 
-            return await AccountRepo.Login(username, password);
+            await AccountRepo.Login(username, password);
         }
 
         //meth
