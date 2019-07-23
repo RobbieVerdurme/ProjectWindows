@@ -86,6 +86,9 @@ namespace StadsApp_Windows
                         case "OverzichtPromoties_Page":
                             mainFrame.Navigate(typeof(OverzichtPromoties), OndernemingRepo);
                             break;
+                        case "OverzichtEvents_Page":
+                            mainFrame.Navigate(typeof(OverzichtEvents), OndernemingRepo);
+                            break;
 					}
 				}
 			}

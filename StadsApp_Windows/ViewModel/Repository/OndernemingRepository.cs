@@ -44,6 +44,9 @@ namespace StadsApp_Windows.ViewModel.Repository
             //event
             var jsonEvents = await client.GetStringAsync(new Uri($"{BaseUrl}/events"));
             Events = JsonConvert.DeserializeObject<ObservableCollection<Event>>(jsonEvents);
+            Events = new ObservableCollection<Event>(Events.OrderBy(x => x.Date.Year)
+                                    .ThenBy(x => x.Date.Month)
+                                    .ThenBy(x => x.Date.Date));
 
             //promoties
             var jsonPromoties = await client.GetStringAsync(new Uri($"{BaseUrl}/promoties"));

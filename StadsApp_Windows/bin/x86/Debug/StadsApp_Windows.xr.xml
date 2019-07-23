@@ -120,6 +120,7 @@
       <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="StadsApp_Windows.View.OndernemingAanmaken" />
+    <RootType FullName="StadsApp_Windows.View.OverzichtEvents" />
     <RootType FullName="StadsApp_Windows.View.OverzichtPromoties" />
     <RootType FullName="StadsApp_Windows.View.PromotieAanmaken" />
     <RootType FullName="StadsApp_Windows.View.VestigingAanmaken" />
@@ -129,6 +130,7 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Maps.MapControl">
       <RootProperty Name="Height" />
+      <RootProperty Name="MapServiceToken" />
     </RootType>
     <RootType FullName="StadsApp_Windows.View.OverzichtOndernemingen" />
     <RootType FullName="StadsApp_Windows.View.Registreren" />

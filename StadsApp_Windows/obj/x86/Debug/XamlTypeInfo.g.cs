@@ -189,7 +189,7 @@ namespace StadsApp_Windows.StadsApp_Windows_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[16];
+            _typeNameTable = new string[17];
             _typeNameTable[0] = "StadsApp_Windows.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -199,15 +199,16 @@ namespace StadsApp_Windows.StadsApp_Windows_XamlTypeInfo
             _typeNameTable[6] = "StadsApp_Windows.View.EventAanmaken";
             _typeNameTable[7] = "StadsApp_Windows.View.Login";
             _typeNameTable[8] = "StadsApp_Windows.View.OndernemingAanmaken";
-            _typeNameTable[9] = "StadsApp_Windows.View.OverzichtPromoties";
-            _typeNameTable[10] = "StadsApp_Windows.View.PromotieAanmaken";
-            _typeNameTable[11] = "StadsApp_Windows.View.VestigingAanmaken";
-            _typeNameTable[12] = "StadsApp_Windows.View.OndernemingDetail";
-            _typeNameTable[13] = "StadsApp_Windows.Model.Onderneming";
-            _typeNameTable[14] = "StadsApp_Windows.View.OverzichtOndernemingen";
-            _typeNameTable[15] = "StadsApp_Windows.View.Registreren";
+            _typeNameTable[9] = "StadsApp_Windows.View.OverzichtEvents";
+            _typeNameTable[10] = "StadsApp_Windows.View.OverzichtPromoties";
+            _typeNameTable[11] = "StadsApp_Windows.View.PromotieAanmaken";
+            _typeNameTable[12] = "StadsApp_Windows.View.VestigingAanmaken";
+            _typeNameTable[13] = "StadsApp_Windows.View.OndernemingDetail";
+            _typeNameTable[14] = "StadsApp_Windows.Model.Onderneming";
+            _typeNameTable[15] = "StadsApp_Windows.View.OverzichtOndernemingen";
+            _typeNameTable[16] = "StadsApp_Windows.View.Registreren";
 
-            _typeTable = new global::System.Type[16];
+            _typeTable = new global::System.Type[17];
             _typeTable[0] = typeof(global::StadsApp_Windows.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -217,13 +218,14 @@ namespace StadsApp_Windows.StadsApp_Windows_XamlTypeInfo
             _typeTable[6] = typeof(global::StadsApp_Windows.View.EventAanmaken);
             _typeTable[7] = typeof(global::StadsApp_Windows.View.Login);
             _typeTable[8] = typeof(global::StadsApp_Windows.View.OndernemingAanmaken);
-            _typeTable[9] = typeof(global::StadsApp_Windows.View.OverzichtPromoties);
-            _typeTable[10] = typeof(global::StadsApp_Windows.View.PromotieAanmaken);
-            _typeTable[11] = typeof(global::StadsApp_Windows.View.VestigingAanmaken);
-            _typeTable[12] = typeof(global::StadsApp_Windows.View.OndernemingDetail);
-            _typeTable[13] = typeof(global::StadsApp_Windows.Model.Onderneming);
-            _typeTable[14] = typeof(global::StadsApp_Windows.View.OverzichtOndernemingen);
-            _typeTable[15] = typeof(global::StadsApp_Windows.View.Registreren);
+            _typeTable[9] = typeof(global::StadsApp_Windows.View.OverzichtEvents);
+            _typeTable[10] = typeof(global::StadsApp_Windows.View.OverzichtPromoties);
+            _typeTable[11] = typeof(global::StadsApp_Windows.View.PromotieAanmaken);
+            _typeTable[12] = typeof(global::StadsApp_Windows.View.VestigingAanmaken);
+            _typeTable[13] = typeof(global::StadsApp_Windows.View.OndernemingDetail);
+            _typeTable[14] = typeof(global::StadsApp_Windows.Model.Onderneming);
+            _typeTable[15] = typeof(global::StadsApp_Windows.View.OverzichtOndernemingen);
+            _typeTable[16] = typeof(global::StadsApp_Windows.View.Registreren);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -264,13 +266,14 @@ namespace StadsApp_Windows.StadsApp_Windows_XamlTypeInfo
         private object Activate_6_EventAanmaken() { return new global::StadsApp_Windows.View.EventAanmaken(); }
         private object Activate_7_Login() { return new global::StadsApp_Windows.View.Login(); }
         private object Activate_8_OndernemingAanmaken() { return new global::StadsApp_Windows.View.OndernemingAanmaken(); }
-        private object Activate_9_OverzichtPromoties() { return new global::StadsApp_Windows.View.OverzichtPromoties(); }
-        private object Activate_10_PromotieAanmaken() { return new global::StadsApp_Windows.View.PromotieAanmaken(); }
-        private object Activate_11_VestigingAanmaken() { return new global::StadsApp_Windows.View.VestigingAanmaken(); }
-        private object Activate_12_OndernemingDetail() { return new global::StadsApp_Windows.View.OndernemingDetail(); }
-        private object Activate_13_Onderneming() { return new global::StadsApp_Windows.Model.Onderneming(); }
-        private object Activate_14_OverzichtOndernemingen() { return new global::StadsApp_Windows.View.OverzichtOndernemingen(); }
-        private object Activate_15_Registreren() { return new global::StadsApp_Windows.View.Registreren(); }
+        private object Activate_9_OverzichtEvents() { return new global::StadsApp_Windows.View.OverzichtEvents(); }
+        private object Activate_10_OverzichtPromoties() { return new global::StadsApp_Windows.View.OverzichtPromoties(); }
+        private object Activate_11_PromotieAanmaken() { return new global::StadsApp_Windows.View.PromotieAanmaken(); }
+        private object Activate_12_VestigingAanmaken() { return new global::StadsApp_Windows.View.VestigingAanmaken(); }
+        private object Activate_13_OndernemingDetail() { return new global::StadsApp_Windows.View.OndernemingDetail(); }
+        private object Activate_14_Onderneming() { return new global::StadsApp_Windows.Model.Onderneming(); }
+        private object Activate_15_OverzichtOndernemingen() { return new global::StadsApp_Windows.View.OverzichtOndernemingen(); }
+        private object Activate_16_Registreren() { return new global::StadsApp_Windows.View.Registreren(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -336,52 +339,59 @@ namespace StadsApp_Windows.StadsApp_Windows_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 9:   //  StadsApp_Windows.View.OverzichtPromoties
+            case 9:   //  StadsApp_Windows.View.OverzichtEvents
                 userType = new global::StadsApp_Windows.StadsApp_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_9_OverzichtPromoties;
+                userType.Activator = Activate_9_OverzichtEvents;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  StadsApp_Windows.View.PromotieAanmaken
+            case 10:   //  StadsApp_Windows.View.OverzichtPromoties
                 userType = new global::StadsApp_Windows.StadsApp_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_10_PromotieAanmaken;
+                userType.Activator = Activate_10_OverzichtPromoties;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 11:   //  StadsApp_Windows.View.VestigingAanmaken
+            case 11:   //  StadsApp_Windows.View.PromotieAanmaken
                 userType = new global::StadsApp_Windows.StadsApp_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_11_VestigingAanmaken;
+                userType.Activator = Activate_11_PromotieAanmaken;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 12:   //  StadsApp_Windows.View.OndernemingDetail
+            case 12:   //  StadsApp_Windows.View.VestigingAanmaken
                 userType = new global::StadsApp_Windows.StadsApp_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_12_OndernemingDetail;
+                userType.Activator = Activate_12_VestigingAanmaken;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 13:   //  StadsApp_Windows.View.OndernemingDetail
+                userType = new global::StadsApp_Windows.StadsApp_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_13_OndernemingDetail;
                 userType.AddMemberName("GeselecteerdeOnderneming");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 13:   //  StadsApp_Windows.Model.Onderneming
+            case 14:   //  StadsApp_Windows.Model.Onderneming
                 userType = new global::StadsApp_Windows.StadsApp_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 14:   //  StadsApp_Windows.View.OverzichtOndernemingen
+            case 15:   //  StadsApp_Windows.View.OverzichtOndernemingen
                 userType = new global::StadsApp_Windows.StadsApp_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_14_OverzichtOndernemingen;
+                userType.Activator = Activate_15_OverzichtOndernemingen;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 15:   //  StadsApp_Windows.View.Registreren
+            case 16:   //  StadsApp_Windows.View.Registreren
                 userType = new global::StadsApp_Windows.StadsApp_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_15_Registreren;
+                userType.Activator = Activate_16_Registreren;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

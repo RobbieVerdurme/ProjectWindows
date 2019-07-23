@@ -118,6 +118,7 @@
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\OndernemingAanmakenViewModel.cs" />
     <Compile Include="ViewModel\OndernemingDetailViewModel.cs" />
+    <Compile Include="ViewModel\OverzichtEventsViewModel.cs" />
     <Compile Include="ViewModel\OverzichtPromotiesViewModel.cs" />
     <Compile Include="ViewModel\ParamDTO\AccountDTO.cs" />
     <Compile Include="ViewModel\ParamDTO\ParamDTO.cs" />
@@ -139,6 +140,9 @@
     </Compile>
     <Compile Include="View\OndernemingAanmaken.xaml.cs">
       <DependentUpon>OndernemingAanmaken.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OverzichtEvents.xaml.cs">
+      <DependentUpon>OverzichtEvents.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OverzichtPromoties.xaml.cs">
       <DependentUpon>OverzichtPromoties.xaml</DependentUpon>
@@ -199,6 +203,10 @@
     <Page Include="View\OndernemingAanmaken.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\OverzichtEvents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\OverzichtPromoties.xaml">
       <SubType>Designer</SubType>

@@ -23,6 +23,9 @@
             <NavigationViewItem Icon="Comment" Tag="OverzichtPromoties_Page">
                 <TextBlock Tag="OverzichtPromoties_Page">Promoties</TextBlock>
             </NavigationViewItem>
+            <NavigationViewItem Icon="Calendar" Tag="OverzichtEvents_Page">
+                <TextBlock Tag="OverzichtEvents_Page">Aankomende evenementen</TextBlock>
+            </NavigationViewItem>
         </NavigationView.MenuItems>
         <NavigationView.PaneFooter>
             <NavigationViewItem x:ConnectionId='3' Icon="Contact" Tag="Login_Page"                           >

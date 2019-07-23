@@ -10,8 +10,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <ScrollViewer>
         <StackPanel Orientation="Vertical">
-            <Maps:MapControl x:ConnectionId='2' x:Name="MyMap"
-                    Height="275"/>
+            <Maps:MapControl x:ConnectionId='2' x:Name="MyMap" Height="275" MapServiceToken="GiwTCR3chli1QzampJbU~s2i7W4g-gwnnB3KeOHzUsQ~AhK_3Pg79YWCETmYDkJoAjOd-fJPDb8iT_WixUc9hIOo_KrRHxTj6okmjjf0qiLQ"/>
             <StackPanel>
                 <TextBlock Text="Vindt hier de onderneming die u zoekt" TextAlignment="Center" FontSize="25px" TextDecorations="Underline"/>
             </StackPanel>

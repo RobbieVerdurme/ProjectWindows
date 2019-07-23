@@ -1,1 +1,1 @@
-C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Windows\StadsApp_Windows.csproj;x86
+C:\Windows poging 2\StadsApp_Windows\StadsApp_Windows.csproj;x86
