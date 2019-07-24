@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using StadsApp_Backend.Models;
 using StadsApp_Windows.Model;
+using StadsApp_Windows.Model.Exceptions;
 using StadsApp_Windows.Model.message;
 using StadsApp_Windows.ViewModel;
 using StadsApp_Windows.ViewModel.ParamDTO;
@@ -57,12 +58,26 @@ namespace StadsApp_Windows.View
         {
             ErrorMessage.Text = "";
             //login
-            ErrorMessage.Text = await loginvm.Login(UsernameTextBox.Text, PasswordTextBox.Password);
-
-            if (ErrorMessage.Text.Equals(""))
+            try
             {
+                await loginvm.Login(UsernameTextBox.Text, PasswordTextBox.Password);
+                
+                //Navigate to ondernemingen when successfully logged in
                 Frame.Navigate(typeof(OverzichtOndernemingen), ondernemingsRepo);
             }
+            catch (InvalidUsernameException ex)
+            {
+                ErrorMessage.Text = "Invalid username";
+            }
+            catch (InvalidPasswordException ex)
+            {
+                ErrorMessage.Text = "Invalid password";
+            }
+            catch (InvalidCredentialsException ex)
+            {
+                ErrorMessage.Text = "Invalid credentials";
+            }
+
 		}
 
         private void RegistreerClicked(object sender, RoutedEventArgs e)
