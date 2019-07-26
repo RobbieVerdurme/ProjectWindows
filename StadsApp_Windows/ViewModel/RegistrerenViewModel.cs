@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using StadsApp_Windows.Model;
+using StadsApp_Windows.Model.Exceptions;
 using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
@@ -24,36 +25,36 @@ namespace StadsApp_Windows.ViewModel
         }
 
         //meth
-        public async Task<string> Registreer(string username, string password, string passwordconfirm)
+        public async Task Registreer(string username, string password, string passwordconfirm)
         {
             //checks
             if (string.IsNullOrEmpty(username))
             {
-                return "Please enter a username";
+                throw new InvalidUsernameException("Please enter a username");
             }
             if (!IsValidEmail(username))
             {
-                return "Not a valid email";
+                throw new InvalidUsernameException("Not a valid email");
             }
             if (string.IsNullOrEmpty(password))
             {
-                return "Please enter a password";
+                throw new InvalidPasswordException("Please enter a password");
             }
             if (string.IsNullOrEmpty(passwordconfirm))
             {
-                return "Please enter the password";
+                throw new InvalidPasswordException("Please enter a password");
             }
             if (password != passwordconfirm)
             {
-                return "Passwords do not match";
+                throw new InvalidPasswordException("Passwords do not match");
             }
             if (!CheckStrength(password))
             {
-                return "Passwords is not strong enough";
+                throw new InvalidPasswordException("password is not strong enough");
             }
 
             //registreer
-            return await AccountRepo.Register(username, password, passwordconfirm);
+            await AccountRepo.Register(username, password, passwordconfirm);
         }
 
         /***********************************Checks Help meth***********************************************/

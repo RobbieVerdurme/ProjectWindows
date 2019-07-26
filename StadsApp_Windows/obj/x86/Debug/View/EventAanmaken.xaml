@@ -18,6 +18,9 @@
                 </VisualState.StateTriggers>
                 <VisualState.Setters>
                     <!--setter voor min pixel 720 -->
+                    <Setter Target="NaamEvent.Orientation" Value="Horizontal"/>
+                    <Setter Target="BeschrijvingEvent.Orientation" Value="Horizontal"/>
+                    <Setter Target="DatumEvent.Orientation" Value="Horizontal"/>
                 </VisualState.Setters>
             </VisualState>
         </VisualStateGroup>
@@ -25,19 +28,22 @@
     
     <!-- -->
     <StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Naam"/>
-            <TextBox x:ConnectionId='5' x:Name="txtNaamEvent" PlaceholderText="Naam event"/>
+        <StackPanel>
+            <TextBlock Text="Voeg hier u event Toe" FontSize="25" HorizontalAlignment="Center"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Beschrijving"/>
-            <TextBox x:ConnectionId='4' x:Name="txtBeschrijvingEvent" PlaceholderText="Beschrijving event"/>
+        <StackPanel x:ConnectionId='2' x:Name="NaamEvent" Orientation="Vertical" HorizontalAlignment="Center">
+            <TextBlock Text="Naam" HorizontalAlignment="Center"/>
+            <TextBox x:ConnectionId='8' x:Name="txtNaamEvent" Width="400" PlaceholderText="Naam event"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Datum"/>
-            <CalendarDatePicker x:ConnectionId='3' x:Name="calDate" />
+        <StackPanel x:ConnectionId='3' x:Name="BeschrijvingEvent" Orientation="Vertical" HorizontalAlignment="Center">
+            <TextBlock Text="Beschrijving" HorizontalAlignment="Center"/>
+            <TextBox x:ConnectionId='7' x:Name="txtBeschrijvingEvent" Width="400" PlaceholderText="Beschrijving event"/>
         </StackPanel>
-        <Button x:ConnectionId='2' Content="Event Toevoegen"                       />
+        <StackPanel x:ConnectionId='4' x:Name="DatumEvent" Orientation="Vertical" HorizontalAlignment="Center">
+            <TextBlock Text="Datum" HorizontalAlignment="Center"/>
+            <CalendarDatePicker x:ConnectionId='6' x:Name="calDate" Width="400" />
+        </StackPanel>
+        <Button x:ConnectionId='5' Content="Event Toevoegen"                        HorizontalAlignment="Center"/>
     </StackPanel>
 </Page>
 

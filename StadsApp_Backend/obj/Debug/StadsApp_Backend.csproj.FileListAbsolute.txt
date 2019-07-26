@@ -157,16 +157,11 @@ D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Diagnostics.StackTra
 D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.IO.Compression.dll
 D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.IO.FileSystem.dll
 D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.IO.FileSystem.Primitives.dll
-D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.IO.Pipes.AccessControl.dll
-D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.IO.Pipes.dll
 D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Reflection.Metadata.dll
-D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Security.AccessControl.dll
-D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Security.Claims.dll
 D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Security.Cryptography.Algorithms.dll
 D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Security.Cryptography.Encoding.dll
 D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Security.Cryptography.Primitives.dll
 D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Security.Principal.Windows.dll
 D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Text.Encoding.CodePages.dll
 D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.ValueTuple.dll
 D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Xml.ReaderWriter.dll
@@ -218,7 +213,6 @@ D:\School\ProjectWindows\StadsApp_Backend\bin\System.Web.WebPages.dll
 D:\School\ProjectWindows\StadsApp_Backend\bin\System.Web.WebPages.Razor.dll
 D:\School\ProjectWindows\StadsApp_Backend\bin\WebGrease.dll
 D:\School\ProjectWindows\StadsApp_Backend\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\School\ProjectWindows\StadsApp_Backend\bin\System.Net.Http.Formatting.xml
 D:\School\ProjectWindows\StadsApp_Backend\bin\System.Web.Http.xml
 D:\School\ProjectWindows\StadsApp_Backend\bin\System.Web.Http.Owin.xml
 D:\School\ProjectWindows\StadsApp_Backend\bin\System.Web.Http.WebHost.xml
@@ -388,3 +382,11 @@ C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bi
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Net.Sockets.dll
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Globalization.Calendars.dll
+D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Net.Http.dll
+D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Net.Sockets.dll
+D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Threading.Tasks.Extensions.dll

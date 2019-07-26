@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using StadsApp_Backend.Models;
+using StadsApp_Windows.Model.Exceptions;
 using StadsApp_Windows.ViewModel;
 using StadsApp_Windows.ViewModel.ParamDTO;
 using StadsApp_Windows.ViewModel.Repository;
@@ -64,13 +65,31 @@ namespace StadsApp_Windows.View
             //In the real world you would normally validate the entered credentials and information before 
             //allowing a user to register a new account. 
             //For this sample though we will skip that step and just register an account if username is not null.
-            ErrorMessage.Text = await registrerenvm.Registreer(UsernameTextBox.Text, PasswordBox.Password, PasswordRepeatBox.Password);
-
-            if (ErrorMessage.Text.Equals(""))
+            try
             {
+                //Try to register the user
+                await registrerenvm.Registreer(UsernameTextBox.Text, PasswordBox.Password, PasswordRepeatBox.Password);
+
                 //Go to main page
-                Frame.Navigate(typeof(OverzichtOndernemingen), this.OndernemingRepo);
+                Frame.Navigate(typeof(Login), new AccountDTO()
+                {
+                    AccountRepository = this.AccountRepo,
+                    OndernemingRepository = this.OndernemingRepo
+                });
             }
-		}
+            catch(InvalidPasswordException ex)
+            {
+                ErrorMessage.Text = ex.Message;
+            }
+            catch (InvalidUsernameException ex)
+            {
+                ErrorMessage.Text = ex.Message;
+            }
+            catch (InvalidCredentialsException ex)
+            {
+                ErrorMessage.Text = ex.Message;
+            }
+
+        }
 	}
 }
