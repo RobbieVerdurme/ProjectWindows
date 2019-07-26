@@ -68,7 +68,7 @@ namespace StadsApp_Windows.View
             try
             {
                 //Try to register the user
-                await registrerenvm.Registreer(UsernameTextBox.Text, PasswordBox.Password, PasswordRepeatBox.Password);
+                await registrerenvm.Registreer(UsernameTextBox.Text, PasswordBox.Password, PasswordRepeatBox.Password, OndernemerToggleBox.IsOn);
 
                 //Go to main page
                 Frame.Navigate(typeof(Login), new AccountDTO()

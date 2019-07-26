@@ -36,6 +36,7 @@
             <TextBox x:Name="UsernameTextBox" Margin="4" Width="250" Header="Username" PlaceholderText="Username"/>
             <PasswordBox x:Name="PasswordBox" Margin="4" Width="250" Header="Paswoord" PlaceholderText="Paswoord"/>
             <PasswordBox x:Name="PasswordRepeatBox" Margin="4" Width="250" Header="Verificatie" PlaceholderText="Paswoord"/>
+            <ToggleSwitch x:Name="OndernemerToggleBox" Margin="4" Header="Ondernemer" HorizontalAlignment="Center"/>
 
             <Button x:Name="PassportRegisterButton" Content="Register" Background="DodgerBlue" Foreground="White"
         Click="RegisterButton_Click_Async" Width="80" HorizontalAlignment="Center" Margin="0,20"/>

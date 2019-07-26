@@ -152,6 +152,11 @@
       <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="StadsApp_Windows.View.OverzichtOndernemingen" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ToggleSwitch">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Header" />
+      <RootProperty Name="HorizontalAlignment" />
+    </RootType>
     <RootType FullName="StadsApp_Windows.View.Registreren" />
   </Roots.RootTypes>
 </Roots>

@@ -25,7 +25,7 @@ namespace StadsApp_Windows.ViewModel
         }
 
         //meth
-        public async Task Registreer(string username, string password, string passwordconfirm)
+        public async Task Registreer(string username, string password, string passwordconfirm, bool ondernemer)
         {
             //checks
             if (string.IsNullOrEmpty(username))
@@ -54,7 +54,7 @@ namespace StadsApp_Windows.ViewModel
             }
 
             //registreer
-            await AccountRepo.Register(username, password, passwordconfirm);
+            await AccountRepo.Register(username, password, passwordconfirm, ondernemer);
         }
 
         /***********************************Checks Help meth***********************************************/

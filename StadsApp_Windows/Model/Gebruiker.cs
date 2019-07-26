@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace StadsApp_Windows.Model
 {
-    public abstract class Gebruiker
+    public class Gebruiker
     {
         public int ID { get; set; }
         public string Naam { get; set; }
@@ -17,5 +17,7 @@ namespace StadsApp_Windows.Model
         public string Password { get; set; }
         public ObservableCollection<Onderneming> Ondernemingenvolgen {get;set;}
         public string Access_token { get; set; }
+
+        public virtual bool IsOndernemer() { return false; }
     }
 }

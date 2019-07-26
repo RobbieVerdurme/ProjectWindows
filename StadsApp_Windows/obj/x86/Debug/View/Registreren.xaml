@@ -36,8 +36,9 @@
             <TextBox x:ConnectionId='4' x:Name="UsernameTextBox" Margin="4" Width="250" Header="Username" PlaceholderText="Username"/>
             <PasswordBox x:ConnectionId='5' x:Name="PasswordBox" Margin="4" Width="250" Header="Paswoord" PlaceholderText="Paswoord"/>
             <PasswordBox x:ConnectionId='6' x:Name="PasswordRepeatBox" Margin="4" Width="250" Header="Verificatie" PlaceholderText="Paswoord"/>
+            <ToggleSwitch x:ConnectionId='7' x:Name="OndernemerToggleBox" Margin="4" Header="Ondernemer" HorizontalAlignment="Center"/>
 
-            <Button x:ConnectionId='7' x:Name="PassportRegisterButton" Content="Register" Background="DodgerBlue" Foreground="White"
+            <Button x:ConnectionId='8' x:Name="PassportRegisterButton" Content="Register" Background="DodgerBlue" Foreground="White"
                                            Width="80" HorizontalAlignment="Center" Margin="0,20"/>
 
         </StackPanel>

@@ -266,7 +266,7 @@ namespace StadsApp_Backend.Controllers
                     CookieAuthenticationDefaults.AuthenticationType);
 
                 List<Claim> roles = oAuthIdentity.Claims.Where(c => c.Type == ClaimTypes.Role).ToList();
-                AuthenticationProperties properties = ApplicationOAuthProvider.CreateProperties(user.UserName, Newtonsoft.Json.JsonConvert.SerializeObject(roles.Select(x => x.Value)));
+                AuthenticationProperties properties = ApplicationOAuthProvider.CreateProperties(user.UserName, roles.Select(x => x.Value).DefaultIfEmpty("").FirstOrDefault());
                 Authentication.SignIn(properties, oAuthIdentity, cookieIdentity);
             }
             else
@@ -344,7 +344,14 @@ namespace StadsApp_Backend.Controllers
                 return GetErrorResult(result);
             }
 
-            UserManager.AddToRole(user.Id, "Ondernemer");
+            if(model.GebruikerType is null || model.GebruikerType != "Ondernemer")
+            {
+                UserManager.AddToRole(user.Id, "Gebruiker");
+            }
+            else
+            {
+                UserManager.AddToRole(user.Id, "Ondernemer");
+            }
 
             return Ok();
         }

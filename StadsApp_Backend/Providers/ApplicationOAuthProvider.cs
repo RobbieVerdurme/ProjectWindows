@@ -46,7 +46,7 @@ namespace StadsApp_Backend.Providers
 
             List<Claim> roles = oAuthIdentity.Claims.Where(c => c.Type == ClaimTypes.Role).ToList();
             var a = Newtonsoft.Json.JsonConvert.SerializeObject(roles.Select(x => x.Value));
-            AuthenticationProperties properties = CreateProperties(user.UserName, Newtonsoft.Json.JsonConvert.SerializeObject(roles.Select(x => x.Value)));
+            AuthenticationProperties properties = CreateProperties(user.UserName, roles.Select(x => x.Value).DefaultIfEmpty("").FirstOrDefault());
             AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
             context.Validated(ticket);
             context.Request.Context.Authentication.SignIn(cookiesIdentity);
@@ -93,7 +93,7 @@ namespace StadsApp_Backend.Providers
             IDictionary<string, string> data = new Dictionary<string, string>
             {
                 { "userName", userName },
-                { "roles", Roles }
+                { "gebruikerType", Roles }
             };
             return new AuthenticationProperties(data);
         }
