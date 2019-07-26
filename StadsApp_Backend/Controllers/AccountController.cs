@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -264,7 +265,8 @@ namespace StadsApp_Backend.Controllers
                 ClaimsIdentity cookieIdentity = await user.GenerateUserIdentityAsync(UserManager,
                     CookieAuthenticationDefaults.AuthenticationType);
 
-                AuthenticationProperties properties = ApplicationOAuthProvider.CreateProperties(user.UserName);
+                List<Claim> roles = oAuthIdentity.Claims.Where(c => c.Type == ClaimTypes.Role).ToList();
+                AuthenticationProperties properties = ApplicationOAuthProvider.CreateProperties(user.UserName, roles.Select(x => x.Value).DefaultIfEmpty("").FirstOrDefault());
                 Authentication.SignIn(properties, oAuthIdentity, cookieIdentity);
             }
             else
@@ -340,6 +342,15 @@ namespace StadsApp_Backend.Controllers
             if (!result.Succeeded)
             {
                 return GetErrorResult(result);
+            }
+
+            if(model.GebruikerType is null || model.GebruikerType != "Ondernemer")
+            {
+                UserManager.AddToRole(user.Id, "Gebruiker");
+            }
+            else
+            {
+                UserManager.AddToRole(user.Id, "Ondernemer");
             }
 
             return Ok();

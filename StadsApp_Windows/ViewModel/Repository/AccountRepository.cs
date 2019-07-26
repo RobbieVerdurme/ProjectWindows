@@ -57,14 +57,17 @@ namespace StadsApp_Windows.ViewModel.Repository
             }
 
             //Save user in global variables
-            Ondernemer o = new Ondernemer();
-            o.Username = username;  
-
             var result = response.Content.ReadAsStringAsync().Result;
             Dictionary<string, string> tokenDictionary =
                JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
             string token = tokenDictionary["access_token"];
+
+            Gebruiker o;
+            if (tokenDictionary["gebruikerType"] == "Ondernemer") o = new Ondernemer();
+            else o = new Gebruiker();
+            o.Username = username;
             o.Access_token = token;
+            var a = o.IsOndernemer();
 
             //Send new loggedinuserevent
             Messenger.Default.Send<GebruikerLoggedInMessage>(new GebruikerLoggedInMessage(o));
@@ -74,10 +77,15 @@ namespace StadsApp_Windows.ViewModel.Repository
             vault.Add(new Windows.Security.Credentials.PasswordCredential("StadsApp", username, password));
         }
 
-        public async Task Register(string username, string password, string passwordconfirm)
+        public async Task Register(string username, string password, string passwordconfirm, bool ondernemer)
         {
+
+            string type;
+            if (ondernemer) type = "Ondernemer";
+            else type = "Gebruiker";
+
             //Register user
-            var registerdata = new RegisterBindingModel() { Email = username, Password = password, ConfirmPassword = passwordconfirm };
+            var registerdata = new RegisterBindingModel() { Email = username, Password = password, ConfirmPassword = passwordconfirm, GebruikerType = type };
             var registerJson = JsonConvert.SerializeObject(registerdata);
             
             var res = await client.PostAsync("/api/account/register", new StringContent(registerJson, System.Text.Encoding.UTF8, "application/json"));

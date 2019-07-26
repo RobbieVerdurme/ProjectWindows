@@ -249,8 +249,6 @@ D:\School\ProjectWindows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.Core
 D:\School\ProjectWindows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.CopyComplete
 D:\School\ProjectWindows\StadsApp_Backend\obj\Debug\StadsApp_Backend.dll
 D:\School\ProjectWindows\StadsApp_Backend\obj\Debug\StadsApp_Backend.pdb
-D:\School\ProjectWindows\StadsApp_Backend\obj\Debug\StadsApp_Backend.Migrations.initial.resources
-D:\School\ProjectWindows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.GenerateResource.cache
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\ApplicationInsights.config
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\StadsApp_Backend.dll.config
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\StadsApp_Backend.dll
@@ -390,3 +388,5 @@ D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Net.Http.dll
 D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Net.Sockets.dll
 D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
 D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\School\ProjectWindows\StadsApp_Backend\obj\Debug\StadsApp_Backend.Migrations.initial.resources
+D:\School\ProjectWindows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.GenerateResource.cache

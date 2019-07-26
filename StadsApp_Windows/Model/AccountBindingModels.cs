@@ -48,6 +48,9 @@ namespace StadsApp_Backend.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Display(Name = "GebruikerType")]
+        public string GebruikerType;
     }
 
     public class RegisterExternalBindingModel

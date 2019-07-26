@@ -44,7 +44,9 @@ namespace StadsApp_Backend.Providers
             ClaimsIdentity cookiesIdentity = await user.GenerateUserIdentityAsync(userManager,
                 CookieAuthenticationDefaults.AuthenticationType);
 
-            AuthenticationProperties properties = CreateProperties(user.UserName);
+            List<Claim> roles = oAuthIdentity.Claims.Where(c => c.Type == ClaimTypes.Role).ToList();
+            var a = Newtonsoft.Json.JsonConvert.SerializeObject(roles.Select(x => x.Value));
+            AuthenticationProperties properties = CreateProperties(user.UserName, roles.Select(x => x.Value).DefaultIfEmpty("").FirstOrDefault());
             AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
             context.Validated(ticket);
             context.Request.Context.Authentication.SignIn(cookiesIdentity);
@@ -86,11 +88,12 @@ namespace StadsApp_Backend.Providers
             return Task.FromResult<object>(null);
         }
 
-        public static AuthenticationProperties CreateProperties(string userName)
+        public static AuthenticationProperties CreateProperties(string userName, string Roles)
         {
             IDictionary<string, string> data = new Dictionary<string, string>
             {
-                { "userName", userName }
+                { "userName", userName },
+                { "gebruikerType", Roles }
             };
             return new AuthenticationProperties(data);
         }

@@ -8,5 +8,6 @@ namespace StadsApp_Windows.Model
 {
     public class Ondernemer : Gebruiker
     {
+        public override bool IsOndernemer() { return true; }
     }
 }
