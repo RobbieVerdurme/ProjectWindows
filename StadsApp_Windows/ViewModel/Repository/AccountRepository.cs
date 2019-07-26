@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using StadsApp_Backend.Models;
 using StadsApp_Windows.Model;
 using StadsApp_Windows.Model.Exceptions;
@@ -73,22 +74,30 @@ namespace StadsApp_Windows.ViewModel.Repository
             vault.Add(new Windows.Security.Credentials.PasswordCredential("StadsApp", username, password));
         }
 
-        public async Task<string> Register(string username, string password, string passwordconfirm)
+        public async Task Register(string username, string password, string passwordconfirm)
         {
             //Register user
             var registerdata = new RegisterBindingModel() { Email = username, Password = password, ConfirmPassword = passwordconfirm };
             var registerJson = JsonConvert.SerializeObject(registerdata);
-            HttpClient client = new HttpClient();
-            var res = await client.PostAsync($"{BaseUrl}/api/account/register", new StringContent(registerJson, System.Text.Encoding.UTF8, "application/json"));
+            
+            var res = await client.PostAsync("/api/account/register", new StringContent(registerJson, System.Text.Encoding.UTF8, "application/json"));
 
             //Log error message
             if (!res.IsSuccessStatusCode)
             {
-                return res.StatusCode + " " + res.ReasonPhrase;
-            }
-            else
-            {
-                return "Error";
+                String content = await res.Content.ReadAsStringAsync();
+                var err = JObject.Parse(content);
+
+                try
+                {
+                    var mes = err["ModelState"][""][0].ToString();
+                    throw new InvalidCredentialsException(mes);
+                }
+                catch(NullReferenceException ex)
+                {
+                    throw new InvalidCredentialsException("Bad Request from server");
+                }
+                
             }
         }
     }

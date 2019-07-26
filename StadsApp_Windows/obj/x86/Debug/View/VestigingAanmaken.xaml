@@ -18,7 +18,7 @@
                 <VisualState.Setters>
                     <!-- setter for less then 720 pixels-->
                     <Setter Target="NaamVestinging.Orientation" Value="Horizontal"/>
-                    <Setter Target="test.TextDecorations" Value=""/>
+                    <Setter Target="AdresVestiging.Orientation" Value="Horizontal"/>
                 </VisualState.Setters>
             </VisualState>
         </VisualStateGroup>
@@ -27,17 +27,17 @@
     <!-- -->
     <StackPanel>
         <StackPanel>
-            <TextBlock x:ConnectionId='6' x:Name="test" Text="Maak hier een vestiging aan" FontSize="25" HorizontalAlignment="Center" TextDecorations="Underline"/>
+            <TextBlock Text="Maak hier een vestiging aan" FontSize="25" HorizontalAlignment="Center"/>
         </StackPanel>
         <StackPanel x:ConnectionId='2' x:Name="NaamVestinging" Orientation="Vertical" Padding="10" HorizontalAlignment="Center">
             <TextBlock Text="Naam vestiging:" Padding="10" HorizontalAlignment="Center"/>
-            <TextBox x:ConnectionId='5' x:Name="txtNaam" Width="400"/>
+            <TextBox x:ConnectionId='6' x:Name="txtNaam" Width="400"/>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Padding="10" HorizontalAlignment="Center">
+        <StackPanel x:ConnectionId='3' x:Name="AdresVestiging" Orientation="Vertical" Padding="10" HorizontalAlignment="Center">
             <TextBlock Text="Adres van vestiging:" Padding="10" HorizontalAlignment="Center"/>
-            <TextBox x:ConnectionId='4' x:Name="txtAdres" Width="400"/>
+            <TextBox x:ConnectionId='5' x:Name="txtAdres" Width="400"/>
         </StackPanel>
-        <Button x:ConnectionId='3' Content="Vestiging opslaan"                          HorizontalAlignment="Center"/>
+        <Button x:ConnectionId='4' Content="Vestiging opslaan"                          HorizontalAlignment="Center"/>
     </StackPanel>
 </Page>
 

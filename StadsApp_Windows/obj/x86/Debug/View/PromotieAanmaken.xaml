@@ -33,19 +33,19 @@
         </StackPanel>
         <StackPanel x:ConnectionId='2' x:Name="Percentage" Orientation="Vertical" HorizontalAlignment="Center">
             <TextBlock Text="Percentage" HorizontalAlignment="Center"/>
-            <TextBox x:ConnectionId='10' x:Name="txtPercentagePromotie" PlaceholderText="Percentage promotie"/>
+            <TextBox x:ConnectionId='10' x:Name="txtPercentagePromotie" Width="400" PlaceholderText="Percentage promotie"/>
         </StackPanel>
         <StackPanel x:ConnectionId='3' x:Name="Beschrijving" Orientation="Vertical" HorizontalAlignment="Center">
             <TextBlock Text="Beschrijving" HorizontalAlignment="Center"/>
-            <TextBox x:ConnectionId='9' x:Name="txtBeschrijvingPromotie" PlaceholderText="Beschrijving promotie"/>
+            <TextBox x:ConnectionId='9' x:Name="txtBeschrijvingPromotie" Width="400" PlaceholderText="Beschrijving promotie"/>
         </StackPanel>
         <StackPanel x:ConnectionId='4' x:Name="Van" Orientation="Vertical" HorizontalAlignment="Center">
             <TextBlock Text="Van" HorizontalAlignment="Center"/>
-            <CalendarDatePicker x:ConnectionId='8' x:Name="calVan" HorizontalAlignment="Center"/>
+            <CalendarDatePicker x:ConnectionId='8' x:Name="calVan" Width="400" HorizontalAlignment="Center"/>
         </StackPanel>
         <StackPanel x:ConnectionId='5' x:Name="Tot" Orientation="Vertical" HorizontalAlignment="Center">
             <TextBlock Text="Tot" HorizontalAlignment="Center"/>
-            <CalendarDatePicker x:ConnectionId='7' x:Name="calTot" HorizontalAlignment="Center"/>
+            <CalendarDatePicker x:ConnectionId='7' x:Name="calTot" Width="400" HorizontalAlignment="Center"/>
         </StackPanel>
         <Button x:ConnectionId='6' Content="Promotie Opslaan"                         HorizontalAlignment="Center"/>
     </StackPanel>

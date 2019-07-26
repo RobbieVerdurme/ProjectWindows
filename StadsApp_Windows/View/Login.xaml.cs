@@ -48,6 +48,7 @@ namespace StadsApp_Windows.View
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+
             AccountDTO param = (AccountDTO)e.Parameter;
             this.loginvm = new LoginViewModel(param.AccountRepository);
             this.ondernemingsRepo = param.OndernemingRepository;
