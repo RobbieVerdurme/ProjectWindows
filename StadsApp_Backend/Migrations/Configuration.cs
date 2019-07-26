@@ -1,5 +1,6 @@
 namespace StadsApp_Backend.Migrations
 {
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -18,6 +19,7 @@ namespace StadsApp_Backend.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+            context.Roles.Add(new IdentityRole("Ondernemer"));
         }
     }
 }
