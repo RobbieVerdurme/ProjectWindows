@@ -33,7 +33,6 @@ namespace StadsApp_Windows.View
         //var
         private OndernemingDetailViewModel detailondernemingvm;
         private OndernemingRepository OndernemingRepo;
-        public Onderneming GeselecteerdeOnderneming { get; set; }
 
         //constr
         public OndernemingDetail()
@@ -47,16 +46,15 @@ namespace StadsApp_Windows.View
             base.OnNavigatedTo(e);
             ParamDTO param = (ParamDTO)e.Parameter;
             this.OndernemingRepo = param.ondernemingRepo;
-            this.GeselecteerdeOnderneming = param.gekozenOnderneming;
             this.detailondernemingvm = new OndernemingDetailViewModel(param.ondernemingRepo, param.gekozenOnderneming);
-            this.DataContext = GeselecteerdeOnderneming;
+            this.DataContext = detailondernemingvm;
         }
 
         /************************************************************Toevoegen****************************************************************************/
         private void VestigingToevoegen(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(VestigingAanmaken), new ParamDTO() {
-            gekozenOnderneming = this.GeselecteerdeOnderneming,
+            gekozenOnderneming = this.detailondernemingvm.GeselecteerdeOnderneming,
             ondernemingRepo = this.OndernemingRepo
             });
         }
@@ -64,7 +62,7 @@ namespace StadsApp_Windows.View
         private void PromotieToevoegen(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(PromotieAanmaken), new ParamDTO() {
-                gekozenOnderneming = this.GeselecteerdeOnderneming,
+                gekozenOnderneming = this.detailondernemingvm.GeselecteerdeOnderneming,
                 ondernemingRepo = this.OndernemingRepo
             });
         }
@@ -95,7 +93,7 @@ namespace StadsApp_Windows.View
             
             doc.Open();
             Paragraph p1 = new Paragraph("Veel plezier met uw kortingsbon!!");
-            Paragraph p2 = new Paragraph($"Dankzij {GeselecteerdeOnderneming.Naam} heeft U een kortingsbon ontvangen ter waarde van {p.Percentage}%. " +
+            Paragraph p2 = new Paragraph($"Dankzij {this.detailondernemingvm.GeselecteerdeOnderneming.Naam} heeft U een kortingsbon ontvangen ter waarde van {p.Percentage}%. " +
                 $"Deze kan gebruikt worden in alle winkels van onze onderneming");
             Paragraph p3 = new Paragraph($"Deze kortingsbon is geldig vanaf {p.Van} tot {p.Tot}.");
             Paragraph p4 = new Paragraph($"{p.Beschrijving}");
@@ -130,12 +128,12 @@ namespace StadsApp_Windows.View
 
         private Vestiging GetVestiging(Vestiging selectedItem)
         {
-            return GeselecteerdeOnderneming.Vestigingen.Where(x => x.VestigingID.Equals(selectedItem.VestigingID)).FirstOrDefault();
+            return this.detailondernemingvm.GeselecteerdeOnderneming.Vestigingen.Where(x => x.VestigingID.Equals(selectedItem.VestigingID)).FirstOrDefault();
         }
 
         public void Verwijderen(object sender, RoutedEventArgs e)
         {
-            detailondernemingvm.VerwijderOnderneming(GeselecteerdeOnderneming);
+            detailondernemingvm.VerwijderOnderneming();
             this.Frame.Navigate(typeof(OverzichtOndernemingen), this.OndernemingRepo);
         }
     }

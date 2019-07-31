@@ -4,6 +4,7 @@ using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -14,6 +15,7 @@ namespace StadsApp_Windows.ViewModel
     class OndernemingDetailViewModel
     {
         //var
+        public Gebruiker Gebruiker { get; set; } = Globals.loggedInGebruiker;
         public Onderneming GeselecteerdeOnderneming { get; set; }
         public ObservableCollection<Event> Events { get; set; }
         private OndernemingRepository OndernemingRepo;
@@ -33,9 +35,9 @@ namespace StadsApp_Windows.ViewModel
             Events = OndernemingRepo.Events;
         }
 
-        public void VerwijderOnderneming(Onderneming o)
+        public void VerwijderOnderneming()
         {
-            OndernemingRepo.VerwijderOnderneming(GeselecteerdeOnderneming);
+            OndernemingRepo.VerwijderOnderneming(this.GeselecteerdeOnderneming);
         }
     }
 }

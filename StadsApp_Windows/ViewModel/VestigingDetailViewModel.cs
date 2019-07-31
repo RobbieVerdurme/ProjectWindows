@@ -13,17 +13,20 @@ namespace StadsApp_Windows.ViewModel
     {
         //var
         private OndernemingRepository OndernemingRepo;
+        public Vestiging Vestiging { get; set; }
+        public Gebruiker Gebruiker { get; set; } = Globals.loggedInGebruiker;
 
         //constr
-        public VestigingDetailViewModel(OndernemingRepository ondRepo)
+        public VestigingDetailViewModel(OndernemingRepository ondRepo, Vestiging vestiging)
         {
             this.OndernemingRepo = ondRepo;
+            this.Vestiging = vestiging;
         }
 
         //meth
-        public async Task VerwijderVestigingAsync(Vestiging v)
+        public async Task VerwijderVestigingAsync()
         {
-            await OndernemingRepo.VerwijderVestigingAsync(v);
+            await OndernemingRepo.VerwijderVestigingAsync(Vestiging);
         }
     }
 }

@@ -5,8 +5,14 @@
     xmlns:local="using:StadsApp_Windows"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodel="using:StadsApp_Windows.ViewModel.Converter"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <!--PAGE -->
+    <Page.Resources>
+        <viewmodel:GebruikerVisabilityConverter x:Key="GebruikerConverter"/>
+    </Page.Resources>
+    <!-- -->
     <NavigationView x:Name="nvTopLevelNav"
                 Loaded="nvTopLevelNav_Loaded"
                 Margin="0,15,0,-3"
@@ -17,7 +23,7 @@
             <NavigationViewItem Icon="Home" Tag="Overzicht_Page">
                 <TextBlock Tag="Overzicht_Page">Onderneming overzicht</TextBlock>
             </NavigationViewItem>
-            <NavigationViewItem Icon="Shop" Tag="Toevoegen_Page">
+            <NavigationViewItem Icon="Shop" Tag="Toevoegen_Page" Visibility="{Binding Gebruiker, Converter={StaticResource GebruikerConverter}}">
                 <TextBlock Tag="Toevoegen_Page">Onderneming toevoegen</TextBlock>
             </NavigationViewItem>
             <NavigationViewItem Icon="Comment" Tag="OverzichtPromoties_Page">

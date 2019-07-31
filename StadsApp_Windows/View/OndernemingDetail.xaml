@@ -2,15 +2,15 @@
     x:Class="StadsApp_Windows.View.OndernemingDetail"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:StadsApp_Windows.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:viewmodel="using:StadsApp_Windows.ViewModel"
+    xmlns:viewmodel="using:StadsApp_Windows.ViewModel.Converter"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <!-- PAGE -->
     <Page.Resources>
         <viewmodel:DateConverter x:Key="dateConverter"/>
+        <viewmodel:GebruikerVisabilityConverter x:Key="GebruikerConverter"/>
     </Page.Resources>
     
     <!-- VISUALSTATES -->
@@ -33,17 +33,17 @@
     <!-- -->
     <StackPanel Padding="30 0 0 0">
         <StackPanel Orientation="Horizontal" Padding="20">
-            <TextBlock Text="{Binding Naam}" FontWeight="Bold" FontSize="30"/>
+            <TextBlock Text="{Binding GeselecteerdeOnderneming.Naam}" FontWeight="Bold" FontSize="30"/>
         </StackPanel>
             
         <StackPanel Orientation="Horizontal" Padding="10">
             <TextBlock Text="Soort onderneming" Width="200"/>
-            <TextBlock Text="{Binding Soort}" FontWeight="Bold"/>
+            <TextBlock Text="{Binding GeselecteerdeOnderneming.Soort}" FontWeight="Bold"/>
         </StackPanel>
         <StackPanel Orientation="Vertical">
             <StackPanel x:Name="Vestigingen" Orientation="Horizontal" Padding="20">
                 <TextBlock Text="Vestiging(en):" Width="200"/>
-                <ListView x:Name="lvVestigingen" ItemsSource="{Binding Vestigingen}">
+                <ListView x:Name="lvVestigingen" ItemsSource="{Binding GeselecteerdeOnderneming.Vestigingen}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel DoubleTapped="StackPanel_DoubleTapped">
@@ -54,11 +54,11 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackPanel>
-            <Button Content="Vestiging toevoegen" Click="VestigingToevoegen"/>
-            
+            <Button Content="Vestiging toevoegen" Click="VestigingToevoegen" Visibility="{Binding Gebruiker, Converter={StaticResource GebruikerConverter}}"/>
+
             <StackPanel x:Name="Promoties" Orientation="Horizontal" Padding="20 30 20 20">
                 <TextBlock Text="Promoties:" Width="200"/>
-                <ListView x:Name="lvPromoties" ItemsSource="{Binding Promoties}">
+                <ListView x:Name="lvPromoties" ItemsSource="{Binding GeselecteerdeOnderneming.Promoties}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Tapped="Promotie_Tapped">
@@ -71,8 +71,8 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackPanel>
-            <Button Content="Promotie toevoegen" Click="PromotieToevoegen"/>
+            <Button Content="Promotie toevoegen" Click="PromotieToevoegen" Visibility="{Binding Gebruiker, Converter={StaticResource GebruikerConverter}}"/>
         </StackPanel>
-        <Button Content="Onderneming verwijderen" Click="Verwijderen" Margin="0 30 0 0"/>
+        <Button Content="Onderneming verwijderen" Click="Verwijderen" Margin="0 30 0 0" Visibility="{Binding Gebruiker, Converter={StaticResource GebruikerConverter}}"/>
     </StackPanel>
 </Page>

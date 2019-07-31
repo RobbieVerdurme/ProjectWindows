@@ -28,7 +28,6 @@ namespace StadsApp_Windows.View
     public sealed partial class DetailVestiging : Page
     {
         //var
-        private Vestiging Vestiging;
         private VestigingDetailViewModel vmDetail;
         private OndernemingRepository OndernemingRepo;
 
@@ -44,22 +43,21 @@ namespace StadsApp_Windows.View
             base.OnNavigatedTo(e);
             ParamDTO param = (ParamDTO)e.Parameter;
             this.OndernemingRepo = param.ondernemingRepo;
-            this.Vestiging = param.gekozenVestiging;
-            vmDetail = new VestigingDetailViewModel(param.ondernemingRepo);
-            this.DataContext = Vestiging;
+            vmDetail = new VestigingDetailViewModel(param.ondernemingRepo, param.gekozenVestiging);
+            this.DataContext = vmDetail.Vestiging;
         }
 
         private void EventToevoegen(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(EventAanmaken), new ParamDTO() {
-            gekozenVestiging = this.Vestiging,
+            gekozenVestiging = this.vmDetail.Vestiging,
             ondernemingRepo = this.OndernemingRepo
             });
         }
 
         protected async void Verwijderen(object sender, RoutedEventArgs e)
         {
-            await vmDetail.VerwijderVestigingAsync(Vestiging);
+            await vmDetail.VerwijderVestigingAsync();
             this.Frame.Navigate(typeof(OverzichtOndernemingen), this.OndernemingRepo);
         }
 
@@ -72,7 +70,7 @@ namespace StadsApp_Windows.View
 
             appointment.Subject = evnt.Naam;
             appointment.Details = evnt.Beschrijving;
-            appointment.Location = Vestiging.Adres;
+            appointment.Location = this.vmDetail.Vestiging.Adres;
             appointment.StartTime = evnt.Date;
             appointment.AllDay = true;
 
@@ -82,7 +80,7 @@ namespace StadsApp_Windows.View
         
         private Event GetEvent(Event selectedItem)
         {
-            return Vestiging.Events.Where(x => x.EventId == selectedItem.EventId).FirstOrDefault();
+            return this.vmDetail.Vestiging.Events.Where(x => x.EventId == selectedItem.EventId).FirstOrDefault();
         }
 
         private static Rect GetElementRect(FrameworkElement element)

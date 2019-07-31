@@ -35,7 +35,7 @@ namespace StadsApp_Windows
         private MainPageViewModel vm;
         private OndernemingRepository OndernemingRepo;
         private AccountRepository AccountRepo;
-        
+
         public MainPage()
         {
             this.InitializeComponent();

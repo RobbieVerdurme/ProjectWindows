@@ -5,12 +5,13 @@
     xmlns:local="using:StadsApp_Windows.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:viewmodel="using:StadsApp_Windows.ViewModel"
+    xmlns:viewmodel="using:StadsApp_Windows.ViewModel.Converter"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <!-- PAGES -->
     <Page.Resources>
         <viewmodel:DateConverter x:Key="dateConverter"/>
+        <viewmodel:GebruikerVisabilityConverter x:Key="GebruikerConverter"/>
     </Page.Resources>
     
     <!-- VISUALSTATES -->
@@ -52,7 +53,7 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackPanel>
-        <Button Content="Event toevoegen" Click="EventToevoegen" Margin="0 20 0 0"/>
-        <Button Content="Vestiging verwijderen" Click="Verwijderen" Margin="0 30 0 0 "/>
+        <Button Content="Event toevoegen" Click="EventToevoegen" Margin="0 20 0 0" Visibility="{Binding Gebruiker, Converter={StaticResource GebruikerConverter}}"/>
+        <Button Content="Vestiging verwijderen" Click="Verwijderen" Margin="0 30 0 0 " Visibility="{Binding Gebruiker, Converter={StaticResource GebruikerConverter}}"/>
     </StackPanel>
 </Page>

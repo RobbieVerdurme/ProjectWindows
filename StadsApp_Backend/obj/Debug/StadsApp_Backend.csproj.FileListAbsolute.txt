@@ -364,8 +364,6 @@ C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bi
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.DependencyCollector.xml
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\bin\Microsoft.AI.Web.xml
-C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.Migrations.initial.resources
-C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.GenerateResource.cache
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.CoreCompileInputs.cache
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.CopyComplete
 C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.dll
@@ -390,3 +388,5 @@ D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Runtime.InteropServi
 D:\School\ProjectWindows\StadsApp_Backend\bin\roslyn\System.Threading.Tasks.Extensions.dll
 D:\School\ProjectWindows\StadsApp_Backend\obj\Debug\StadsApp_Backend.Migrations.initial.resources
 D:\School\ProjectWindows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.GenerateResource.cache
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.Migrations.initial.resources
+C:\Users\Boeferrob\Desktop\Windows\Projects\StadsApp_Windows\StadsApp_Backend\obj\Debug\StadsApp_Backend.csproj.GenerateResource.cache

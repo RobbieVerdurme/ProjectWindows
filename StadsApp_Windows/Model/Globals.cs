@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StadsApp_Windows.Model
 {
-	class Globals
+	public class Globals
 	{
 		public static Gebruiker loggedInGebruiker { get; set; }
 	}

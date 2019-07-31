@@ -5,7 +5,7 @@
     xmlns:local="using:StadsApp_Windows.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:viewmodel="using:StadsApp_Windows.ViewModel"
+    xmlns:viewmodel="using:StadsApp_Windows.ViewModel.Converter"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <!-- PAGE -->

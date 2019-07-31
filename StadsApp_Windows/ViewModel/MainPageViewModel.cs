@@ -17,7 +17,6 @@ namespace StadsApp_Windows.ViewModel
     public class MainPageViewModel : INotifyPropertyChanged
     {
         public Gebruiker Gebruiker { get; set; }
-
         private string _username;
         public string Username {
             get {
@@ -27,6 +26,7 @@ namespace StadsApp_Windows.ViewModel
                 _username = value;
                 OnPropertyChanged(new PropertyChangedEventArgs("Username"));
             } }
+
 
         public MainPageViewModel()
         {
