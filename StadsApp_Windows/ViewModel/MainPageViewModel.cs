@@ -16,7 +16,15 @@ namespace StadsApp_Windows.ViewModel
 {
     public class MainPageViewModel : INotifyPropertyChanged
     {
-        public Gebruiker Gebruiker { get; set; }
+        private Gebruiker _gebruiker;
+        public Gebruiker Gebruiker {
+            get {
+                return _gebruiker;
+            }
+            set {
+                _gebruiker = value;
+                OnPropertyChanged(new PropertyChangedEventArgs("Gebruiker"));
+            } }
         private string _username;
         public string Username {
             get {
@@ -38,7 +46,11 @@ namespace StadsApp_Windows.ViewModel
         //Update the username if a new user is logged in
         private void ReceiveMessage(GebruikerLoggedInMessage m)
         {
-            if (m.gebruiker == null) Username = "login";
+            if (m.gebruiker == null)
+            {
+                Username = "login";
+                Gebruiker = null;
+            }
             else
             {
                 Username = m.gebruiker.Username;
