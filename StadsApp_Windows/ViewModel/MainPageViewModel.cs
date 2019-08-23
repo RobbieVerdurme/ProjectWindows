@@ -23,6 +23,7 @@ namespace StadsApp_Windows.ViewModel
             }
             set {
                 _gebruiker = value;
+                Globals.loggedInGebruiker = value;
                 OnPropertyChanged(new PropertyChangedEventArgs("Gebruiker"));
             } }
         private string _username;
