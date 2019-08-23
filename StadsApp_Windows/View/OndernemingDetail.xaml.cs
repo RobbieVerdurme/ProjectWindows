@@ -5,20 +5,12 @@ using StadsApp_Windows.ViewModel;
 using StadsApp_Windows.ViewModel.ParamDTO;
 using StadsApp_Windows.ViewModel.Repository;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.ApplicationModel.Appointments;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -68,50 +60,68 @@ namespace StadsApp_Windows.View
         }
         
         /************************************************************Promotie pdf Genereren****************************************************************************/
-        private void Promotie_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void Promotie_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            /*OpenFileDialog 
-            Stream myStream;
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-
-            saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            saveFileDialog1.FilterIndex = 2;
-            saveFileDialog1.RestoreDirectory = true;
-
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            using (System.IO.MemoryStream memoryStream = new System.IO.MemoryStream())
             {
-                if ((myStream = saveFileDialog1.OpenFile()) != null)
+                Promotie p = (Promotie)lvPromoties.SelectedItem;
+
+                Document doc = new Document();
+                /*string pathName = "";
+                try
                 {
-                    // Code to write the stream goes here.
-                    myStream.Close();
+                    StorageFolder folder = await DownloadsFolder.CreateFolderAsync("Promoties");
+                    pathName = folder.Path;
+                } catch(Exception ex)
+                {
+                    string localfolder = ApplicationData.Current.LocalFolder.Path;
+                    var array = localfolder.Split('\\');
+                    var username = array[2];
+                    string downloads = @"C:\Users\" + username + @"\Downloads\440f7795-f868-46cf-9c90-16733e673bb3_zp8g5bj0fsrbp!App\Promoties";
+                    pathName = downloads;
                 }
-            }*/
+                string fileName = p.Beschrijving + ".pdf";
+                string fullName = Path.Combine(pathName, fileName);
+                //PdfWriter.GetInstance(doc, new FileStream(fullName, FileMode.Create));*/
+                StorageFile file = await DownloadsFolder.CreateFileAsync(p.Beschrijving + ".pdf");
 
-            Promotie p = (Promotie)lvPromoties.SelectedItem;
 
-            Document doc = new Document();
-            
-            doc.Open();
-            Paragraph p1 = new Paragraph("Veel plezier met uw kortingsbon!!");
-            Paragraph p2 = new Paragraph($"Dankzij {this.detailondernemingvm.GeselecteerdeOnderneming.Naam} heeft U een kortingsbon ontvangen ter waarde van {p.Percentage}%. " +
-                $"Deze kan gebruikt worden in alle winkels van onze onderneming");
-            Paragraph p3 = new Paragraph($"Deze kortingsbon is geldig vanaf {p.Van} tot {p.Tot}.");
-            Paragraph p4 = new Paragraph($"{p.Beschrijving}");
-            Paragraph p5 = new Paragraph("Wij wensen u alvast veel plezier met onze kortingsbon");
-            doc.Add(p1);
-            doc.Add(p2);
-            doc.Add(p3);
-            doc.Add(p4);
-            doc.Add(p5);
-            doc.Close();
-            PdfWriter.GetInstance(doc, new FileStream("C:\\Users\\Boeferrob\\Downloads\\file.pdf", FileMode.Create));
-            ContentDialog dialog = new ContentDialog()
-            {
-                Title = "PDF gedownload",
-                Content = "PDF van deze promotie vindt U terug in uw Download folder",
-                CloseButtonText = "OK"
-            };
-            dialog.ShowAsync();
+                doc.Open();
+                Paragraph p1 = new Paragraph("Veel plezier met uw kortingsbon!!");
+                Paragraph p2 = new Paragraph($"Dankzij {this.detailondernemingvm.GeselecteerdeOnderneming.Naam} heeft U een kortingsbon ontvangen ter waarde van {p.Percentage}%. " +
+                    $"Deze kan gebruikt worden in alle winkels van onze onderneming");
+                Paragraph p3 = new Paragraph($"Deze kortingsbon is geldig vanaf {p.Van} tot {p.Tot}.");
+                Paragraph p4 = new Paragraph($"{p.Beschrijving}");
+                Paragraph p5 = new Paragraph("Wij wensen u alvast veel plezier met onze kortingsbon");
+                doc.Add(p1);
+                doc.Add(p2);
+                doc.Add(p3);
+                doc.Add(p4);
+                doc.Add(p5);
+                doc.Close();
+                //await Windows.Storage.FileIO.WriteTextAsync(file, /*doc.ToString()*/"Halloo");
+                
+                /*byte[] bytes = memoryStream.ToArray();
+                memoryStream.Close();
+                Response.Clear();
+                Response.ContentType = "application/pdf";
+
+                string pdfName = "User";
+                Response.AddHeader("Content-Disposition", "attachment; filename=" + pdfName + ".pdf");
+                Response.ContentType = "application/pdf";
+                Response.Buffer = true;
+                Response.Cache.SetCacheability(System.Web.HttpCacheability.NoCache);
+                Response.BinaryWrite(bytes);
+                Response.End();
+                Response.Close();*/
+                ContentDialog dialog = new ContentDialog()
+                {
+                    Title = "PDF gedownload",
+                    Content = "PDF van deze promotie vindt U terug in uw Download folder",
+                    CloseButtonText = "OK"
+                };
+                dialog.ShowAsync();
+            }
         }
 
         /************************************************************Naar vestiging gaan****************************************************************************/
