@@ -7,11 +7,13 @@ using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.IO;
 using System.Linq;
+using Windows.Networking.BackgroundTransfer;
 using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
+using Windows.Web.Http;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -67,24 +69,14 @@ namespace StadsApp_Windows.View
                 Promotie p = (Promotie)lvPromoties.SelectedItem;
 
                 Document doc = new Document();
-                /*string pathName = "";
-                try
-                {
-                    StorageFolder folder = await DownloadsFolder.CreateFolderAsync("Promoties");
-                    pathName = folder.Path;
-                } catch(Exception ex)
-                {
-                    string localfolder = ApplicationData.Current.LocalFolder.Path;
-                    var array = localfolder.Split('\\');
-                    var username = array[2];
-                    string downloads = @"C:\Users\" + username + @"\Downloads\440f7795-f868-46cf-9c90-16733e673bb3_zp8g5bj0fsrbp!App\Promoties";
-                    pathName = downloads;
-                }
+                string username = ApplicationData.Current.LocalFolder.Path.Split('\\')[2];
+                string pathName = @"C:\Users\" + username + @"\Downloads\440f7795-f868-46cf-9c90-16733e673bb3_zp8g5bj0fsrbp!App";
+                
                 string fileName = p.Beschrijving + ".pdf";
                 string fullName = Path.Combine(pathName, fileName);
-                //PdfWriter.GetInstance(doc, new FileStream(fullName, FileMode.Create));*/
                 StorageFile file = await DownloadsFolder.CreateFileAsync(p.Beschrijving + ".pdf");
 
+                //PdfWriter.GetInstance(doc, new FileStream(fullName, FileMode.Append));
 
                 doc.Open();
                 Paragraph p1 = new Paragraph("Veel plezier met uw kortingsbon!!");
@@ -100,27 +92,14 @@ namespace StadsApp_Windows.View
                 doc.Add(p5);
                 doc.Close();
                 //await Windows.Storage.FileIO.WriteTextAsync(file, /*doc.ToString()*/"Halloo");
-                
-                /*byte[] bytes = memoryStream.ToArray();
-                memoryStream.Close();
-                Response.Clear();
-                Response.ContentType = "application/pdf";
 
-                string pdfName = "User";
-                Response.AddHeader("Content-Disposition", "attachment; filename=" + pdfName + ".pdf");
-                Response.ContentType = "application/pdf";
-                Response.Buffer = true;
-                Response.Cache.SetCacheability(System.Web.HttpCacheability.NoCache);
-                Response.BinaryWrite(bytes);
-                Response.End();
-                Response.Close();*/
                 ContentDialog dialog = new ContentDialog()
                 {
                     Title = "PDF gedownload",
                     Content = "PDF van deze promotie vindt U terug in uw Download folder",
                     CloseButtonText = "OK"
                 };
-                dialog.ShowAsync();
+                await dialog.ShowAsync();
             }
         }
 
