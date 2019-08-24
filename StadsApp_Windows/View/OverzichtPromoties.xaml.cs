@@ -1,5 +1,6 @@
 ﻿using StadsApp_Windows.Model;
 using StadsApp_Windows.ViewModel;
+using StadsApp_Windows.ViewModel.ParamDTO;
 using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
@@ -47,11 +48,14 @@ namespace StadsApp_Windows.View
         private void StackPanel_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             //repo?
+            ParamDTO param = new ParamDTO();
             Promotie p = (Promotie)lvPromoties.SelectedItem;
             Onderneming o = overzichtPromotiesvm.Ondernemingen.Where(ond => ond.OndernemingID.Equals(p.OndernemingID)).FirstOrDefault();
             o.Vestigingen.AddRange(overzichtOndvm.Vestigingen.Where(x => x.Ondernemingid.Equals(o.OndernemingID)));
             o.Promoties.AddRange(overzichtPromotiesvm.Promoties.Where(x => x.OndernemingID.Equals(o.OndernemingID)));
-            this.Frame.Navigate(typeof(OndernemingDetail), o);
+            param.gekozenOnderneming = o;
+            param.ondernemingRepo = OndernemingRepo;
+            this.Frame.Navigate(typeof(OndernemingDetail), param);
         }
     }
 }
