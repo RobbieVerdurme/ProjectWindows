@@ -28,17 +28,17 @@
     <!-- -->
     <StackPanel>
         <StackPanel>
-            <TextBlock Text="Maak hier u onderneming aan" FontSize="25" HorizontalAlignment="Center"/>
+            <TextBlock Text="Maak hier uw onderneming aan" FontSize="25" HorizontalAlignment="Center"/>
         </StackPanel>
-        <StackPanel x:Name="NaamOnderneming" Orientation="Vertical" HorizontalAlignment="Center">
+        <StackPanel x:Name="NaamOnderneming" Orientation="Vertical" HorizontalAlignment="Center" Margin="10">
             <TextBlock Text="Naam" HorizontalAlignment="Center"/>
-            <TextBox x:Name="txtNaam" Width="400"/> 
+            <TextBox x:Name="txtNaam" Width="400" TextAlignment="Center"/> 
         </StackPanel>
-        <StackPanel x:Name="AdresOnderneming" Orientation="Vertical" HorizontalAlignment="Center">
+        <StackPanel x:Name="AdresOnderneming" Orientation="Vertical" HorizontalAlignment="Center" Margin="10">
             <TextBlock Text="Adres" HorizontalAlignment="Center"/>
-            <TextBox x:Name="txtAdres" Width="400"/>
+            <TextBox x:Name="txtAdres" Width="400" TextAlignment="Center"/>
         </StackPanel>
-        <StackPanel x:Name="TypeOnderneming" Orientation="Vertical" HorizontalAlignment="Center">
+        <StackPanel x:Name="TypeOnderneming" Orientation="Vertical" HorizontalAlignment="Center" Margin="10">
             <TextBlock Text="Categorie/Type onderneming" HorizontalAlignment="Center"/>
             <ComboBox Width="400" x:Name="cboSoort" ItemsSource="{Binding Soorten}"/>
         </StackPanel>

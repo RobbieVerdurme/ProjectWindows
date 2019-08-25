@@ -24,7 +24,10 @@
                         <StackPanel Padding="10" DoubleTapped="StackPanel_DoubleTapped">
                             <TextBlock Text="{Binding Naam}"/>
                             <TextBlock Text="{Binding Beschrijving}"/>
-                            <TextBlock Text="{Binding Date, Converter={StaticResource dateConverter}}"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Datum:" Margin="0,0,10,0"/>
+                                <TextBlock Text="{Binding Date, Converter={StaticResource dateConverter}}"/>
+                            </StackPanel>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
