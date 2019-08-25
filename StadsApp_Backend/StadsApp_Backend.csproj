@@ -238,9 +238,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908051230382_initial.cs" />
-    <Compile Include="Migrations\201908051230382_initial.Designer.cs">
-      <DependentUpon>201908051230382_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201908252303033_initial.cs" />
+    <Compile Include="Migrations\201908252303033_initial.Designer.cs">
+      <DependentUpon>201908252303033_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -347,11 +347,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908051230382_initial.resx">
-      <DependentUpon>201908051230382_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908252303033_initial.resx">
+      <DependentUpon>201908252303033_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
