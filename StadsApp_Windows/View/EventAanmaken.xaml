@@ -29,7 +29,7 @@
     <!-- -->
     <StackPanel>
         <StackPanel>
-            <TextBlock Text="Voeg hier u event Toe" FontSize="25" HorizontalAlignment="Center"/>
+            <TextBlock Text="Voeg hier uw event toe" FontSize="25" HorizontalAlignment="Center"/>
         </StackPanel>
         <StackPanel x:Name="NaamEvent" Orientation="Vertical" HorizontalAlignment="Center">
             <TextBlock Text="Naam" HorizontalAlignment="Center"/>
