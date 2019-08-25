@@ -44,7 +44,7 @@ namespace StadsApp_Windows.View
             ParamDTO param = (ParamDTO)e.Parameter;
             this.OndernemingRepo = param.ondernemingRepo;
             vmDetail = new VestigingDetailViewModel(param.ondernemingRepo, param.gekozenVestiging);
-            this.DataContext = vmDetail.Vestiging;
+            this.DataContext = vmDetail;
         }
 
         private void EventToevoegen(object sender, RoutedEventArgs e)
@@ -88,6 +88,18 @@ namespace StadsApp_Windows.View
             GeneralTransform buttonTransform = element.TransformToVisual(null);
             Point point = buttonTransform.TransformPoint(new Point());
             return new Rect(point, new Size(element.ActualWidth, element.ActualHeight));
+        }
+
+        private async void Abonneren(object sender, RoutedEventArgs e)
+        {
+            if(vmDetail.IsGeabonneerd())
+            {
+                await vmDetail.OnAbonneerVestigingAsync();
+            }
+            else
+            {
+                await vmDetail.AbonneerVestigingAsync();
+            }
         }
     }
 }

@@ -33,11 +33,11 @@
     <!-- -->
     <StackPanel Orientation="Vertical" Padding="20">
         <StackPanel Orientation="Horizontal" Padding="20">
-            <TextBlock Text="{Binding Naam}" FontWeight="Bold" FontSize="30" />
+            <TextBlock Text="{Binding Vestiging.Naam}" FontWeight="Bold" FontSize="30" />
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Adres: "/>
-            <TextBlock Text="{Binding Adres}" Padding="20 0 0 0"/>
+            <TextBlock Text="{Binding Vestiging.Adres}" Padding="20 0 0 0"/>
         </StackPanel>
         <StackPanel x:Name="Events" Orientation="Horizontal">
             <TextBlock Text="Events:" Width="70"/>
@@ -45,15 +45,16 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Tapped="Event_Tapped" Padding="10">
-                            <TextBlock Text="{Binding Naam}"/>
-                            <TextBlock Text="{Binding Beschrijving}"/>
-                            <TextBlock Text="{Binding Date, Converter={StaticResource dateConverter}}"/>
+                            <TextBlock Text="{Binding Vestiging.Naam}"/>
+                            <TextBlock Text="{Binding Vestiging.Beschrijving}"/>
+                            <TextBlock Text="{Binding Vestiging.Date, Converter={StaticResource dateConverter}}"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </StackPanel>
-        <Button Content="Event toevoegen" Click="EventToevoegen" Margin="0 20 0 0" Visibility="{Binding Gebruiker, Converter={StaticResource GebruikerConverter}}"/>
-        <Button Content="Vestiging verwijderen" Click="Verwijderen" Margin="0 30 0 0 " Visibility="{Binding Gebruiker, Converter={StaticResource GebruikerConverter}}"/>
+        <Button Content="Event toevoegen" Click="EventToevoegen" Margin="0 20 0 0" Visibility="{Binding Vestiging.Gebruiker, Converter={StaticResource GebruikerConverter}}"/>
+        <Button Content="Vestiging verwijderen" Click="Verwijderen" Margin="0 30 0 0 " Visibility="{Binding Vestiging.Gebruiker, Converter={StaticResource GebruikerConverter}}"/>
+        <Button Content="{Binding AbonnerenText}" Click="Abonneren" Margin="0 30 0 0 " Visibility="{Binding Vestiging.Gebruiker, Converter={StaticResource GebruikerConverter}}"/>
     </StackPanel>
 </Page>

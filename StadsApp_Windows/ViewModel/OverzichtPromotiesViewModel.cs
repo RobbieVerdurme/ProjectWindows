@@ -24,7 +24,7 @@ namespace StadsApp_Windows.ViewModel
         {
             this.Ondernemingen = OndernemingRepo.Ondernemingen;
             this.Promoties = OndernemingRepo.Promoties;
-            this.Promoties.OrderBy(x => x.Van);
+            //this.Promoties.OrderBy(x => x.Van);
         }
     }
 }

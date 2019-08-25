@@ -86,10 +86,15 @@ namespace StadsApp_Windows
                         case "OverzichtPromoties_Page":
                             mainFrame.Navigate(typeof(OverzichtPromoties), OndernemingRepo);
                             break;
+
                         case "AankomendeEvents_Page":
                             mainFrame.Navigate(typeof(OverzichtEvents), OndernemingRepo);
                             break;
-					}
+
+                        case "OverzichtAbonnementen_Page":
+                            mainFrame.Navigate(typeof(OverzichtAbonnementen), OndernemingRepo);
+                            break;
+                    }
 				}
 			}
 		}

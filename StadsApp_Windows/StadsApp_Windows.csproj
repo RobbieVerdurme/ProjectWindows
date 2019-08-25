@@ -118,6 +118,7 @@
     <Compile Include="ViewModel\Converter\DateConverter.cs" />
     <Compile Include="ViewModel\Converter\GebruikerVisabilityConverter.cs" />
     <Compile Include="ViewModel\EventAanmakenViewModel.cs" />
+    <Compile Include="ViewModel\OverzichtAbonnementViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\OndernemingAanmakenViewModel.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="ViewModel\ParamDTO\AccountDTO.cs" />
     <Compile Include="ViewModel\ParamDTO\ParamDTO.cs" />
     <Compile Include="ViewModel\PromotieAanmakenViewModel.cs" />
+    <Compile Include="ViewModel\Repository\AbonnementRepository.cs" />
     <Compile Include="ViewModel\Repository\AccountRepository.cs" />
     <Compile Include="ViewModel\Repository\OndernemingRepository.cs" />
     <Compile Include="ViewModel\VestigingAanmakenViewModel.cs" />
@@ -134,6 +136,7 @@
     <Compile Include="ViewModel\RegistrerenViewModel.cs" />
     <Compile Include="ViewModel\VestigingDetailViewModel.cs" />
     <Compile Include="ViewModel\ParamDTO\ViewModelDTO.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\DetailVestiging.xaml.cs">
       <DependentUpon>DetailVestiging.xaml</DependentUpon>
     </Compile>
@@ -145,6 +148,9 @@
     </Compile>
     <Compile Include="View\OndernemingAanmaken.xaml.cs">
       <DependentUpon>OndernemingAanmaken.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OverzichtAbonnementen.xaml.cs">
+      <DependentUpon>OverzichtAbonnementen.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OverzichtEvents.xaml.cs">
       <DependentUpon>OverzichtEvents.xaml</DependentUpon>
@@ -208,6 +214,10 @@
     <Page Include="View\OndernemingAanmaken.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\OverzichtAbonnementen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\OverzichtEvents.xaml">
       <SubType>Designer</SubType>

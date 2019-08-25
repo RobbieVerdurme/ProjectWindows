@@ -32,6 +32,9 @@
             <NavigationViewItem Icon="Calendar" Tag="AankomendeEvents_Page">
                 <TextBlock Tag="AankomendeEvents_Page">Aankomende events</TextBlock>
             </NavigationViewItem>
+            <NavigationViewItem Icon="Comment" Tag="OverzichtAbonnementen_Page">
+                <TextBlock Tag="OverzichtAbonnementen_Page">Abonnementen</TextBlock>
+            </NavigationViewItem>
         </NavigationView.MenuItems>
         <NavigationView.PaneFooter>
             <NavigationViewItem Icon="Contact" Tag="Login_Page" Tapped="UserButton_Tapped">

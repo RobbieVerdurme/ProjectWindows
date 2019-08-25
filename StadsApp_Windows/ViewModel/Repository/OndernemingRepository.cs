@@ -22,6 +22,7 @@ namespace StadsApp_Windows.ViewModel.Repository
         public ObservableCollection<Event> Events { get; set; }
         public ObservableCollection<Promotie> Promoties { get; set; }
         public ObservableCollection<string> Soorten { get; set; }
+        public ObservableCollection<Vestiging> Abonnementen = new ObservableCollection<Vestiging>();
 
         //constr
         public OndernemingRepository()
@@ -48,6 +49,7 @@ namespace StadsApp_Windows.ViewModel.Repository
             //promoties
             var jsonPromoties = await client.GetStringAsync(new Uri($"{BaseUrl}/promoties"));
             Promoties = JsonConvert.DeserializeObject<ObservableCollection<Promotie>>(jsonPromoties);
+            
 
             //soorten onderneming
             //online data afhalen extra class soort
@@ -55,6 +57,7 @@ namespace StadsApp_Windows.ViewModel.Repository
             //Soorten = JsonConvert.DeserializeObject<ObservableCollection<String>>(jsonSoorten);
             Soorten = new ObservableCollection<string>(new List<string>(new string[] { "Alle", "Schoenenwinkel", "Restaurant", "Café", "Brasserie", "Hotel", "Kledingwinkel", "Supermarkt", "B&B", "Drankcentrale", "Nachtwinkel", "School", "Frituur", "Broodjeszaak", "Overige" }));
         }
+        
         /***************************************************Aanmaken***************************************************************/
         public async Task AanmakenOndernemingAsync(Onderneming onderneming)
         {
@@ -147,6 +150,26 @@ namespace StadsApp_Windows.ViewModel.Repository
             await client.DeleteAsync(new Uri($"{BaseUrl}/vestigings/{vestiging.VestigingID}"));
             Vestiging verwijderenVestiging = this.Vestigingen.Where(v => v.VestigingID == v.VestigingID).FirstOrDefault();
             this.Vestigingen.Remove(verwijderenVestiging);
+            await UnAbonneerVestigingAsync(vestiging);
+        }
+
+        public async Task AbonneerVestigingAsync(Vestiging vestiging)
+        {
+            //await client.DeleteAsync(new Uri($"{BaseUrl}/vestigings/{vestiging.VestigingID}"));
+            //Vestiging verwijderenVestiging = this.Vestigingen.Where(v => v.VestigingID == v.VestigingID).FirstOrDefault();
+            if (this.Abonnementen.ToList().Find(a => a.VestigingID == vestiging.VestigingID) == null)
+            {
+                this.Abonnementen.Add(vestiging);
+            }
+        }
+
+        public async Task UnAbonneerVestigingAsync(Vestiging vestiging)
+        {
+            //await client.DeleteAsync(new Uri($"{BaseUrl}/vestigings/{vestiging.VestigingID}"));
+            //Vestiging verwijderenVestiging = this.Vestigingen.Where(v => v.VestigingID == v.VestigingID).FirstOrDefault();
+            Vestiging vestigingToRemove = this.Abonnementen.ToList().Find(v => v.VestigingID == vestiging.VestigingID);
+            this.Abonnementen.Remove(vestigingToRemove);
+           
         }
     }
 }

@@ -1,6 +1,9 @@
-﻿using GalaSoft.MvvmLight;
+﻿using CommonServiceLocator;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
+using StadsApp_Windows.View;
+using StadsApp_Windows.ViewModel.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,10 +34,17 @@ namespace StadsApp_Windows.ViewModel
             }
 
             //Register your services used here
+            
+            SimpleIoc.Default.Register<OverzichtAbonnementViewModel>();
+
+            var navigationService = new NavigationService();
+
+            navigationService.Configure(nameof(OverzichtAbonnementen), typeof(OverzichtAbonnementen));
             SimpleIoc.Default.Register<INavigationService, NavigationService>();
 
         }
 
+        //public OverzichtAbonnementViewModel OverzichtAbonnementViewModelInstance = new OverzichtAbonnementViewModel();
 
         // <summary>
         // Gets the StartPage view model.

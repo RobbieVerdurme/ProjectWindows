@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="StadsApp_Windows.View.OverzichtAbonnementen"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:$wizardcodebehindxmlns$"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:viewmodel="using:StadsApp_Windows.ViewModel.Converter"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <viewmodel:DateConverter x:Key="dateConverter"/>
+    </Page.Resources>
+
+    <StackPanel Orientation="Vertical">
+        <StackPanel>
+            <TextBlock Text="Evenementen van je geabonneerde vesitigingen:" TextAlignment="Center" FontSize="25px" TextDecorations="Underline"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <ListView x:Name="lvEvents" ItemsSource="{Binding Path=SubscribedEvents}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Padding="10" DoubleTapped="StackPanel_DoubleTapped">
+                            <TextBlock Text="{Binding Naam}"/>
+                            <TextBlock Text="{Binding Beschrijving}"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Datum:" Margin="0,0,10,0"/>
+                                <TextBlock Text="{Binding Date, Converter={StaticResource dateConverter}}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+    </StackPanel>
+</Page>
