@@ -31,17 +31,17 @@
         <StackPanel>
             <TextBlock Text="Voeg hier uw event toe" FontSize="25" HorizontalAlignment="Center"/>
         </StackPanel>
-        <StackPanel x:Name="NaamEvent" Orientation="Vertical" HorizontalAlignment="Center">
+        <StackPanel x:Name="NaamEvent" Orientation="Vertical" HorizontalAlignment="Center" Margin="10">
             <TextBlock Text="Naam" HorizontalAlignment="Center"/>
-            <TextBox x:Name="txtNaamEvent" Width="400" PlaceholderText="Naam event"/>
+            <TextBox x:Name="txtNaamEvent" Width="400" PlaceholderText="Naam event" TextAlignment="Center"/>
         </StackPanel>
-        <StackPanel x:Name="BeschrijvingEvent" Orientation="Vertical" HorizontalAlignment="Center">
+        <StackPanel x:Name="BeschrijvingEvent" Orientation="Vertical" HorizontalAlignment="Center" Margin="10">
             <TextBlock Text="Beschrijving" HorizontalAlignment="Center"/>
-            <TextBox x:Name="txtBeschrijvingEvent" Width="400" PlaceholderText="Beschrijving event"/>
+            <TextBox x:Name="txtBeschrijvingEvent" Width="400" PlaceholderText="Beschrijving event" TextAlignment="Center"/>
         </StackPanel>
-        <StackPanel x:Name="DatumEvent" Orientation="Vertical" HorizontalAlignment="Center">
+        <StackPanel x:Name="DatumEvent" Orientation="Vertical" HorizontalAlignment="Center" Margin="10">
             <TextBlock Text="Datum" HorizontalAlignment="Center"/>
-            <CalendarDatePicker x:Name="calDate" Width="400" />
+            <CalendarDatePicker x:Name="calDate" Width="400"/>
         </StackPanel>
         <Button Content="Event Toevoegen" Click="EventToevoegen" HorizontalAlignment="Center"/>
     </StackPanel>

@@ -31,19 +31,19 @@
         <StackPanel HorizontalAlignment="Center">
             <TextBlock Text="Voeg hier een promotie toe" FontSize="25px" HorizontalAlignment="Center"/>
         </StackPanel>
-        <StackPanel x:Name="Percentage" Orientation="Vertical" HorizontalAlignment="Center">
+        <StackPanel x:Name="Percentage" Orientation="Vertical" HorizontalAlignment="Center" Margin="10">
             <TextBlock Text="Percentage" HorizontalAlignment="Center"/>
-            <TextBox x:Name="txtPercentagePromotie" Width="400" PlaceholderText="Percentage promotie"/>
+            <TextBox x:Name="txtPercentagePromotie" Width="400" PlaceholderText="Percentage promotie" TextAlignment="Center"/>
         </StackPanel>
-        <StackPanel x:Name="Beschrijving" Orientation="Vertical" HorizontalAlignment="Center">
+        <StackPanel x:Name="Beschrijving" Orientation="Vertical" HorizontalAlignment="Center" Margin="10">
             <TextBlock Text="Beschrijving" HorizontalAlignment="Center"/>
-            <TextBox x:Name="txtBeschrijvingPromotie" Width="400" PlaceholderText="Beschrijving promotie"/>
+            <TextBox x:Name="txtBeschrijvingPromotie" Width="400" PlaceholderText="Beschrijving promotie" TextAlignment="Center"/>
         </StackPanel>
-        <StackPanel x:Name="Van" Orientation="Vertical" HorizontalAlignment="Center">
+        <StackPanel x:Name="Van" Orientation="Vertical" HorizontalAlignment="Center" Margin="10">
             <TextBlock Text="Van" HorizontalAlignment="Center"/>
             <CalendarDatePicker x:Name="calVan" Width="400" HorizontalAlignment="Center"/>
         </StackPanel>
-        <StackPanel x:Name="Tot" Orientation="Vertical" HorizontalAlignment="Center">
+        <StackPanel x:Name="Tot" Orientation="Vertical" HorizontalAlignment="Center" Margin="10">
             <TextBlock Text="Tot" HorizontalAlignment="Center"/>
             <CalendarDatePicker x:Name="calTot" Width="400" HorizontalAlignment="Center"/>
         </StackPanel>

@@ -31,11 +31,11 @@
         </StackPanel>
         <StackPanel x:Name="NaamVestinging" Orientation="Vertical" Padding="10" HorizontalAlignment="Center">
             <TextBlock Text="Naam vestiging:" Padding="10" HorizontalAlignment="Center"/>
-            <TextBox x:Name="txtNaam" Width="400"/>
+            <TextBox x:Name="txtNaam" Width="400" TextAlignment="Center"/>
         </StackPanel>
         <StackPanel x:Name="AdresVestiging" Orientation="Vertical" Padding="10" HorizontalAlignment="Center">
             <TextBlock Text="Adres van vestiging:" Padding="10" HorizontalAlignment="Center"/>
-            <TextBox x:Name="txtAdres" Width="400"/>
+            <TextBox x:Name="txtAdres" Width="400" TextAlignment="Center"/>
         </StackPanel>
         <Button Content="Vestiging opslaan" Click="VestigingOpslaan" HorizontalAlignment="Center"/>
     </StackPanel>

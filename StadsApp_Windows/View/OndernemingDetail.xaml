@@ -46,7 +46,7 @@
                 <ListView x:Name="lvVestigingen" ItemsSource="{Binding GeselecteerdeOnderneming.Vestigingen}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel DoubleTapped="StackPanel_DoubleTapped">
+                            <StackPanel DoubleTapped="StackPanel_DoubleTapped" Margin="10">
                                 <TextBlock Text="{Binding Naam}"/>
                                 <TextBlock Text="{Binding Adres}"/>
                             </StackPanel>
@@ -61,7 +61,7 @@
                 <ListView x:Name="lvPromoties" ItemsSource="{Binding GeselecteerdeOnderneming.Promoties}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Tapped="Promotie_Tapped">
+                            <StackPanel Tapped="Promotie_Tapped" Margin="10">
                                 <TextBlock Text="{Binding Beschrijving}"/>
                                 <TextBlock Text="{Binding Percentage}"/>
                                 <TextBlock Text="{Binding Van, Converter={StaticResource dateConverter}}"/>
