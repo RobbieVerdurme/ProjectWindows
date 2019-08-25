@@ -37,11 +37,20 @@
             <ListView x:Name="lvPromoties" ItemsSource="{Binding Promoties}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel DoubleTapped="StackPanel_DoubleTapped">
+                        <StackPanel Margin="0,10,0,0" DoubleTapped="StackPanel_DoubleTapped">
                             <TextBlock Text="{Binding Beschrijving}"/>
-                            <TextBlock Text="{Binding Percentage}"/>
-                            <TextBlock Text="{Binding Van, Converter={StaticResource dateConverter}}"/>
-                            <TextBlock Text="{Binding Tot, Converter={StaticResource dateConverter}}"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="0,0,10,0">Percentage: </TextBlock>
+                                <TextBlock Text="{Binding Percentage}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="0,0,10,0">Van: </TextBlock>
+                                <TextBlock Text="{Binding Van, Converter={StaticResource dateConverter}}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                    <TextBlock Margin="0,0,10,0">Tot: </TextBlock>
+                                    <TextBlock Text="{Binding Tot, Converter={StaticResource dateConverter}}"/>
+                            </StackPanel>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
