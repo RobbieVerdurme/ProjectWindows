@@ -22,7 +22,7 @@ namespace StadsApp_Windows.ViewModel
 
         private void VulData()
         {
-            this.Events = this.OndernemingRepo.Events;
+            this.Events = new ObservableCollection<Event>(this.OndernemingRepo.Events.OrderBy(evenement => evenement.Date));
         }
     }
 }
