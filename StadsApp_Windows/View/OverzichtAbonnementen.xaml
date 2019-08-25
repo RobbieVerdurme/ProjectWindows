@@ -15,7 +15,7 @@
 
     <StackPanel Orientation="Vertical">
         <StackPanel>
-            <TextBlock Text="Evenementen van je geabonneerde vesitigingen:" TextAlignment="Center" FontSize="25px" TextDecorations="Underline"/>
+            <TextBlock Text="Evenementen van je geabonneerde vestigingen:" TextAlignment="Center" FontSize="25px" TextDecorations="Underline"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <ListView x:Name="lvEvents" ItemsSource="{Binding Path=SubscribedEvents}">
