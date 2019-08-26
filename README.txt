@@ -8,9 +8,17 @@ Bij properties moeten zowel frontend als backend aangeduid staan bij het runnen 
 * Bij backend werkten wij met 'Start without debugging'
 * Bij frontend gebruikten wij 'Start'
 
-In StadsApp_Backend in de folder 'Migration' 2 files verwijderen:
-* Configuration.cs
+In StadsApp_Backend in de folder 'Migration' een file verwijderen:
 * ..._initial.cs
 
 Daarna in Package Manager Console bij Default Project 'StadsApp_Backend' aanduiden en de volgende commando's intypen:
-* 
+*  Add-Migration initial
+*  Update-Database
+
+Hierna is het mogelijk om in te loggen als ondernemer met volgende gegevens:
+*  email: ondernemer@gent.be
+*  wachtwoord: Password0!
+
+en als gebruiker:
+*  email: user@gent.be
+*  wachtwoord: Password0!
