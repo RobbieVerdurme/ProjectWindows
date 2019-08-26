@@ -13,7 +13,12 @@ In StadsApp_Backend in de folder 'Migration' een file verwijderen:
 
 Daarna in Package Manager Console bij Default Project 'StadsApp_Backend' aanduiden en de volgende commando's intypen:
 *  Add-Migration initial
-*  Update-Database
+*  sqllocaldb.exe stop
+*  sqllocaldb.exe delete
+*  Update-database
+
+Hierna het project runnen en als het opgestart is weer afsluiten en daarna het volgende commando invoeren in Package Manager Console bij Default Project 'StadsApp_Backend':
+*  Update-database
 
 Hierna is het mogelijk om in te loggen als ondernemer met volgende gegevens:
 *  email: ondernemer@gent.be
