@@ -1,6 +1,4 @@
 # Native apps II: mobile apps voor Windows (TI) (Herexamen)
-
-## Info
 Groep : NL7  
 GroepsLeden:  
 * Angelo Carly
