@@ -25,6 +25,14 @@ namespace StadsApp_Backend.Migrations
             //  to avoid creating duplicate seed data.
             context.Roles.AddOrUpdate(x => x.Name, new IdentityRole("Ondernemer"));
             context.Roles.AddOrUpdate(x => x.Name, new IdentityRole("Gebruiker"));
+            context.Users.AddOrUpdate(x => x.Email, new Models.ApplicationUser()
+            {
+                UserName = "ondernemer@gent.be",
+                PasswordHash = "AHem6nPNJw0dSMoRO5gDZdRjentMSOjEZp9xKcuudIhQ+vgiA+6fVmqjY99FNXYR+g==",
+                SecurityStamp = "e556582d-7e6f-4891-8c94-7f6c08d1177c",
+                Email = "ondernemer@gent.be"
+            }
+            );
             SaveChanges(context);
         }
 
