@@ -33,6 +33,14 @@ namespace StadsApp_Backend.Migrations
                 Email = "ondernemer@gent.be"
             }
             );
+            context.Users.AddOrUpdate(x => x.Email, new Models.ApplicationUser()
+            {
+                UserName = "user@gent.be",
+                PasswordHash = "ABgPNvTAvs0JdeyeF/YScLO/N0J5g6WaOyIYpMllcii45fl3acxTG4PhvqCvL3qI3g==",
+                SecurityStamp = "9211af25-5c2d-4c56-8d80-48c8fdc3035d",
+                Email = "user@gent.be"
+            }
+            );
             SaveChanges(context);
         }
 
